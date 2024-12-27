@@ -1,0 +1,286 @@
+
+
+
+.blocco{
+	text-align:center;
+	display:inline-block;
+	border:2px solid black;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffcf32+0,ffffff+30,ffffff+50,ffffff+70,ffcf32+100 */
+background: #ffcf32; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffcf32 0%, #ffffff 30%, #ffffff 50%, #ffffff 70%, #ffcf32 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffcf32 0%,#ffffff 30%,#ffffff 50%,#ffffff 70%,#ffcf32 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffcf32 0%,#ffffff 30%,#ffffff 50%,#ffffff 70%,#ffcf32 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcf32', endColorstr='#ffcf32',GradientType=0 ); /* IE6-9 */
+}
+
+
+.popover{
+	color:black;
+}
+
+.popover-title{
+	display:none;
+}
+.checkagain{
+
+	border:1px solid black; 
+	box-shadow:2px 2px 2px black;
+}
+
+.wrong{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8e8e8e+0,ffffff+30,ffffff+50,ffffff+70,8e8e8e+100 */
+background: #8e8e8e; /* Old browsers */
+background: -moz-linear-gradient(top,  #8e8e8e 0%, #ffffff 30%, #ffffff 50%, #ffffff 70%, #8e8e8e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #8e8e8e 0%,#ffffff 30%,#ffffff 50%,#ffffff 70%,#8e8e8e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #8e8e8e 0%,#ffffff 30%,#ffffff 50%,#ffffff 70%,#8e8e8e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8e8e8e', endColorstr='#8e8e8e',GradientType=0 ); /* IE6-9 */
+
+}
+
+.aright{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1b7c00+0,ffffff+30,ffffff+50,ffffff+70,1b7c00+100 */
+background: #1b7c00; /* Old browsers */
+background: -moz-linear-gradient(top,  #1b7c00 0%, #ffffff 30%, #ffffff 50%, #ffffff 70%, #1b7c00 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #1b7c00 0%,#ffffff 30%,#ffffff 50%,#ffffff 70%,#1b7c00 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #1b7c00 0%,#ffffff 30%,#ffffff 50%,#ffffff 70%,#1b7c00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b7c00', endColorstr='#1b7c00',GradientType=0 ); /* IE6-9 */
+
+}
+
+#area_testo{
+
+	border:4px solid black;
+	margin-bottom:10px;
+	box-shadow:0px 0px 30px black;
+}
+
+.sfondobianco{
+		background-color:white;
+} 
+
+#area_random{
+	background-color:#333;
+	border:2px solid white;
+	margin-bottom:10px;
+	box-shadow:0px 0px 30px black;
+	padding:5px 0px;
+	color:white;
+
+}
+
+#area_suggerimento{
+	background-color:#333;
+	border:2px solid white;
+	margin-bottom:10px;
+	box-shadow:0px 0px 30px black;
+	padding:5px 0px;
+	color:white;
+
+}
+
+.sfondogrigio{
+	background-color:lightgrey;
+}
+
+
+#intro_wrapper{
+	background-color:white;
+	border:4px solid black;
+	margin-bottom:10px;
+	box-shadow:0px 0px 30px black;
+	padding:20px 10px;
+
+}
+
+.blocco h5{
+		margin-bottom:2em;
+		line-height:2em;
+		background-color:darkgoldenrod;
+		color:white;
+		border:1px solid black;
+		border-radius:5px;
+		box-shadow:1px 1px 1px black;
+}
+
+.blocco div{
+	margin:20px auto;
+}
+
+body{
+	background-image:url('../src/steam2.jpg');
+	background-size:cover;
+}
+
+.piu{
+	height:50px;
+	width:100%;
+	cursor:pointer;
+	color:white;
+	line-height:50px;
+}
+
+.piu span{
+	line-height:50px;
+	font-size:40px;
+	color:black;
+}
+.meno{
+	height:50px;
+	width:100%;
+	cursor:pointer;
+
+	color:white;
+	line-height:50px;
+}
+
+.meno span{
+	line-height:50px;
+	font-size:40px;
+	color:black;
+}
+
+.campo{
+	height:30px;
+	line-height:30px;
+	font-family:sans-serif;
+	color:black;
+	font-size:24px;
+	
+}
+
+#coniugazione{
+		height:30px;
+	line-height:30px;
+	font-family:sans-serif;
+	color:black;
+	font-size:20px;
+}
+
+.transparent{
+	opacity:0;
+	cursor:default;
+}
+
+#verbo{
+	margin:1.5em auto;
+}
+
+#bottom_check{
+	margin:1em auto;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#credits{
+	color:white;
+	text-shadow:2px 2px 2px black;
+}
+
+.mybtn{
+	font-size:2em;
+	margin:1em 0em;
+	border:1px solid black;
+	box-shadow:2px 2px 2px black;
+	text-shadow:1px 1px 2px black;
+	font-stretch:expanded;
+	font-weight:bold;
+}
+
+
+
+
+.win{
+	background-color:darkgreen;
+	color:white;
+}
+
+.min_piu{
+	display:none;
+}
+.min_meno{
+	display:none;
+}
+
+@media (max-width: 480px) {
+.piu{
+	display:none;
+}
+.meno{
+	display:none;
+}
+.campo{
+	font-size:20px;
+	line-height:26px;
+	display:inline-block;
+	height:26px;
+}
+.blocco div{
+	margin:10px auto;
+}
+h3{
+	font-size:12px;
+}
+
+.blocco h6{
+	display:none;
+}
+
+.blocco h5{
+	margin-bottom:0px;
+}
+#coniugazione{
+		line-height:26px;
+	font-size:20px;
+		height:26px;
+}
+
+#area_random_min{
+	display:none;
+}
+
+.min_piu{
+	display:block;
+	float:left;
+		line-height:26px;
+	font-size:20px;
+	color:black;
+}
+.min_meno{
+	display:block;
+	float:right;
+		line-height:26px;
+	font-size:20px;
+	color:black;	
+}
+#verbo{
+	margin:15px auto;
+	font-size:28px;
+}
+
+.mybtn{
+	font-size:1.3em;
+	margin:20px auto;
+}
+#haiscritto{
+		font-size:28px;
+		margin:15px auto;
+}
+#credits{
+	font-size:12px;
+}
+
+#bottom_check{
+	margin:20px auto;
+}
+}
+
+
+

@@ -1,0 +1,227 @@
+.audiocontrollo{
+width:40px;
+height:40px;
+margin:5px 15px;
+}
+
+#pictures{
+float:right;
+}
+
+
+#ascolto{
+line-height:40px;
+font-size:26px;
+font-family:"Lobster";
+border-right:1px solid grey;
+text-align:center;
+cursor:pointer;
+text-align:center;
+}
+
+#leggo{
+font-family:"Lobster";
+text-align:center;
+cursor:pointer;
+text-align:center;
+line-height:40px;
+font-size:26px;
+}
+
+.tabactivated{
+background-color:white;
+color:#d64e35;
+}
+
+.ascoltodeactivated{
+background-color:#eeeeee;
+color:#993624;
+box-shadow:-2px -2px 2px darkgray inset;
+}
+
+.leggodeactivated{
+background-color:#eeeeee;
+color:#993624;
+box-shadow:2px -2px 2px darkgray inset;
+}
+
+
+
+#ascoltoaudio{
+border-bottom:1px solid red;
+padding-bottom:10px;
+}
+
+
+
+#titolostoria{
+font-family:"Bangers","Tahoma";
+color:red;
+text-align:center;
+font-size:3em;
+text-decoration:underline;
+
+}
+
+@font-face {
+    font-family: "Bangers";
+    src: url('../src/fonts/Bangers.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url('../src/fonts/Lobster.otf') format("truetype");
+}
+
+#automaticomanuale{
+height:40px;
+border-top:1px solid red;
+}
+
+#centroautomaticomanuale{
+text-align:left;
+}
+
+#rightautomaticomanuale{
+text-align:right;
+}
+
+#testomanuale{
+font-family:"Lobster";
+line-height:40px;
+font-size:20px;
+float:left;
+}
+
+#testoautomatico{
+font-family:"Lobster";
+line-height:40px;
+font-size:20px;
+float:left;
+}
+
+#switchauto{
+cursor:pointer;
+height:30px;
+margin:5px 5px;
+display:inline-block;
+width:55px;
+background-size:cover;
+padding:5px 0px;
+border:0px solid black;
+float:left;
+}
+
+
+
+#quantoavanzamento{
+font-family:"Lobster";
+line-height:40px;
+font-size:20px;
+display:inline-block;
+margin-left:20px;
+}
+
+
+
+
+.topause{
+background-image:url('pause.png');
+background-size:cover;
+}
+
+.toplay{
+background-image:url('play.png');
+background-size:cover;
+}
+
+#centroaudiobar{
+text-align:center;
+}
+
+#leftaudiobar{
+text-align:left;
+}
+
+#rightaudiobar{
+text-align:right;
+}
+
+#rewind{
+background-image:url('restart.png');
+
+}
+
+.picture{
+background-image:url('picture.png');
+
+}
+
+.picturentext{
+background-image:url('picturentext.png');
+
+}
+
+.nopicture{
+background-image:url('nopicture.png');
+
+}
+
+#alto{
+padding-bottom:5px;
+border-bottom:1px solid #d64e35;
+box-shadow:0px 2px 2px lightgray;
+}
+
+.auto{
+background-image:url('Switch_Auto.png');
+}
+
+.manuale{
+background-image:url('Switch_Manual.png');
+}
+
+#avanzamento{
+font-family:"Lobster";
+line-height:40px;
+font-size:20px;
+display:inline-block;
+
+}
+
+.scomparsa{
+background-image:url('scomparsa.png');
+}
+
+.noscomparsa{
+background-image:url('noscomparsa.png');
+}
+
+.semiscomparsa{
+background-image:url('semiscomparsa.png');
+}
+
+#indietro{
+border-right:1px solid #d64e35;
+border-bottom:1px solid #d64e35;
+}
+
+
+#logoinnav{
+height:22px;
+}
+
+.modal-body h3, .modal-body h4, .modal-title{
+font-family:"Bangers", Verdana, Tahoma;
+color:#993624;
+}
+
+.media-object{
+width:32px;
+}
+
+ul li a{
+font-family:"Bangers", Verdana, Tahoma;
+
+}
+

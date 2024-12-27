@@ -1,0 +1,119 @@
+body{
+
+background:url('gamebackground-06.png');
+background-size:cover;
+
+}
+
+
+
+.btnmargin{
+margin:30px 0px;
+}
+
+#game_panel{
+display:none;
+}
+
+#risultato_container{
+display:none;
+}
+
+#guess{
+font-size:40px;
+text-align:center;
+padding:30px;
+}
+
+#next{
+font-size:18px;
+}
+
+.sillaba{
+display:inline-block;
+}
+
+#parola{
+padding:1em 0em 2em 0em;
+}
+
+.avanzamento{
+display:inline-block;
+margin:0px 10px;
+width:20px;
+height:20px;
+}
+
+#progress{
+margin-top:1em;
+text-align:center;
+}
+
+
+
+//DA cambiare
+
+#risultato_container{
+width:800px;
+min-height:460px;
+padding:0px;
+border: 1px solid black;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+margin-bottom: 5px;
+margin-top:5px;
+box-shadow:2px 2px 2px black;
+margin:0px auto;
+display:none;
+cursor:pointer;
+background-image:url(bg.jpg);
+}
+
+#grey_bar{
+width:500px;
+height:30px;
+background-color:grey;
+border-radius:20px;
+margin:30px auto;
+}
+
+#green_bar{
+width:0px;
+height:30px;
+background-color:lightgreen;
+border-radius:20px;
+margin:0px;
+float:left;
+}
+
+#error{
+text-align:center;
+color:white;
+}
+
+.istruzioni{
+padding:5px 20px; background-color:#00a739; color:white; box-shadow:2px 2px 2px black; border-radius:10px;
+padding-bottom:20px;
+}
+
+#annulla{
+color:red;
+cursor:pointer;
+margin:0px 10px;
+}
+
+.red{
+color:red;
+}
+
+.yellow{
+color:#1d00ff;
+}
+
+.green{
+color:green;
+}
+
+.grey{
+color:grey;
+}

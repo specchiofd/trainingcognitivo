@@ -1,0 +1,179 @@
+
+@font-face {
+    font-family: BirdyGame;
+    src: url(MotionControl.otf);
+}
+
+.next, .prev{
+  cursor:pointer;
+}
+
+body{
+  background-image:url('128-86.jpg');
+  font-family:BirdyGame;
+  font-size:3em;
+
+}
+
+.marbot{
+  margin:0.2em 0em;
+}
+
+h1,h2,h3{
+    text-shadow:2px 2px 2px black;
+}
+
+.setting_row{
+    text-shadow:2px 2px 2px black;
+  margin-bottom:0.5em;
+  padding-bottom:0.5em;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.centra{
+  margin:10px auto;
+}
+
+.screen{
+  background-color:white;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:2px 2px 2px black;
+    background-image:url('tavolo.jpg');
+    color:white;
+}
+
+#squadrauno{
+background-color:red;
+}
+
+#squadradue{
+background-color:blue;
+}
+
+#squadratre{
+background-color:green;
+}
+
+
+#squadraquattro{
+background-color:black;
+}
+
+.team{
+  border-radius:20px;
+  border:0px solid black;
+  border-bottom:2px solid black;
+  color:white;
+  font-size:2em;
+  padding:1em;
+  margin:1em 0em;
+}
+
+@media (min-width: 200px) { .cella{
+  display:inline-block;
+  width:70px;
+  margin:3px;
+  cursor:pointer;
+} }
+
+@media (min-width: 768px) { .cella{
+  display:inline-block;
+  width:100px;
+  margin:6px;
+  cursor:pointer;
+}  }
+
+
+@media (min-width: 992px) { .cella{
+  display:inline-block;
+  width:120px;
+  margin:10px;
+  cursor:pointer;
+}  }
+
+
+@media (min-width: 1200px) { .cella{
+  display:inline-block;
+  max-width:120px;
+  margin:10px;
+  cursor:pointer;
+}  }
+
+
+
+.front{
+      box-shadow:0px 0px 20px black;
+      border:5px solid white;
+
+}
+
+.back{
+    box-shadow:0px 0px 20px black;
+    border:5px solid white;
+
+}
+
+
+
+#team_0{
+  background-color:red;
+}
+
+#team_1{
+  background-color:blue;
+}
+
+#team_2{
+  background-color:green;
+}
+
+#team_3{
+  background-color:black;
+}
+
+.segna{
+  width:20%;
+  display:inline-block;
+  color:yellow;
+  text-shadow:2px 2px 2px black;
+  text-align:right;
+  padding-right:10px;
+}
+.nome{
+  width:60%;
+  display:inline-block;
+  text-align:left;
+}
+.punti{
+  width:20%;
+  display:inline-block;
+  text-align:right;
+}
+.team_wrapper{
+  color:white;
+  width:100%;
+  font-size:1.2em;
+  line-height:1.5em;
+  text-align:left;
+  border:2px solid black;
+  margin-bottom:10px;
+}
+
+.main_team{
+  padding:10px;
+}
+
+.btn{
+  font-size:1.5em;
+  border:1px solid black;
+}

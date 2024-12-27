@@ -1,0 +1,121 @@
+@font-face {
+    font-family: "Bangers";
+    src: url('../src/fonts/Bangers.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url('../src/fonts/Lobster.otf') format("truetype");
+}
+
+
+#loaded{
+display:none;
+}
+
+.parola{
+display:inline-block;
+margin-right:0.5em;
+
+font-family:sans-serif;
+}
+
+.immagine{
+cursor:pointer;
+border:2px solid white;
+}
+
+#container{
+display:inline-block;
+text-align:center;
+width:100%;
+padding-bottom:2em;
+padding-left:0.5em;
+padding-right:0.5em;
+position:relative;
+left:0px;
+}
+
+
+
+p{
+margin:0px 0px 1em 0px;
+}
+
+.testoimmagine{
+display:none;
+}
+
+
+.audioimg {
+width:50px;
+height:50px;
+border-radius:50%;
+}
+
+.indietro{
+background-image:url('Step_Left.png');
+}
+
+.avanti{
+background-image:url('Step_Right.png');
+}
+
+.diminuisci{
+background-image:url('Minus.png');
+}
+
+.aumenta{
+background-image:url('Plus.png');
+}
+
+
+@media only screen and (max-width : 479px){
+ #audiobar{
+height:50px;
+}
+
+.otherbutton{
+width:34px;
+height:34px;
+cursor:pointer;
+
+cursor:pointer;
+margin:10px 0px 5px 0px;
+display:inline-block;
+background-size:cover;
+}
+#play{
+width:40px;
+height:40px;
+margin-top:6px;
+}
+
+
+	}
+
+@media only screen and (min-width : 480px){
+
+#play{
+width:60px;
+height:60px;
+margin-top:6px;
+}
+
+
+ #audiobar{
+height:70px;
+}
+
+.otherbutton{
+width:50px;
+height:50px;
+cursor:pointer;
+
+cursor:pointer;
+margin:10px 0px 5px 0px;
+display:inline-block;
+background-size:cover;
+}
+	}
+

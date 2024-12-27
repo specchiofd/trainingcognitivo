@@ -1,0 +1,323 @@
+.noborder{
+  border:0px solid black;
+  padding:0px 0px;
+  margin:0px auto;
+  background-color:transparent;
+  color:white;
+}
+
+.noborder:hover{
+  background-color:transparent;
+  color:lightgrey;
+}
+
+.mypadding{
+  padding:5px 0px;
+  margin:0px auto;
+}
+
+.mysettings{
+  margin-top:2em;
+}
+
+body{
+  background-image:url('../img/water.jpg');
+  text-shadow:2px 2px 2px black;
+  color:white;
+}
+
+.btnshadow{
+  box-shadow:2px 2px 2px black;
+  text-shadow:1px 1px 1px black;
+}
+
+.suggestions_wrapper{
+  background-color: black;
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
+}
+
+#suggestion{
+  background-color:darkgreen;
+  border:2px solid grey;
+
+
+}
+
+#suggestions_text {
+  line-height:40px;
+}
+#marinaio{
+  margin:10px auto;
+}
+
+#weapons{
+  background-color:#006900;
+}
+
+#enemies{
+  background-color:#980000;
+}
+
+
+#result{
+  padding:20px 0px;
+}
+
+.mybg{
+  background-color:rgba(0,0,0,0.6);
+  padding:50px;
+  border-radius:100%;
+  border:5px solid green;
+}
+
+#settings{
+  margin:0px auto;
+  float:none;
+}
+
+.cella{
+  background-image:url('../img/water.jpg');
+  border:1px solid black;
+  float:left;
+    font-size:20px;
+    background-size:cover;
+    cursor:pointer;
+}
+
+.cella_head{
+  background-color:darkgrey;
+  border:1px solid black;
+  color:white;
+    float:left;
+  font-size:20px;
+}
+
+.myhover{
+  background-image:url('../img/water2.png');
+  background-size:cover;
+}
+
+.puntato{
+  background-image:url('../img/pointer.png');
+  background-size:cover;
+}
+
+.puntato_radar{
+  background-image:url('../img/pointer_radar.png');
+  background-size:cover;
+}
+
+.colpita{
+  background-image:url('../img/colpita.png');
+  background-size:cover;
+}
+
+#operazione{
+  color:black;
+  text-shadow:0px 0px 0px black;
+}
+
+#risultato{
+  color:green;
+}
+
+.pulsante{
+  cursor:pointer;
+  display:inline-block;
+  width:40px;
+  height:40px;
+  border:1px solid black;
+  color:white;
+  background-color:navy;
+  line-height:40px;
+  font-size:20px;
+  margin-top:4px;
+}
+
+.erase{
+  cursor:pointer;
+  display:inline-block;
+  width:40px;
+  height:40px;
+  border:1px solid black;
+  color:white;
+  background-color:darkgrey;
+  line-height:40px;
+  font-size:20px;
+}
+
+.fire{
+  cursor:pointer;
+  display:inline-block;
+  width:40px;
+  height:40px;
+  border:1px solid black;
+  color:white;
+  background-color:darkgreen;
+  line-height:40px;
+  font-size:20px;
+}
+
+.pulsante:hover{
+  background-color:royal;
+}
+
+.erase:hover{
+  background-color:lightgrey;
+}
+
+.fire:hover{
+  background-color:lightgreen;
+}
+
+.mylh{
+  line-height:40px;
+  font-size:20px;
+}
+
+.affondato{
+  background-image:url('../img/affondata.png');
+  background-size:cover;
+}
+
+.affondatohover{
+  background-image:url('../img/affondatahover.png');
+  background-size:cover;
+}
+
+.acqua{
+  background-image:url('../img/niente.png');
+  background-size:cover;
+}
+
+.acquahover{
+  background-image:url('../img/nientehover.png');
+  background-size:cover;
+}
+
+.acquaradar{
+  background-image:url('../img/water3.png');
+  background-size:cover;
+}
+
+.affondatoradar{
+  background-image:url('../img/affondataradar.png');
+  background-size:cover;
+}
+
+.nienteradar{
+  background-image:url('../img/nienteradar.png');
+  background-size:cover;
+}
+
+.naveradar{
+  background-image:url('../img/naveradar.png');
+  background-size:cover;
+}
+
+.affondatoradaractive{
+  background-image:url('../img/affondataradar_active.png');
+  background-size:cover;
+}
+
+.nienteradaractive{
+  background-image:url('../img/nienteradar_active.png');
+  background-size:cover;
+}
+
+.acquaradaractive{
+  background-image:url('../img/water4.png');
+  background-size:cover;
+}
+
+.mymargin{
+  margin:2em auto;
+  border:2px solid grey;
+  width:100%;
+  padding:5px;
+  cursor:pointer;
+}
+
+#board{
+  border-top:10px solid black;
+  border-bottom:10px solid black;
+  background-color:black;
+}
+
+.rrow {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.rrow > [class*='col-xs-2'] {
+  display: flex;
+  flex-direction: column;
+}
+
+.rowleft{
+  border-bottom-left-radius:20px;
+  padding:15px;
+}
+
+.rowright{
+  border-bottom-right-radius:20px;
+    padding:15px;
+}
+
+.nemico{
+  margin:40px auto;
+}
+
+.myset{
+  cursor:pointer;
+}
+
+.margright{
+  margin-right:10px;
+}
+
+.myglyphicon{
+  width:40px;
+  height:40px;
+}
+
+.lessmargin{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#infomodal{
+  color:black;
+  text-shadow:0px 0px 0px black;
+}
+
+#errore{
+  color:black;
+  text-shadow:0px 0px 0px black;
+}
+
+#msg-error{
+  color:red;
+}
+
+#result{
+  background-color:white;
+  text-shadow:0px 0px 0px black;
+}
+
+#come{
+  cursor:pointer;
+}

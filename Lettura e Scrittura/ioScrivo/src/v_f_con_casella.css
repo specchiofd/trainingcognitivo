@@ -1,0 +1,91 @@
+#casella{
+height:24px;
+border:1px dotted black;
+width:24px;
+font-family:Open Sans;
+font-size:1.5em;
+color:black;
+vertical-align:middle;
+background-color:white;
+}
+
+#prima_parte{
+font-family:Open Sans;
+font-size:1.5em;
+color:white;
+vertical-align:middle;
+}
+
+#seconda_parte{
+margin-left:10px;
+font-family:Open Sans;
+font-size:1.5em;
+color:white;
+vertical-align:middle;
+}
+
+#wrapper_risposte{
+display:none;
+width:100%;
+margin-top:40px;
+text-align:center;
+padding-bottom:30px;
+}
+
+#risposta_1{
+cursor:pointer;
+background-color:#4F374B;
+color:white;
+padding:10px;
+width:40%;
+height:20px;
+font-size:1.1em;
+display:inline-block;
+font-family:Roboto;
+border:1px solid white;
+}
+
+#risposta_2{
+cursor:pointer;
+background-color:#4e342e;
+color:white;
+padding:10px;
+width:40%;
+height:20px;
+font-size:1.1em;
+font-family:Roboto;
+display:inline-block;
+border:1px solid white;
+}
+
+#risposta_3{
+cursor:pointer;
+background-color:#7C3C00;
+color:white;
+padding:10px;
+width:90px;
+height:20px;
+font-size:1em;
+font-family:Roboto;
+display:inline-block;
+border:1px solid white;
+}
+
+#immagine{
+display:inline-block;
+width:200px;
+height:200px;
+border-radius:10px;
+border:1px solid black;
+}
+
+#big_item{
+padding-top:30px;
+width:100%;
+height:240px;
+display:none;
+text-align:center;
+border-radius:10px;
+border-top:1px solid white;
+border-bottom:1px solid white;
+}

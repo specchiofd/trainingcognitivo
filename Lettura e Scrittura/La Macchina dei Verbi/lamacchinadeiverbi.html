@@ -1,0 +1,173 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/stile.css?v=13" media="screen" />
+<title>La macchina dei verbi - Esercizi sui verbi gratis!</title>
+<meta name='description' content='Una web app gratuita per allenarsi con i tempi verbali'>
+
+
+</head>
+
+<body class="noselect">
+
+
+
+
+
+
+<div class="container">
+
+<h1 style="color:white"class="text-center">La macchina dei verbi!</h1>
+<br/>
+</br/>
+<h4 id="credits"class="text-center">Ideata e programmata da Antonio Milanese - info@trainingcognitivo.it</h4>
+<br/>
+</br/>
+<div id="intro">
+<div id="intro_wrapper" class="text-center">
+<h3>Benvenuto/a!<br/><br/> Clicca sulla modalità <strong>Osserva</strong> se vuoi modificare gli elementi di un verbo e vedere il risultato finale.<br/><br/>
+Nella modalità <strong>Gioca</strong>, invece, ti verrà proposto un verbo a caso e dovrai farne l'analisi con l'aiuto delle frecce!</div>
+
+<button class="btn btn-success btn-warning btn-block mybtn" id="esplora_btn">OSSERVA</button>
+<button class="btn btn-success btn-warning btn-block mybtn" id="esercizio_btn">GIOCA</button>
+</div>
+<div id="area_random_min">
+<div class="col-xs-12" id="area_random">
+<div class="col-xs-12"><h5>Genera solo verbi con i seguenti modi<input style="margin-left:15px" type="checkbox" class="chk" id="indicativo" checked> Indicativo
+<input style="margin-left:15px" type="checkbox" class="chk" id="congiuntivo" checked> Congiuntivo
+<input style="margin-left:15px" type="checkbox" class="chk" id="condizionale" checked> Condizionale
+<input style="margin-left:15px" type="checkbox" class="chk" id="imperativo" unchecked> Imperativo
+<input style="margin-left:15px" type="checkbox" class="chk" id="infinito" unchecked> Infinito
+<input style="margin-left:15px" type="checkbox" class="chk" id="participio" unchecked> Participio
+<input style="margin-left:15px" type="checkbox" class="chk" id="gerundio" unchecked> Gerundio
+</h5></div>
+</div>
+</div>
+<div id="esplora">
+<div class="col-xs-12" id="area_suggerimento">
+
+<div class="col-xs-8"><h3 id="txt_suggerimento"></h3></div><div class="col-xs-4">
+<button type="button" style="margin:20px 0px 10px 0px" class="btn btn-success btn-block checkagain"  id="checkagain" aria-label="Left Align">
+  <h2 style="	margin:10px 0px; "><span class="glyphicon glyphicon-check" aria-hidden="true" id='ch'></span><span class="glyphicon glyphicon-pencil" aria-hidden="true" id='ed'></span><span class="glyphicon glyphicon-repeat" aria-hidden="true" id='re'></span></h2>
+</button>
+</div></div>
+<div class="col-xs-12 sfondogrigio" id="haiscritto_area" style="margin-bottom:20px; border:4px solid black;">
+<h3 class="text-center">Hai scritto</h3>
+<h1 class="text-center" id="haiscritto"></h1></div>
+<div class="col-xs-12 sfondobianco" id="area_testo" >
+<h1 class="text-center" id="verbo"></div>
+</div>
+<div class="parametri text-center">
+
+<div class="blocco col-xs-12 col-sm-2 col-md-2 col-lg-2" id="bl_voce">
+<h5>Voce del verbo <a href="#" data-toggle="popover" data-trigger="focus" title="Voce del verbo" data-content="Quale verbo stiamo coniugando?">
+<h6><span style="color:white; display:block; margin:0px auto; font-size:14px"class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a> </h6>
+</h5>
+<div class="piu" target="voce"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+<div class="min_piu" target="voce"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+<div class="campo" id="voce"></div>
+<div class="min_meno" target="voce"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+<div class="meno" target="voce"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+</div>
+<div class="blocco col-xs-12 col-sm-1 col-md-1 col-lg-1" id="bl_coniugazione">
+<h5>Coniug.<a href="#" data-toggle="popover" data-trigger="focus" title="Voce del verbo" data-content="Ricorda la fine del verbo all'infinito: -are -ere o -ire?">
+<h6><span style="color:white; display:block; margin:0px auto; font-size:14px"class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a> </h6></h5>
+<div class="piu" target="coniugazione" id="piuconiugazione"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+<div class="min_piu" target="coniugazione" id="minpiuconiugazione"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+<div class="campo" id="coniugazione"></div>
+<div class="meno" target="coniugazione" id="menoconiugazione"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+<div class="min_meno" target="coniugazione" id="minmenoconiugazione"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+
+</div>
+<div class="blocco col-xs-12 col-sm-2 col-md-2 col-lg-2" id="bl_modo">
+<h5>Modo<a href="#" data-toggle="popover" data-trigger="focus" title="Voce del verbo" data-content="Ricorda che il congiuntivo vuole il 'che' davanti, il condizionale è un'intenzione mentre l'imperativo è un comando">
+<h6><span style="color:white; display:block; margin:0px auto; font-size:14px"class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a> </h6></h5>
+<div class="min_piu" target="modo"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+<div class="piu" target="modo"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+<div class="campo" id="modo"></div>
+<div class="meno" target="modo"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+<div class="min_meno" target="modo"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+
+</div>
+<div class="blocco col-xs-12 col-sm-3 col-md-3 col-lg-3" id="tempo_wrapper" >
+<h5>Tempo<a href="#" data-toggle="popover" data-trigger="focus" title="Voce del verbo" data-content="L'azione avviene adesso (presente), è avvenuta nel passato o avverrà nel futuro?">
+<h6><span style="color:white; display:block; margin:0px auto; font-size:14px"class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a> </h6></h5>
+<div class="min_piu" target="tempo"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+<div class="piu" target="tempo"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+<div class="campo" id="tempo"></div>
+<div class="meno" target="tempo"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+<div class="min_meno" target="tempo"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+
+</div>
+<div class="blocco col-xs-12 col-sm-1 col-md-1 col-lg-1" id="numpersona_wrapper">
+<h5>Persona<a href="#" data-toggle="popover" data-trigger="focus" title="Voce del verbo" data-content="Le prima persona è io/noi, la seconda tu/voi, la terza egli(ella)/essi">
+<h6><span style="color:white; display:block; margin:0px auto; font-size:14px"class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a> </h6></h5>
+<div class="min_piu" target="numpersona"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+<div class="piu" target="numpersona"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+<div class="campo" id="numpersona"></div>
+<div class="meno" target="numpersona"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+<div class="min_meno" target="numpersona"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+
+</div>
+<div class="blocco col-xs-12 col-sm-2 col-md-2 col-lg-2" id="singplur_wrapper" >
+<h5>Sing/Plu<a href="#" data-toggle="popover" data-trigger="focus" title="Voce del verbo" data-content="Le persone al singolare sono: io, tu, egli/ella. Al plurale sono noi, voi, essi">
+<h6><span style="color:white; display:block; margin:0px auto; font-size:14px"class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a> </h6></h5>
+<div class="min_piu" target="singplur"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+<div class="piu" target="singplur"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+<div class="campo" id="singplur"></div>
+<div class="meno" target="singplur"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+<div class="min_meno" target="singplur"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+
+</div>
+<!--
+<div class="blocco">
+<div class="piu" target="attivopassivo">+</div>
+<div class="campo" id="attivopassivo"></div>
+<div class="meno" target="attivopassivo">-</div>
+</div>
+-->
+<div class="blocco col-xs-12 col-sm-1 col-md-1 col-lg-1 " id="bl_transitivo">
+<h5>Tran/Intr<a href="#" data-toggle="popover" data-trigger="focus" title="Voce del verbo" data-content="Un verbo è transitivo quando l'azione si estende su un oggetto"> <h6><span style="color:white; display:block; margin:0px auto; font-size:14px"class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a> </h6></h5>
+<div class="min_piu" target="voce" id="minpiutransitivo"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+<div class="piu" target="transitivo" id="piutransitivo"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+<div class="campo single" id="transitivo"></div>
+<div class="piu" target="transitivo" id="menotransitivo"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+<div class="min_meno" target="transitivo" id="minmenotransitivo"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+
+</div>
+</div>
+<div style="clear:both"></div>
+<div>
+<div class="col-xs-12 col-md-12">
+<button class="btn btn-success btn-success btn-block mybtn" id="bottom_check"></button></div>
+<div class="col-xs-12 col-md-6">
+<button class="btn btn-success btn-warning btn-block mybtn" id="switch_another">GENERA UN ALTRO</button></div>
+<div class="col-xs-12 col-md-6">
+<button class="btn btn-success btn-warning btn-block mybtn" id="switch_esplora">VAI A MODALITÀ OSSERVA</button></div>
+<div class="col-xs-12 col-md-6">
+<button class="btn btn-success btn-warning btn-block mybtn" id="acaso">UN VERBO A CASO</button></div>
+<div class="col-xs-12 col-md-6">
+<button class="btn btn-success btn-warning btn-block mybtn" id="switch_esercizio">VAI A MODALITÀ GIOCA</button></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<script src="lib/jquery.js?v=5"></script>
+<script src="js/bootstrap.js?v=6"></script>
+<script src="js/database.js?v=10"></script>
+<script src="js/esplora.js?v=15"></script>
+
+
+
+
+</body>

@@ -1,0 +1,105 @@
+body {
+    background-color:#002844;
+    color:lightgreen;
+}
+
+#settings{
+    background-color:black;
+    padding:10px;
+    border:1px solid lightgreen;
+    border-radius:10px;
+}
+.option_wrapper{
+    border-bottom:1px solid #111;
+    padding:20px auto;
+    margin-bottom:10px;
+}
+
+h5{
+    font-size:1.1em;
+    font-weight:500;
+
+}
+
+.prev, .next{
+    cursor:pointer;
+}
+
+.cella{
+    display:inline-block;
+    border:2px solid lightgreen;
+    text-align:center;
+    margin:10px 2px;
+    background-color:black;
+}
+
+.sopra{
+    border-bottom:1px solid lightgreen;
+}
+
+#tabella{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#303335+0,000000+100 */
+    background: #303335; /* Old browsers */
+    background: -moz-linear-gradient(top,  #303335 0%, #000000 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #303335 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #303335 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#303335', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+    padding:20px 0px;
+    border-radius:20px;
+    border:10px solid #222;
+    text-align:center;
+}
+
+#parola_wrapper{
+    margin:0px auto 20px auto;
+    font-size:1.5em;
+    text-align:center;
+    background-color:#111;
+    border-radius:100px 100px 20px 20px;
+    border:4px solid #333;
+    padding:20px 0px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#303335+0,000000+100 */
+    background: #303335; /* Old browsers */
+    background: -moz-linear-gradient(top,  #303335 0%, #000000 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #303335 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #303335 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#303335', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+}
+
+#risposta{
+    background-color:#111;
+    color:lightgreen;
+    font-size:1.5em;
+    text-align:center;
+    border:0px solid black;
+    border-bottom:1px solid lightgreen;
+    padding:5px 0px;
+    box-shadow: none;
+}
+
+#confronto{
+    background-color:#111;
+    color:lightgreen;
+    font-size:1.5em;
+    text-align:center;
+    padding:5px 0px;
+    box-shadow: none;
+}
+
+.avanzamento_inner{
+    text-align:center;
+    font-size:1.2em;
+    display:inline-block;
+}
+
+.highlighted{
+    background-color:white;
+    color:black;
+}
+
+#win{
+    background-color:brown;
+    text-shadow:1px 1px 1px black;
+}

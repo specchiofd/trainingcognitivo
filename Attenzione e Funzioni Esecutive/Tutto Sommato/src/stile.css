@@ -1,0 +1,169 @@
+@font-face {
+    font-family: "Bangers";
+    src: url('fonts/Bangers.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url('fonts/Lobster.otf') format("truetype");
+}
+
+
+.myIstr{
+border-radius:15px;
+color:white;
+
+background-color:#007729;
+}
+
+
+
+
+
+body{
+background-image:url('gamebackground-02.png');
+background-repeat:no-repeat;
+background-attachment: fixed;
+background-color:black;
+background-size:cover;
+}
+
+img{
+border:0px solid black;
+}
+
+
+
+
+
+#topcento{
+width:400px;
+height:70px;
+background-image:url('top100.png');
+margin:10px auto;
+display:block;
+}
+
+#txt{
+font-family:Bangers;
+}
+
+.istruzioni{
+padding-bottom:20px; 
+background-color:#007729; 
+border-bottom-left-radius:10px; 
+border-bottom-right-radius:10px; 
+border:1px solid black;
+box-shadow:0px 0px 10px black;
+}
+
+#schermata{
+background-color:white;
+font-size:120px;
+text-align:center;
+font-family:sans-serif;
+color:navy;
+border-radius:5px;
+box-shadow:2px 2px 2px grey;
+border:1px solid black;
+}
+
+#casella{
+box-shadow:2px 2px 2px grey;
+margin-top:10px;
+text-align:center;
+padding:20px 0px;
+font-size:2em;
+background-color:#9ab3ff;
+border-radius:5px;
+border:1px solid black;
+color:white;
+}
+
+.tasto{
+font-size:24px;
+padding:10px 0px;
+cursor:pointer;
+color:white;
+text-align:center;
+border:1px solid black;
+box-shadow:2px 2px 2px black;
+cursor:pointer;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606c88+0,3f4c6b+100;Grey+3D+%232 */
+background: #606c88; /* Old browsers */
+background: -moz-linear-gradient(top,  #606c88 0%, #3f4c6b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #606c88 0%,#3f4c6b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #606c88 0%,#3f4c6b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+
+}
+
+.tastocancella{
+font-size:24px;
+padding:10px 0px;
+background:orange;
+color:white;
+text-align:center;
+border:1px solid black;
+box-shadow:2px 2px 2px black;
+cursor:pointer;
+}
+
+#myprogress{
+margin:10px 0px;
+height:20px;
+width:100%;
+}
+
+#punti{
+float:left;
+display:inline-block;
+text-align:left;
+margin:1.5em auto;
+font-family:Sans-serif;
+border-radius:5px;
+background-color:navy;
+color:white;
+padding:10px 15px;
+} 
+
+#and{
+position:relative;
+float:left;
+display:inline-block;
+text-align:left;
+margin:1.5em auto;
+font-size:1.5em;
+font-family:Sans-serif;
+color:black;
+}
+.tastook{
+font-size:24px;
+padding:10px 0px;
+background:darkgreen;
+color:white;
+text-align:center;
+border:1px solid black;
+box-shadow:2px 2px 2px black;
+cursor:pointer;
+}
+
+#tastieralarge{
+padding:10px 25px;
+border-radius:10px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6db3f2+0,54a3ee+50,3690f0+51,1e69de+100;Blue+Gloss+%233 */
+background: #6db3f2; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #6db3f2 0%, #54a3ee 50%, #3690f0 51%, #1e69de 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+border:1px solid black;
+
+}
+
+#realpunti{
+background:white;
+color:blue;
+font-size:1.2em;
+}

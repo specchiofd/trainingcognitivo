@@ -1,0 +1,38 @@
+<html>
+<head>
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="parametri.js"></script>
+<script src="letterenumeri.js"></script>
+<script src="numerilettere.js"></script>
+<link href="http://roboto-webfont.googlecode.com/svn/trunk/roboto.all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="stile.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="stile_gioco.css" media="screen" />
+</head>
+<body onload="Parametri.entrata()">
+<div id="container">
+<div id="parametri">
+<div id="inserisci">Inserire il numero minimo e il numero massimo (999)</div>
+<div class="parametro">
+<input id="minimo" placeholder="minimo"></div>
+<div class="parametro">
+<input id="massimo" placeholder="massimo (999)"></div>
+<div id="avanti" onclick="Parametri.check(0)">DA LETTERE A NUMERO</div>
+<div id="avanti" onclick="Parametri.check(1)">DA NUMERO A LETTERE</div>
+<div id="avanti" onclick="window.open('http://www.trainingcognitivo.it/giochi/', '_self')">TORNA ALLA PAGINA DEI GIOCHI</div>
+<div id="errore"></div>
+</div>
+</div>
+<div id="gioco_container">
+<div id="istruzione"></div>
+<div id="numero"></div>
+<div id="ghost"></div>
+<input id="risposta">
+<div id="controlla">&#62;</div>
+<div id="risultato"></div>
+<div id="infatti"></div>
+<div id="riprova">RIPROVA</div>
+<div id="cambia_parametri">CAMBIA PARAMETRI</div>
+</div>
+</body>
+</html>

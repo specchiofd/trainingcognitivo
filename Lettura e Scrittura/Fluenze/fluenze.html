@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Re delle fluenze!</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+
+
+
+
+</head>
+
+<body class="noselect container">
+
+
+  <div class="row" id="tutto">
+
+
+  <div  class="text-center col-xs-12 col-md-12 col-lg-12">
+
+
+<div class="screen" id="settings">
+  <h1 class="text-center">Re delle fluenze!</h1>
+  <h5 class="text-center">Programmato da Antonio Milanese - info@trainingcognitivo.it</h5>
+  <br/>
+  <h3><div class="row row_wrapper">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><div class="row_text text-left testo">Fonema</div></div>
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+  <div class="row"><div class="col-xs-4"> <span class="glyphicon glyphicon-chevron-left less" aria-hidden="true" target="fonema"></span></div>
+  <div class="col-xs-4 text-center" id="fonema"></div>
+  <div class="col-xs-4"><span class="glyphicon glyphicon-chevron-right more" target="fonema" aria-hidden="true"></span></div>
+  </div></div></div></h3>
+  <h3><div class="row row_wrapper">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><div class="row_text text-left testo"><p href="#" data-toggle="tooltip" title="La modalità 'allenamento' è senza tempo">Modalità</p></div></div>
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+  <div class="row"><div class="col-xs-4"> <span class="glyphicon glyphicon-chevron-left less" aria-hidden="true" target="modalita"></span></div>
+  <div class="col-xs-4 text-center" id="modalita"></div>
+  <div class="col-xs-4"><span class="glyphicon glyphicon-chevron-right more" target="modalita" aria-hidden="true"></span></div>
+  </div></div></div></h3>
+  <h3 id="difficoltawrapper"><div class="row row_wrapper" >
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><div class="row_text text-left testo">Difficoltà</div></div>
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+  <div class="row"><div class="col-xs-4"> <span class="glyphicon glyphicon-chevron-left less" aria-hidden="true" target="difficolta"></span></div>
+  <div class="col-xs-4 text-center" id="difficolta"></div>
+  <div class="col-xs-4"><span class="glyphicon glyphicon-chevron-right more" target="difficolta" aria-hidden="true"></span></div>
+  </div></div></div></h3>
+
+  <h3><div class="row row_wrapper" >
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><div class="row_text text-left testo">Tutto maiuscolo</div></div>
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+  <div class="row"><div class="col-xs-4"> <span class="glyphicon glyphicon-chevron-left less" aria-hidden="true" target="maiuscolo"></span></div>
+  <div class="col-xs-4 text-center" id="maiuscolo"></div>
+  <div class="col-xs-4"><span class="glyphicon glyphicon-chevron-right more" target="maiuscolo" aria-hidden="true"></span></div>
+  </div></div></div></h3>
+  <br/>
+<br/>
+  <div class="text-center">
+  <button class="btn btn-lg btn-success" id="istruzioni">AVVIA</button>
+  </div>
+</div>
+<div class="screen" id="game">
+
+<div id="points_wrapper">
+<div class="row">
+<div class="col-xs-6 text-left">
+<h4><span class="glyphicon glyphicon-time" aria-hidden="true" id="ico_tempo"></span>
+ <span id="tempo"></span></h4>
+</div>
+<div class="col-xs-6 text-right">
+<h4><span class="glyphicon glyphicon-star" aria-hidden="true" id="stella"></span>
+ <span id="esatte"></span>/<span id="next"></span>  <span class="glyphicon glyphicon-remove" aria-hidden="true"  id="esci"></h4>
+</div>
+</div>
+</div>
+<div id="to_guess_wrapper">
+
+</div>
+<div id="suggerimento_wrapper">
+
+</div>
+<div id="tastiera_wrapper">
+
+</div>
+</div>
+<div class="screen" id="infos">
+<h4 id="istruzioni_txt">
+</h4>
+<br/>
+<h4>Fonema: <span id="fonema_scelto"></span></h4>
+<br/>
+<h2><span class="glyphicon glyphicon-star" aria-hidden="true" style="color:brown"> - <span id="first_ach"></span></h2>
+<h2><span class="glyphicon glyphicon-star" aria-hidden="true" style="color:grey"> - <span id="second_ach"></span></h2>
+<h2><span class="glyphicon glyphicon-star" aria-hidden="true" style="color:gold"> - <span id="third_ach"></span></h2>
+<br/>
+
+<div class="text-center">
+<button class="btn btn-lg btn-success" id="avvia">SONO PRONTO!</button>
+</div>
+</div>
+<div class="screen" id="responso">
+<h2 id="responso_txt">
+</h2>
+<img class="img-responsive" id="responso_img" style="margin:0px auto" />
+<br/>
+<div class="text-center">
+<button class="btn btn-lg btn-success" id="riavvia">GIOCA ANCORA!</button>
+<br/>
+<button class="btn btn-lg btn-info" id="gamecenter">PROVA ALTRI GIOCHI!</button>
+</div>
+
+</div>
+</div>
+</div>
+<link rel="stylesheet" type="text/css" href="src/stile.css">
+<script src="lib/jquery.js"></script>
+<script src="src/fine.js"></script>
+<script src="src/istruzioni.js"></script>
+<script src="src/gioco.js"></script>
+<script src="src/archivio.js"></script>
+<script src="src/menu.js"></script>
+
+<script src="js/bootstrap.js"></script>
+
+
+</body>
+
+</html>

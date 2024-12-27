@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<META NAME="DESCRIPTION" CONTENT="Tutto sommato: un gioco per allenare e potenziare le funzioni esecutive divertendosi.">
+<title>Tutto sommato!</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link href="src/stile.css?v=1" rel="stylesheet" type="text/css">
+  <script src="lib/jquery.js"></script>
+
+</head>
+
+<body>
+<div class="modal fade" tabindex="-1" role="dialog" id="fine" keyboard=false data-backdrop='static' >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center">Fine partita!</h4>
+      </div>
+      <div class="modal-body text-center" id="highyes">
+        <h3>Complimenti: sei nella top 20!</h3>
+		<h1 style="font-size:100px"><span class="glyphicon glyphicon-star-empty" style="color:yellow" aria-hidden="true"></span></h1>
+		<h3>Inserisci il tuo nome</h3>
+		<input placeholder="Mio nome" class="input-lg" id="nome" style="text-align:center; width:50%; margin: 20px; padding:10px; font-size:1.5em">
+      </div>
+      <div class="modal-body text-center" id="highno">
+        		<h3>Mi dispiace, non hai fatto un punteggio da top20!</h3>
+				<br/>
+				<h3>Vuoi riprovare?</h3>
+      </div>
+      <div class="modal-footer">
+	  <div id="footeryes">
+        <button type="button" class="btn btn-primary" id="inserisci">Inserisci</button>
+	</div>
+		  <div id="footerno">
+        <button type="button" class="btn btn-warning rigioca" id="rigioca">Rigioca</button>
+        <button type="button" class="btn btn-primary" id="guardaclassifica">Guarda la classifica</button>
+	</div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="highscore" keyboard=false data-backdrop='static' >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center">Top 20</h4>
+      </div>
+      <div class="modal-body " id="classifica">
+       <table class="table" >
+  <thead>
+    <tr>
+
+      <th>Posizione</th>
+      <th>Nome</th>
+      <th>Punti</th>
+    </tr>
+  </thead>
+  <tbody id="tabella">
+
+  </tbody>
+</table>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-warning rigioca" id="rigiocadue">Rigioca</button>
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="container">
+</div>
+<div class="container">
+  <h1 class="text-center" style="color:white;  text-shadow:2px 2px 2px black">Tutto Sommato!</h1>
+  <h4 class="text-center" style="color:white; text-shadow:2px 2px 2px black">Programmato da Antonio Milanese</h4>
+  <br/>
+
+</br/>
+<div id="istruzioni" class="istruzioni">
+<div class="row" style="text-align:center; margin-bottom:10px">
+<div class="col-xs-12">
+<h2 class="myIstr" id="txt">Istruzioni</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12 text-center" >
+<img class="img-responsive myIstr"  src="src/Spiegazione.png" style="margin:0px auto">
+</div>
+</div>
+<div class="row text-center" style=" margin-bottom:10px">
+<div class="col-xs-12">
+<h3 class="myIstr" id="secondtxt">Scrivi la somma degli ultimi due numeri visti o ascoltati prima che scada il tempo</h3>
+</div>
+<div class="col-xs-12">
+<h3 class="myIstr">Ogni volta che indovinerai guadagnerai dei secondi. <br/>Dopo 5 risposte esatte consecutive riceverai del tempo extra.</h3>
+</div>
+<div class="col-xs-12">
+<h3 class="myIstr">Entrerai a far parte della top 20?</h3>
+</div>
+</div>
+<div class="row" style="text-align:center">
+<button class="btn btn-lg btn-primary" id="inizia">INIZIAMO! <span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+</div>
+</div>
+
+<div id="wrapper" >
+<div class="row">
+<div class="col-xs-4">
+  <div id="punti">Punti: <span class="badge" id="realpunti"></span></div><div id="and"></div>
+</div>
+<div class="col-xs-8 text-right">
+<h3 style="padding:10px 15px;">
+<span style="background-color:navy; border-radius:5px; padding:10px 15px; margin:1.5em auto">
+<span class="glyphicon glyphicon-screenshot consecutive" aria-hidden="true" id="co_1"> </span>
+<span class="glyphicon glyphicon-screenshot consecutive" aria-hidden="true" id="co_2"> </span>
+<span class="glyphicon glyphicon-screenshot consecutive" aria-hidden="true" id="co_3"> </span>
+<span class="glyphicon glyphicon-screenshot consecutive" aria-hidden="true" id="co_4"> </span>
+<span class="glyphicon glyphicon-screenshot consecutive" aria-hidden="true" id="co_5"> </span>
+</span>
+</h3>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+  <div id="myprogress" class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" >
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 col-md-9" id="schermata"><span class="glyphicon glyphicon-ok" style="color:darkgreen" aria-hidden="true" id="ok"></span><div id="schermatatxt"></div><span id="wrong" class="glyphicon glyphicon-remove" aria-hidden="true" style="color:darkred"></span></div>
+<div class="col-xs-12 col-sm-12 col-md-3 cold-lg-3"  id="tastieralarge">
+<div class="row">
+<div class="col-xs-4 tasto" numero=7>7</div>
+<div class="col-xs-4 tasto" numero=8>8</div>
+<div class="col-xs-4 tasto" numero=9>9</div>
+</div>
+<div class="row">
+<div class="col-xs-4 tasto" numero=4>4</div>
+<div class="col-xs-4 tasto" numero=5>5</div>
+<div class="col-xs-4 tasto" numero=6>6</div>
+</div>
+<div class="row">
+<div class="col-xs-4 tasto" numero=1>1</div>
+<div class="col-xs-4 tasto" numero=2>2</div>
+<div class="col-xs-4 tasto" numero=3>3</div>
+</div>
+<div class="row">
+<div class="col-xs-4 tastocancella"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span></div>
+<div class="col-xs-4 tasto" numero=0>0</div>
+<div class="col-xs-4 tastook"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></div>
+</div>
+<div class="row">
+<input class="col-xs-12" type="number" id="casella" placeholder="">
+</div>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<script src="lib/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="src/prova.js"></script>
+</body>
+
+</html>

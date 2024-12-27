@@ -1,0 +1,39 @@
+function Gioco(database,tipo,alternative,titolo,introduzione,regola,finale)
+{
+	this.database = database;
+	this.tipo = tipo;
+	this.alternative = alternative;
+	this.titolo = titolo;
+	this.introduzione = introduzione;
+	this.regola = regola;
+	this.finale = finale;
+}
+
+game_array = [
+new Gioco(mof, "multipla", [], "Maschile o femminile?", "Leggi la parola e scegli l'articolo giusto",["Non esiste una regola precisa per riconoscere i nomi maschili da quelli femminili.", "In generale i nomi maschili finiscono in -o (gatto, topo) e quelli femminili in -a (casa, scuola)", "Alcuni nomi maschili e femminili possono finire in e (il cane, la pelle).", "Ci sono, però, molte eccezioni: nomi maschili che finiscono in a (il problema), nomi femminili che finiscono in o (la radio), nomi che finiscono per consonante (lo sport).", "In questi casi l'unico modo per non sbagliare è fare tanta pratica!"],"Complimenti! Sei un campione degli articoli determinativi! Prova un altro gioco!"),
+new Gioco(ceche, "simili", ["ce","che"], "Cestino o Chestino?", "Scegli la forma corretta della parola",[], "Complimenti! Sei un campione delle Ce e delle CHe! Prova un altro gioco!"),
+new Gioco(unun, "multipla", [], "Un o un'?", "Leggi la parola e scegli l'articolo indeterminativo giusto",["In italiano abbiamo tre articoli indeterminativi. Due sono maschili (un, uno) e uno femminile (una).", "Davanti ai nomi maschili mettiamo quindi un (un gatto, un topo) o uno (uno scoiattolo, uno zerbino).", "Davanti ai nomi femminili mettiamo invece 'una': una donna, una barca. A volte possiamo sostituire la A di unA con un apostrofo: in questo caso abbiamo un'ancora, un'orchidea, un'altalena", "Ricorda, quindi: UN senza apostrofo si mette davanti ai nomi maschili, mentre UN' con l'apostrofo davanti a quelli femminili!"],"Complimenti! Sei un campione degli articoli indeterminativi! Prova un altro gioco!"),
+new Gioco(plu, "multipla", [], "Il plurale di...", "Leggi la parola e scegli la forma corretta al plurale!",["In italiano esistono molte regole per formare il plurale.", "Una regola importante è questa: i nomi femminili che finiscono in -cia e -gia preceduta da vocale al plurale vogliono cie-gie (es: ciliegia/ciliegie)", "Invece, quando -cia e -gia è preceduta da consonante, al plurale si scrive -ce e -ge (es: provincia/province)", "Le vocali accentate restano uguali anche al plurale (la città/le città)"],"Complimenti! Sei un campione dei plurali! Prova un altro gioco!"),
+new Gioco(doppie, "multipla", [],"Oziare o ozziare?", "Leggi la parola e scegli la forma corretta!",["Ricorda che le parole che finiscono in -zio, -zia e -zione non vogliono la doppia z!"],"Complimenti! Sei un campione delle doppie! Prova un altro gioco!"),
+new Gioco(essere, "multipla", [], "È o E?", "Leggi la frase e inserisci È o E!",["In italiano usiamo 'e' per unire due concetti: pasta e fagioli, andata e ritorno, il fratello e la sorella.", "Al contrario, la 'È', voce del verbo essere, può indicare una caratteristica ('quel ragazzo è alto') o fare da ausiliare a un verbo ('è tornato tardi')."],"Complimenti! Sei un campione delle 'e' accentate! Prova un altro gioco!"),
+new Gioco(avere, "multipla", [], "HA o A?", "Leggi la frase e inserisci HA o A!",["In italiano usiamo 'e' per indicare possesso (Io ho otto anni, io ho una bella casa), per 'accompagnare' un verbo (Ho mangiato, hai comprato) o per indicare 'sentire': ho caldo, ho sonno.", "Al contrario, la 'A' si usa quando rispondiamo a queste domande: a chi? (Lo do a Marco), dove? (vado a scuola), quando? (tornerò a mezzogiorno), come? (vado a piedi), in che modo? (lavo i vestiti a mano).","Un piccolo trucco: prova a trasformare la frase al passato, se non ha senso non vuole l'acca! (esempio: vado a casa, al passato sarebbe 'vado aveva casa', quindi non vuole l'acca)."],"Complimenti! Sei un campione delle acca! Prova un altro gioco!"),
+new Gioco(fusioni, "multipla", [], "Ho tenuto o ottenuto?", "Leggi la frase e inserisci la risposta corretta!",[],"Complimenti! Sei un campione delle parole unite e staccate! Prova un altro gioco!"),
+new Gioco(cuqu, "multipla", [], "Cuore, cuoio e quaderno", "Scegli la forma corretta della parola",["La regola generale dice di usare la C quando dopo la u c'è una CONSONANTE (es: cucina, cugino, cuffia).","Se dopo la u abbiamo una vocale, invece, scriviamo la Q: quasi, quaderno, questo, quello","Poche parole fanno eccezione e vogliono la C anche se dopo la u c'è una vocale: sono le cosiddette parole capricciose. Alcune sono: cuore, scuola, cuoio, circuito, scuotere, percuotere", "Acquisto e i derivati dell'acqua (acquazzone, acquedotto, acquario) vogliono -CQ-", "Una parola che fa del tutto eccezione è soqquadro, unica parola italiana con due q"],"Complimenti! Sei un campione delle C e delle Q! Prova un altro gioco!"),
+new Gioco(sz, "simili", ["s","z"], "Insetto o inzetto?", "Scegli la forma corretta della parola", [],"Complimenti! Sei un campione delle S e delle Z! Prova un altro gioco!"),
+new Gioco(bd, "simili", ["b","d"], "Bollo o dollo?", "Scegli la forma corretta della parola",[],"Complimenti! Sei un campione delle B e delle D! Prova un altro gioco!"),
+new Gioco(mn, "simili", ["m","n"], "Mosca o nosca?", "Scegli la forma corretta della parola", [],"Complimenti! Sei un campione delle M e delle N! Prova un altro gioco!"),
+new Gioco(pb, "simili", ["p","b"], "Parco o barco?", "Scegli la forma corretta della parola",[],"Complimenti! Sei un campione delle P e delle B! Prova un altro gioco!"),
+new Gioco(geghe, "simili", ["ge","ghe"], "Ruge o rughe?", "Scegli la forma corretta della parola",[],"Complimenti! Sei un campione delle Ge e delle GHe! Prova un altro gioco!"),
+new Gioco(scesche, "simili", ["sce","sche"], "Scermo o schermo?", "Scegli la forma corretta della parola",[],"Complimenti! Sei un campione delle SCe e delle SChe! Prova un altro gioco!"),
+new Gioco(lgl, "simili", ["li","gl"], "Malione o maglione?", "Scegli la forma corretta della parola",[],"Complimenti! Sei un campione delle LI e delle GL! Prova un altro gioco!"),
+new Gioco(ngn, "simili", ["ni","gn"], "Banio o bagno?", "Scegli la forma corretta della parola",[],"Complimenti! Sei un campione delle NI e delle GN! Prova un altro gioco!"),
+new Gioco(cichi, "simili", ["ci","chi"], "Ciesa o chiesa?", "Scegli la forma corretta della parola",[],"Complimenti! Sei un campione delle CI e delle CHI! Prova un altro gioco!"),
+new Gioco(gighi, "simili", ["gi","ghi"], "Giallo o ghiallo?", "Scegli la forma corretta della parola",[],"Complimenti! Sei un campione delle G e delle GHO! Prova un altro gioco!"),
+new Gioco(scischi, "simili", ["sci","schi"], "Scivolo o schivolo?", "Scegli la forma corretta della parola",[],"Complimenti! Sei un campione delle SCI e delle SCHI! Prova un altro gioco!"),
+new Gioco(contrario, "componi", [], "Scrivi il contrario", "Scrivi il contrario della parola mostrata",[],"Complimenti, sei il campione dei contrari! Prova un altro gioco!"),
+new Gioco(anagrammi, "componi", [], "Trova l'anagramma", "Scrivi l'anagramma della parola mostrata",[],"Complimenti, sei il campione degli anagrammi! Prova un altro gioco!"),
+new Gioco(animali, "componi", [], "Animali", "Scrivi l'animale che corrisponde alla descrizione",[],"Complimenti, sei il campione degli animali! Prova un altro gioco!"),
+new Gioco(emozioni, "componi", [], "Emozioni", "Scrivi l'emozione che corrisponde alla descrizione",[],"Complimenti, sei il campione delle emozioni! Prova un altro gioco!"),
+new Gioco(mestieri, "componi", [], "Mestieri", "Scrivi il mestiere che corrisponde alla descrizione",[],"Complimenti, sei il campione dei mestieri! Prova un altro gioco!"),
+new Gioco(pluraliirregolari, "componi", "", "Plurali strani", "Prova a indovinare il plurale di questi nomi!",[],"Complimenti, sei il campione dei plurali irregolari! Prova un altro gioco!")
+]

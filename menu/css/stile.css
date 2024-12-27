@@ -1,0 +1,32 @@
+body{
+  background-color:lightblue;
+}
+
+.container{
+  box-shadow:2px 2px 2px black;
+  border:1px solid grey;
+  background-color:white
+}
+
+.title{
+  margin-top:1em;
+}
+
+.myimg{
+  margin:5px auto;
+  border:2px solid black;
+  border-radius:5px;
+  box-shadow:2px 2px 2px grey;
+}
+
+.mytext{
+  text-align:center;
+}
+
+.row{
+  margin-top:20px;
+}
+
+#recap_wrapper{
+  min-width:404px;
+}

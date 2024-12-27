@@ -1,0 +1,336 @@
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none;
+    }
+}
+
+#wrapper{
+display:block;
+margin:0px auto;
+width:700px;
+}
+
+#menu{
+display:block; 
+margin:0px auto 10px auto;
+max-width:900px; 
+box-shadow:0px 2px 2px grey;
+background-color:white; 
+}
+
+#logo{
+background-image:url('TC.png');
+float:left;
+margin-right:10px;
+margin-left:10px;
+width:120px;
+height:80px;
+background-repeat:no-repeat;
+background-position:center;
+display:inline-block;
+}
+
+#menu li{
+font-family:Verdana;
+font-size:14px;
+font-weight:600;
+color:black;
+text-align:center;
+padding:30px 10px 30px 10px;
+
+list-style:none;
+cursor:pointer;
+display:inline-block;
+}
+
+#menu li:hover{
+background-color:#e7e7e7;
+}
+
+#menu li a{
+text-decoration:none;
+color:black;
+font-size:14px;
+}
+
+#menu li a:hover{
+text-decoration:none;
+color:black;
+}
+
+#gioco
+{
+width:600px;
+height:800px;
+margin:0px auto;
+}
+
+#base{
+width:600px;
+height:600px;
+margin-top:50px;
+}
+
+.riga{
+text-align:left;
+width:100%;
+}
+
+
+.cella_left{
+background-color:lightblue;
+float:left;
+display:block;
+text-align:center;
+border:1px solid black;
+font-family:Verdana;
+}
+
+
+
+.testo_parametro{
+text-align:left;
+}
+
+.riga_parametro{
+font-size:1.5em;
+font-family:Verdana;
+width:100%;
+margin: 2em auto;
+line-height:2em;
+}
+
+.dato{
+height:30px;
+border:0px solid black;
+border-bottom:1px solid black;
+font-size:24px;
+font-family:Verdana;
+width:60px;
+text-align:center;
+}
+
+#crea{
+	min-width:250px;
+	margin-top:20px;
+}
+
+
+
+#back{
+width:350px;
+padding:20px;
+background-color:royalblue;
+color:white;
+text-align:center;
+font-size:18px;
+font-family:Verdana;
+cursor:Pointer;
+margin:50px auto 10px auto;
+}
+
+#back:hover{
+background-color:navy;
+
+}
+
+#header img{
+	margin:0px auto;
+}
+
+#feedback{
+text-align:center;
+color:red;
+font-size:18px;
+margin:20px auto 10px auto;
+font-family:Times New Roman;
+}
+
+.colore{
+display:inline-block;
+margin-right:20px;
+width:40px;
+height:40px;
+cursor:pointer;
+border:4px solid lightgrey;
+border-radius:5px;
+}
+
+.finale{
+	margin-right:0px;
+}
+
+.numero_colore{
+display:inline-block;
+margin-right:20px;
+width:40px;
+height:40px;
+cursor:pointer;
+border:4px solid lightgrey;
+border-radius:5px;
+}
+
+#sopra_linea{
+margin-top:50px;
+height:28px;
+width:600px;
+background-color:white;
+position:relative;
+}
+
+#linea_container{
+height:20px;
+width:600px;
+}
+
+.cella{
+height:20px;
+float:left;
+}
+
+#numeri_container{
+height:20px;
+position:relative;
+margin-bottom:5px;
+}
+
+.cella_numero{
+float:left;
+height:20px;
+font-family:Verdana;
+text-align:center;
+font-size:14px;
+border-left:1px solid white;
+}
+
+#operazione_container{
+width:600px;
+margin:60px auto;
+}
+
+#primo{
+display:none;
+float:left;
+background-color:antiquewhite;
+}
+
+#prima_freccia{
+cursor:pointer;
+background-image:url('freccia.png');
+display:none;
+width:50px;
+height:50px;
+float:left;
+margin-left:10px;
+}
+
+#seconda_freccia{
+cursor:pointer;
+background-image:url('freccia.png');
+display:none;
+width:50px;
+height:50px;
+float:left;
+margin-left:10px;
+}
+
+#uguale{
+cursor:pointer;
+background-image:url('uguale.png');
+display:none;
+width:50px;
+height:50px;
+float:left;
+margin-left:10px;
+}
+
+#feedback_operazione{
+text-align:center;
+color:blue;
+font-size:18px;
+font-family:Verdana;
+margin:20px auto 10px auto;
+}
+
+.big_dato{
+height:50px;
+border:0px solid black;
+border-bottom:1px solid black;
+font-size:24px;
+font-family:Verdana;
+width:100px;
+text-align:center;
+}
+
+#striscia{
+position:relative;
+width:40px;
+height:18px;
+}
+
+#pointer{
+width:40px;
+height:18px;
+background-image:url('car.png');
+}
+
+#operazione{
+margin-left:60px;
+display:none;
+}
+
+#secondo{
+margin-left:60px;
+display:none;
+}
+
+#risultato{
+display:none;
+}
+
+#ri{
+width:100%;
+margin-top:30px;
+text-align:center;
+clear:both;
+}
+
+#stampa{
+padding:20px;
+font-family:Verdana;
+color:white;
+text-align:center;
+text-shadow:1px 1px 1px black;
+box-shadow:2px 2px 2px black;
+display:inline-block;
+background-color:royalblue;
+cursor:pointer;
+width:200px;
+display:none;
+}
+
+#stampa:hover{
+background-color:navy;
+}
+
+#nuova{
+margin-left:20px;
+padding:20px;
+font-family:Verdana;
+color:white;
+text-align:center;
+text-shadow:1px 1px 1px black;
+box-shadow:2px 2px 2px black;
+display:inline-block;
+background-color:royalblue;
+cursor:pointer;
+width:250px;
+display:none;
+}
+
+#nuova:hover{
+background-color:navy;
+}

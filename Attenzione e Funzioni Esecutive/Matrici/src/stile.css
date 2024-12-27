@@ -1,0 +1,187 @@
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#game{
+  background-image:url("../img/wood-tiled.jpg");
+  padding:10px;
+}
+
+.option_wrapper{
+  border-bottom:1px solid lightgrey;
+  padding:5px;
+}
+
+.glyphicon{
+  cursor:pointer;
+}
+
+.container{
+  background-color:white;
+  box-shadow:2px 2px 2px grey;
+}
+
+body{
+  background-color:lightblue;
+}
+
+.btn-wrapper{
+  margin:3em auto;
+}
+
+.cella{
+  border:1px solid darkgrey;
+  display:inline-block;
+  background-size:cover;
+  cursor:pointer;
+}
+
+.fakecella{
+  border:1px solid darkgrey;
+  display:inline-block;
+  background-size:cover;
+  cursor:pointer;
+  background-color:white;
+  width:100px;
+  height:100px;
+}
+
+
+.token{
+  cursor:pointer;
+  width:150px;
+  height:150px;
+  background-size:cover;
+  border:5px solid black;
+  margin-bottom:10px;
+  background-color:white;
+}
+
+#rubber{
+  background-size:cover;
+  background-image:url("../img/rubber.png");
+}
+
+.temp{
+  opacity:0.5;
+}
+
+.toErase{
+  opacity:0.5;
+}
+
+.legenda{
+  margin-right:10px;
+  border:1px solid black;
+  display:inline-block;
+  width:30px;
+  height:30px;
+}
+
+.legtext{
+  line-height:30px;
+}
+
+.littleToken{
+  width:100px;
+  height:100px;
+}
+
+#divisor{
+  width:100%;
+  height:2px;
+  background-color:black;
+  margin:0.5em 0em;
+}
+
+.esempio{
+  width:150px;
+  height:150px;
+  border:1px solid black;
+  margin-top:20px;
+  display:inline-block;
+  background-size:cover;
+}
+
+.mynavigation{
+  border:1px solid black;
+  border-radius:100%;
+  padding:10px;
+  text-align:center;
+}
+
+#testo_istruzioni{
+  text-align:justify;
+  white-space:pre-line;
+}
+
+.immagini_istruzioni{
+  border:1px solid black;
+  margin:1em auto;
+  padding:10px;
+}
+
+#pre_mode{
+  text-align:justify;
+}
+
+#pre_submode{
+  text-align:justify;
+}
+
+.lowmargin{
+  margin-bottom:10px;
+}
+
+#recap_wrapper{
+  margin:10px 0px;
+  padding:10px;
+  border:1px solid black;
+  box-shadow:2px 2px 2px grey;
+  background-color:white;
+  box-shadow:2px 2px 2px black;
+  min-height:395px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+}
+
+.btn{
+  box-shadow:2px 2px 2px black;
+}
+
+.cerchio{
+  border:2px solid black;
+  border-radius:100%;
+  font-size:20px;
+  height:50px;
+  width:50px;
+  line-height:50px;
+  color:white;
+  margin:5px auto;
+  text-align:center;
+  text-shadow:2px 2px 2px black;
+}
+
+.mini_wrapper{
+  border-bottom:1px solid lightgrey;
+  margin-bottom:10px;
+}
+
+#responso{
+  background-color:white;
+  box-shadow:2px 2px 2px black;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  padding-top:10px;
+}
+
+#remaining{
+  color:white;
+}

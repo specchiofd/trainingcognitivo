@@ -1,0 +1,240 @@
+<html>
+<head>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script src="../lib/preloadjs-0.6.2.min.js"></script>
+<script src="../lib/soundjs-0.6.2.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49898875-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../lib/stile.css">
+<link rel="stylesheet" type="text/css" href="../lib/newstyle.css">
+
+
+
+</head>
+
+
+<body>
+<div class="container">
+<div class="navbar-fixed-top" id="alto" style="background-color:white">
+<nav class="navbar navbar-inverse bg-faded role="navigation" style="margin-bottom:0px">
+<div class="navbar-brand"  ><a href="../index.html"><span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:white"></span><img src="../src/logo.png" id="logoinnav"></a></div>
+<a data-toggle="modal" data-target="#myModal" class="navbar-brand" style="float:right">
+<span class="glyphicon glyphicon glyphicon glyphicon-question-sign" aria-hidden="true" style="font-size:22px; color:white" ></span></a>
+</nav>
+
+<div class='row' style="background-color:white"><div id='ascolto' class='col-xs-6'>Ascolto</div><div id='leggo' class='col-xs-6'>Leggo</div></div>
+<div class='row' style="background-color:white"><div class='col-xs-2 col-sm-3' id="leftaudiobar"><div id='rewind' class='otherbutton'></div></div>
+<div class='col-xs-5 col-xs-offset-1 col-sm-offset-0 col-sm-6' id="centroaudiobar"><div id='back' class='otherbutton'></div><div id='play' class='otherbutton'></div><div id='forward' class='otherbutton'></div></div>
+<div class='col-xs-4 col-sm-3' id="rightaudiobar"><div id="scomparsa" class="otherbutton"></div><div id='imgmode' class='otherbutton'></div></div></div>
+<div class="container" style="background-color:white">
+<div class='row' id='automaticomanuale' >
+<div class='col-xs-0 col-md-3'></div>
+<div class='col-xs-8 col-md-3' id='centroautomaticomanuale'><div id='testomanuale'>Manuale</div><div id='switchauto'></div><div id='testoautomatico'>Auto</div></div>
+<div class='col-xs-4 col-md-3' id="rightautomaticomanuale"><div id="avanzamento"></div></div></div>
+<div class='col-xs-0 col-md-3'></div>
+</div>
+</div>
+<div id="titolostoria"></div>
+<div id='container' class="container">
+<img id="spinner" src="../lib/712.gif"/>
+</div>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Istruzioni</h4>
+      </div>
+      <div class="modal-body" style="padding:10px">
+	  <div style="text-align:center"><img src="../src/logo.png" style="width:50%; display:inline-block"></div>
+       <div class="row" style="padding:10px">Phonoclick è una raccolta di storie in cui il fonema target è presente in alta occorrenza, soprattutto in posizione iniziale di parola.</div>
+	   <div class="row" style="padding:10px">In Phonoclick i vocaboli contenenti il fonema target sono stati sostituiti con immagini. Sono disponibili due modalità: Ascolto e Leggo</div>
+	   
+	   <div class="row" style="padding:0px 10px"><h3>Modalità ascolto</h3></div>
+	   <div class="row" style="padding:0px 10px">Nella modalità ascolto il bambino può ascoltare la storia raccontata dalla voce narrante e cliccare sulle immagini per ascoltare le singole parole </div>
+
+	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/play.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Play/Pausa</h4>
+    Cliccando su Play/Pausa, è possibile avviare e fermare la riporoduzione dell'audio.
+</div>
+</div>
+     	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../zorba/src/zebra.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Immagine della parola target</h4>
+    Cliccando sull'immagine relativa alla parola target, quando la riproduzione è in pausa, sarà possibile ascoltare la parola isolata.
+</div>
+</div> 
+	     	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/picture.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Mostra/nascondi immagini</h4>
+    Con questo pulsante è possibile mostrare le immagini delle parole target, nasconderle o affiancarle al testo.
+</div>
+</div>
+	     	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/restart.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Riavvia la storia</h4>
+    Il pulsante "Riavvia" farà ripartire la storia dall'inizio.
+</div>
+</div>
+		<div style="padding:20px"></div>
+	   <div class="row" style="padding:0px 10px"><h3>Modalità leggo</h3></div>
+	   <div class="row" style="padding:0px 10px">Nella modalità Leggo sarà il bambino a leggere la storia. L'adulto può scorrere la storia manualmente o scegliere un avanzamento automatico in base alla velocità di lettura del bambino.</div>
+
+	   
+
+	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../zorba/src/zebra.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Immagine della parola target</h4>
+    Cliccando sull'immagine relativa alla parola target, quando la riproduzione è in pausa, sarà possibile ascoltare la parola isolata.
+</div>
+</div> 
+	     	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/picture.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Mostra/nascondi immagini</h4>
+    Con questo pulsante è possibile mostrare le immagini delle parole target, nasconderle o affiancarle al testo.
+</div>
+</div>
+	     	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/restart.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Riavvia la storia</h4>
+    Il pulsante "Riavvia" farà ripartire la storia dall'inizio.
+</div>
+</div>  
+	  	     	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/semiscomparsa.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Testo a scomparsa</h4>
+    Il testo successivo alla parola evidenziata sarà invisibile o parzialmente visibile.
+</div>
+</div>   
+	  
+	   
+	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/Switch_Auto.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Avanzamento Automatico/Manuale</h4>
+    Se l'avanzamento è manuale, l'operatore dovrà usare le frecce (vedi sotto) per scorrere la storia, altrimenti basterà impostare il tempo di lettura e premere Play.
+</div>
+</div>
+<div style="padding:20px"></div>
+
+	   <div class="row" style="padding:10px 10px">Clicca sulle schede per vedere i pulsanti disponibili per ogni modalità.</div>
+
+	   <ul class="nav nav-tabs nav-justified">
+  <li class="active"><a data-toggle="tab" href="#istruascolto">Manuale</a></li>
+  <li><a data-toggle="tab" href="#istruleggo">Automatico</a></li>
+</ul>
+<div class="tab-content" style="padding:10px; border:1px solid lightgrey">	   
+	   <div id="istruascolto" class="tab-pane fade in active">
+
+<div class="row" style="padding:10px 10px 0px 10px"><h4 style="text-align:center; color:blue">Avanzamento manuale</h4></div>
+     	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/Step_Left.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Parola precedente</h4>
+    Evidenzia la parola precedente.
+</div>
+</div>      	 
+
+		 <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/Step_Right.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Parola successiva</h4>
+    Evidenzia la parola successiva.
+</div>
+</div> 
+</div>
+<div id="istruleggo" class="tab-pane fade in ">
+<div class="row" style="padding:10px 10px 0px 10px"><h4 style="text-align:center; color:blue">Avanzamento automatico</h4></div>
+	     	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/Plus.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Aumenta la velocità di lettura</h4>
+    Fa scorrere più velocemente le parole.
+</div>
+</div>
+	     	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/Minus.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Diminuisce la velocità di lettura</h4>
+    Fa scorrere più lentamente le parole.
+</div>
+</div>
+	     	   <div class="media">
+  <a class="media-left" href="#">
+    <img class="media-object" src="../lib/play.png" alt="Play">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Avvia l'avanzamento della storia</h4>
+    In modalità "Avanzamento Automatico" fa scorrere le parole della storia. La velocità, in sillabe al secondo, è mostrata sulla destra ed è modificabile attraverso i pulsanti + e -.
+</div>
+</div>
+
+	  </div>
+</div>
+	<span style="text-align:center">
+	<br/>
+	<h4 style="color:blue">Phonoclick</h4>
+	<h4 style="color:blue">Ideato e realizzato da:</h4>
+	<h4>Lia Mastrogiacomo</h4>
+	<h4>Caterina Puntieri</h4>
+	<h4>Luca Volpi</h4>
+	<h4>Daniele Spigolon</h4>
+	<h4>Antonio Milanese</h4></span>
+</div>
+    </div>
+  </div>
+</div>
+<script src="../lib/jquery.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="../lib/mypreload.js"></script>
+<script src="src/toto.js"></script>
+</body>

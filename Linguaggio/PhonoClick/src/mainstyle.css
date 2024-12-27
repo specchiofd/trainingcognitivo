@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "Bangers";
+    src: url('fonts/Bangers.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url('fonts/Lobster.otf') format("truetype");
+}
+
+
+
+@media (orientation: landscape){
+#logo{
+margin:2.5% auto;
+width:35%;
+text-align:center;
+}
+
+body{
+background-image:url('sfondo.png');
+background-repeat:repeat;
+background-size:50%;
+}
+
+
+#help{
+position:absolute;
+top:1em;
+right:1em;
+width:5%;
+cursor:pointer;
+}
+
+#payoff{
+font-family:"Lobster", Verdana, Tahoma;
+margin:2.5% auto;
+text-align:center;
+color:#d64e35;
+font-size:2em;
+}
+
+.spilla{
+width:12%;
+display:inline-block;
+cursor:pointer;
+}
+
+
+
+.riga{
+margin-top:-2%;
+text-align:center;
+}
+
+
+#contenuto{
+margin-top:5%;
+}
+
+}
+
+@media (orientation: portrait){
+
+body{
+background-image:url('sfondo.png');
+background-repeat:repeat;
+}
+
+#contenuto{
+margin-top:10%;
+}
+
+.riga{
+margin-top:-3.5%;
+text-align:center;
+}
+
+#help{
+position:absolute;
+top:1em;
+right:1em;
+width:10%;
+cursor:pointer;
+}
+
+#logo{
+margin:2em auto 1em auto;
+width:60%;
+text-align:center;
+}
+
+#payoff{
+font-family:"Lobster", Verdana, Tahoma;
+margin:0px auto;
+text-align:center;
+color:#d64e35;
+font-size:1.6em;
+}
+
+.spilla{
+width:30%;
+display:inline-block;
+cursor:pointer;
+}
+}
+
+#logo img{
+width:100%;
+}
+
+
+.spilla img{
+width:100%;
+}
+
+
+
+#help img{
+width:100%;
+cursor:pointer;
+}
+
+
+
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+

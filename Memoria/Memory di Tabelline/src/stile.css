@@ -1,0 +1,77 @@
+.noborder{
+  border:0px solid black;
+  padding:0px 0px;
+  margin:0px auto;
+  background-color:transparent;
+  color:white;
+}
+
+.noborder:hover{
+  background-color:transparent;
+  color:lightgrey;
+}
+
+.mypadding{
+  padding:10px 0px;
+  margin:0px auto;
+}
+
+.mysettings{
+  margin-top:2em;
+}
+
+body{
+  background-image:url('../img/legno.png');
+  text-shadow:2px 2px 2px black;
+  color:white;
+}
+
+.btnshadow{
+  box-shadow:2px 2px 2px black;
+  text-shadow:1px 1px 1px black;
+}
+
+.carta{
+  cursor:pointer;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width:120px;
+  height:120px;
+  margin:20px;
+  border-radius:10px;
+  border:1px solid white;
+  display:inline-block;
+  box-shadow:2px 2px 2px black;
+  background-image:url("../img/carta.png");
+  font-size:30px;
+  line-height:120px;
+  background-size:cover;
+}
+
+.red{
+  background-color:red;
+}
+
+.blue{
+  background-color:blue;
+}
+
+.semitrasp{
+  opacity:0.2;
+}
+
+#redbox{
+border-top-left-radius:10px;
+border-top-right-radius:10px;
+margin-top:10px}
+
+#bluebox{
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  border-top:1px solid lightgrey;
+}
+
+#result{
+  padding:20px 0px;
+}

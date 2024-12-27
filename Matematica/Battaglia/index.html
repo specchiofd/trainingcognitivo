@@ -1,0 +1,246 @@
+<html>
+<head>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Battaglia navale di tabelline!</title>
+</head>
+<body class="noselect">
+  <div class="modal fade" tabindex="-1" role="dialog" id="operazione">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Inserisci il codice per lanciare il missile!</h4>
+        </div>
+        <div class="modal-body text-center">
+        <h1><span id="dafare"></span><span id="risultato"></span></h1>
+        <br/>
+      </br/>
+        <div class="row">
+        <div class="pulsante"  val=1>1</div>
+        <div class="pulsante"  val=2>2</div>
+        <div class="pulsante"  val=3>3</div>
+      </div>
+      <div class="row">
+        <div class="pulsante"  val=4>4</div>
+        <div class="pulsante"  val=5>5</div>
+        <div class="pulsante"  val=6>6</div>
+        </div>
+        <div class="row">
+          <div class="pulsante"  val=7>7</div>
+          <div class="pulsante"  val=8>8</div>
+          <div class="pulsante"  val=9>9</div>
+        </div>
+        <div class="row">
+                  <div class="erase"><span class="glyphicon glyphicon-erase mylh" aria-hidden="true"></span></div>
+                  <div class="pulsante"  val=0 style="line-height:46px">0</div>
+                  <div class="fire"><span class="glyphicon glyphicon-flash mylh" aria-hidden="true"></span></div>
+
+        </div>
+
+        </div>
+      <h3 class="text-center" id="msg-error">Scrivi il risultato usando il tastierino
+        </h3>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="infomodal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Istruzioni</h4>
+        </div>
+        <div class="modal-body">
+        <p class="text-center">
+
+        <img class='img-responsive ' style="margin:0px auto; height:30px" src='./img/navenemica.png' />
+
+      </p>
+      <br/>
+        <p class="text-center">
+        Abbiamo trovato delle navi nemiche in questo tratto di mare!<br/>
+        Usa i missili <img src="./img/missile.png" />  per colpirle! <br/>
+        Per lanciare correttamente il missile devi digitare il codice <strong>risolvendo la tabellina!</strong><br/><br/>
+        Se scriverai il risultato corretto, il missile partirà! <br/> <br/> </p>
+        <h3 class="text-center">I tuoi aiutanti</h3>
+        <p>
+        Puoi cliccare sul <strong>radar</strong> <img src="./img/radar.png" /> per cercare le navi in una zona. Il radar ti mostrerà per un secondo la presenza o meno delle navi! <br/>
+
+        </p>
+        <div class="row">
+          <div class="col-xs-3">
+          </div>
+          <div class="col-xs-3">
+            <img class='img-responsive' src='./img/inforadar.png'>
+          </div>
+
+          <div class="col-xs-3">
+            <img class='img-responsive' src='./img/inforadar2.png'>
+          </div>
+          <div class="col-xs-3">
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <p>
+         A volte il <strong>marinaio </strong><img src='./img/7.png'  /> ti informerà della presenza di navi su alcune righe o colonne. Ascolta i suoi consigli!
+         <br/>
+         <br/>
+
+        </p>
+<p class="text-center">
+  Buon divertimento e... buona caccia!
+</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Chiudi</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="errore">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Oh oh!</h4>
+        </div>
+        <div class="modal-body">
+<h2 class="text-center">Oh oh! Qualcosa è andato storto!</h2>
+<img style="margin:0px auto" class="img-responsive" src="./img/errore.png" />
+<h4 class="text-center">Il codice inserito non era quello giusto e il missile non è partito!</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Chiudi</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+<div class="container">
+  
+<div class="col-xs-12 mybg" id="settings">
+    <div class="row text-center">
+    <h1>Battaglia navale <br/>
+
+  di tabelline!</h1>
+    <h3>Programmata da Antonio Milanese</h3>
+    <h5>NB: il gioco richiede uno schermo grande (tablet o pc)</h5>
+    <br/>
+    <br/>
+
+        </div>
+<div class="row mysettings ">
+<h3 class="text-center">Livello</h3></h3>
+</div>
+<br />
+<div class="row ">
+  <div class="col-xs-3">
+    <button type="button" class="btn btn-default pull-left noborder" aria-label="Prev" id="prevdiff">
+      <h2 class="mypadding"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </h2></button>
+  </div>
+    <div class="col-xs-6">
+      <h2 class="mypadding text-center" id="difficolta_setting"></h2>
+    </div>
+  <div class="col-xs-3">
+      <button type="button" class="btn btn-default pull-right noborder" aria-label="Next"  id="nextdiff">
+    <h2 class="mypadding"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  </h2></button>
+</div>
+</div>
+
+
+<div class="row mysettings text-center">
+  <br/>
+  <div class="row">
+
+  <button id="start" name="singlebutton" class="btnshadow btn btn-lg btn-success"><h1>GIOCA!</h1></button>
+
+
+</div>
+<br/>
+
+
+  <div class="row">
+  <button id="come" class="btn-center btnshadow btn btn-lg btn-info"><span class=" glyphicon glyphicon-info-sign myset"></span> Come si gioca?</button>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 text-center" id="game">
+<div class="row suggestions_wrapper">
+  <div class="col-xs-1" id="officer_avatar">
+  <img id="marinaio" src="./img/7.png" />
+  </div>
+  <div class="col-xs-9 text-left" id="suggestion">
+  <h4 id="suggestions_text"></h4>
+  </div>
+  <div class="col-xs-2 text-right" id="help">
+  <h1 class="lessmargin text-center"><span id="audio" class="glyphicon myglyphicon glyphicon-volume-off myset margright"></span>
+    <span id="info" class=" glyphicon myglyphicon glyphicon-info-sign myset"></span></h1>
+</h4>
+  </div>
+</div>
+<div class="row rrow">
+  <div class="col-xs-2 text-left rowleft " id="weapons">
+  <h3 class="text-center">Le tue armi</h3>
+  <h5 class="text-center">Clicca per selezionarle</h3>
+  <div class="row mymargin text-center" style="width:100%" id="select_missile">
+  <h2 class="text-center">Missili</h2>
+  <h2><img src="./img/missile.png" /><span id="num_missili"></span></h2>
+  </div>
+  <div class="row mymargin text-center" id="select_radar">
+  <h2 class="text-center">Radar</h2>
+  <h2><img src="./img/radar.png" /><span id="num_radar"></span></h2>
+  </div>
+  </div>
+  <div class="col-xs-8" id="board">
+  </div>
+  <div class="col-xs-2 rowright" id="enemies">
+    <h3 class="text-center">Le navi nemiche</h3>
+    <div id="navinemiche">
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="row text-center" id="result">
+  <h3 id="responso"></h3>
+    <img class="img-responsive" style="margin:20px auto; border:10px solid white" id="final_image" />
+    <br/>
+
+  </br/>
+  <button class="btn btn-md btn-success" id="restart"><h3>GIOCA ANCORA!</h3></button>
+</div>
+
+
+<div class="row text-center">
+  <div class="col-xs-2" >
+  </div>
+<div class="col-xs-8" id="hidden">
+</div>
+<div class="col-xs-2" >
+</div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="src/stile.css">
+
+<script src="lib/jquery.js"></script>
+<script src="lib/soundjs-0.6.2.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="src/game.js?v=3"></script>
+
+</div>
+</body>
+</html>

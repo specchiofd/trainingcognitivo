@@ -1,0 +1,419 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/stile_indice.css?v=5" media="screen" />
+<title>ioScrivo! - Esercizi di ortografia gratis!</title>
+<meta name='description' content='Una web app gratuita per allenarsi con le più importanti regole ortografiche'>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body>
+<div id="regola" class="modal fade black" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title black" >Ripassa la regola</h4>
+      </div>
+      <div class="modal-body" style="text-align:justify">
+        <p id="regola_txt">Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="quit" class="modal fade black" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title black">Sei sicuro di voler tornare al menu?</h4>
+      </div>
+      <div class="modal-body">
+        <p class="black">Tornando al menu perderai i dati di questa sessione</p>
+      </div>
+      <div class="modal-footer">
+	  		<button type="button" class="btn btn-danger" id="realquit" style="margin:10px auto">Sì</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" style="margin:10px auto">No</button>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+
+
+
+<div class="row">
+
+<div id="menu" class="text-center col-xs-12 col-md-12 col-lg-6 col-lg-push-3">
+<div class="row "><img id="logo" src="img/Logo.png"/></div>
+<div class="row space ">
+<h5>Ideato e sviluppato da Antonio Milanese</h5>
+<h5>info@trainingcognitivo.it</h5>
+</div>
+<h3>Scegli la categoria</h3>
+<div class="space panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#simili" class="list-group-item justify-content-between">Suoni simili (p-b, f-v...)<span class="badge text-right">4</span></a>
+      </h4>
+    </div>
+	<div id="simili" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=10>B/D: Bollo o dollo?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=11>M/N: Mosca o nosca?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=12>P/B: Parco o barco?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=9>S/Z: Insetto o inzetto?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class=" panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#maschile" class="list-group-item justify-content-between">Maschile e Femminile <span class="badge text-right">2</span></a>
+      </h4>
+    </div>
+    <div id="maschile" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=0>Maschile o femminile?<span class="toright black glyphicon glyphicon-check"></span></li>
+        <li class="list-group-item justify-content-between  menu_item" gameid=2>Un o un'?<span class="toright black glyphicon glyphicon-check"></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#singolare" class="list-group-item justify-content-between ">Singolare e plurale <span class="badge text-right">2</span></a>
+      </h4>
+    </div>
+    <div id="singolare" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=3>Il plurale di...<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+	        <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=25>Plurali strani: gli uovi o le uova?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#gruppi" class="list-group-item justify-content-between">Gruppi ortografici (ci-chi, li-gli...)<span class="badge text-right">8</span></a>
+      </h4>
+    </div>
+	<div id="gruppi" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=1>Ce/Che: Cestino o chestino?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+	        <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=17>Ci/Chi: Ciesa o chiesa?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=13>ge/ghe: ruge o rughe?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+	        <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=18>gi/ghi: giallo o ghiallo?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+	  <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=14>sce/sche: scermo o schermo?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+	  	  <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=19>sci/schi: scivolo o schivolo?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+	  	  	  <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=15>li/gli: malione o maglione?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+	  	  	  <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=16>ni/gni: banio o bagno?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#fusioni" class="list-group-item justify-content-between">Fusioni illegali <span class="badge text-right">1</span></a>
+      </h4>
+    </div>
+    <div id="fusioni" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=7>Ho tenuto o ottenuto?<span class="toright black glyphicon glyphicon-check"></span> </li>
+    </div>
+  </div>
+</div>
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#omofone" class="list-group-item justify-content-between">Omofone non omografe <span class="badge text-right">1</span></a>
+      </h4>
+    </div>
+    <div id="omofone" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=8>Cuore, cuoio e quaderno<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#doppie" class="list-group-item justify-content-between">Doppie <span class="badge text-right">1</span></a>
+      </h4>
+    </div>
+    <div id="doppie" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=4>Oziare o ozziare?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#essere" class="list-group-item justify-content-between">Verbo essere <span class="badge text-right">1</span></a>
+      </h4>
+    </div>
+    <div id="essere" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=5>E o È?<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#avere" class="list-group-item justify-content-between">Verbo avere <span class="badge text-right">1</span></a>
+      </h4>
+    </div>
+    <div id="avere" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=6>Ha o a?<span class="toright black glyphicon glyphicon-check"></span> </li>
+    </div>
+  </div>
+</div>
+
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#ce" class="list-group-item justify-content-between">C'è, ce n'è, ce ne <span class="badge text-right">1</span></a>
+      </h4>
+    </div>
+    <div id="ce" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between disabled">Completa la frase<span class="toright black glyphicon glyphicon-check"></span> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#rime" class="list-group-item justify-content-between">Rime <span class="badge text-right">1</span></a>
+      </h4>
+    </div>
+    <div id="rime" class="panel-collapse collapse">
+      <ul class="list-group">
+        <li class="list-group-item justify-content-between disabled">Trova la rima per l'animale<span class="toright black glyphicon glyphicon-check"></span><span class="toright black glyphicon  glyphicon-picture"></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a data-toggle="collapse" href="#lessico" class="list-group-item justify-content-between">Lessico <span class="badge text-right">5</span></a>
+      </h4>
+    </div>
+    <div id="lessico" class="panel-collapse collapse">
+      <ul class="list-group ">
+        <li class="list-group-item justify-content-between menu_item" gameid=20>Scrivi il contrario<span class="toright black glyphicon glyphicon-hand-up"></span><span class="toright black glyphicon  glyphicon-picture"></span></li>
+      </ul>
+	        <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=21>Completa l'anagramma<span class="toright black glyphicon glyphicon-hand-up"></span><span class="toright black glyphicon  glyphicon-picture"></span></li>
+      </ul>
+	        <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=22>Animali<span class="toright black glyphicon glyphicon-hand-up"></span><span class="toright black glyphicon  glyphicon-picture"></span></li>
+      </ul>
+	  	        <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=24>Mestieri<span class="toright black glyphicon glyphicon-hand-up"></span><span class="toright black glyphicon  glyphicon-picture"></span></li>
+      </ul>
+	        <ul class="list-group">
+        <li class="list-group-item justify-content-between menu_item" gameid=23>Emozioni<span class="toright black glyphicon glyphicon-hand-up"></span><span class="toright black glyphicon  glyphicon-picture"></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="panel-group text-left">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <h4 class="panel-title ">
+        <a class="list-group-item justify-content-between" id="random">Gioco casuale</a>
+      </h4>
+    </div>
+
+  </div>
+</div>
+<div class="row space">
+<h4>Legenda</h4>
+<div class="col-xs-12 col-md-6 text-left"><p><span class="toleft glyphicon 	glyphicon-check"></span><span >Scelta multipla</p></div>
+<div class="col-xs-12 col-md-6 text-left"><p><span class="toleft glyphicon 	glyphicon-picture"></span><span >Con immagini</p></div>
+<div class="col-xs-12 col-md-6 text-left"><p><span class="toleft glyphicon 	glyphicon-resize-horizontal"></span><span >inserire nella casella</p></div>
+<div class="col-xs-12 col-md-6 text-left"><p><span class="toleft glyphicon 	glyphicon-hand-up"></span><span >Composizione</p></div>
+</div>
+
+</div>
+
+<div id="instructions" class="text-center">
+<div class="col-xs-12">
+<h3 class="space" id="instructions_title"></h3>
+<h4 class="veryspace" id="instructions_txt"></h4>
+
+<button class="veryspace btn btn-lg btn-success " id="avvia"> <span class="glyphicon glyphicon-triangle-right"></span> AVVIA</button>
+<button class="veryspace btn btn-md btn-info" id="btn_regola" data-toggle="modal" data-target="#regola"> <span class="glyphicon glyphicon-question-sign" ></span> RIPASSA LA REGOLA</button>
+<button class="space btn btn-md btn-secondary" id="back"> <span class="glyphicon glyphicon-menu-left"></span> TORNA AL MENU</button>
+</div>
+</div>
+
+<div id="game_screen" class="text-center">
+<div class="game_kind" id="componi">
+<div class="col-xs-12 veryspace" id="c_domanda">
+<h4><span id="c_suggerimento"></span></h4>
+<h2 class="space"><span id="c_testo"></span></h2>
+</div>
+<div class="veryspace col-xs-12" id="c_risposte">
+<div class="row text-center"><div class="lettera" id=0 active=true></div><div class="lettera" id=1 active=true></div><div class="lettera" id=2 active=true></div><div class="lettera" id=3 active=true></div></div>
+<div class="row text-center"><div class="lettera" id=4 active=true></div><div class="lettera" id=5 active=true></div><div class="lettera" id=6 active=true></div><div class="lettera" id=7 active=true></div></div>
+<div class="row text-center"><div class="lettera" id=8 active=true></div><div class="lettera" id=9 active=true></div><div class="lettera" id=10 active=true></div><div class="lettera" id=11 active=true></div></div>
+<div class="row text-center"><div class="lettera" id=12 active=true></div><div class="lettera" id=13 active=true></div><div class="lettera" id=14 active=true></div><div class="lettera" id=15 active=true></div></div>
+</div>
+<div class="veryspace col-xs-12" id="c_vaiavanti">
+<div class="row text-center" >
+<div class="col-xs-8 col-xs-push-2"><button class="btn btn-block btn-success ris" id="c_avanza">PROSSIMO</button></div>
+</div>
+</div>
+</div>
+<div class="game_kind" id="multipla">
+
+<div class="col-xs-12 veryspace" id="domanda">
+<h3><span id="primo"></span><span id="mezzo"></span><span id="secondo"></span></h3>
+</div>
+<div class="veryspace col-xs-12" id="risposte">
+<div class="row" >
+<div class="col-xs-6"><button class="btn btn-block ris" id="btn_uno"></button></div>
+<div class="col-xs-6"><button class="btn btn-block ris" id="btn_due"></button></div>
+</div>
+</div>
+
+<div class="veryspace col-xs-12" id="simili_wrapper">
+<div class="row" >
+<div class="col-xs-5"><div class="simili" id="simili_uno"></div></div>
+<div class="col-xs-2" style="padding:0px"><button class="btn btn-success" style="height:100px; min-width:60px"id="simili_toggle" ><h1 ><span class="glyphicon glyphicon-picture"></span></h1></button></div>
+<div class="col-xs-5"><div class="simili" id="simili_due"></div></div>
+</div>
+</div>
+<div class="veryspace col-xs-12" id="vaiavanti">
+<div class="row text-center" >
+<div class="col-xs-8 col-xs-push-2"><button class="btn btn-block btn-success ris" id="avanza">PROSSIMO</button></div>
+</div>
+</div>
+
+
+</div>
+<div class="game_kind" id="feedback">
+<div class="col-xs-12 veryspace" >
+<h2><span id="responso"></span></h2>
+</div>
+<div class="veryspace col-xs-12" id="nextlevel">
+<div class="row text-center" >
+<div class="space col-xs-8 col-xs-push-2"><button class="btn btn-block btn-success ris" id="next_lvl">LIVELLO 2</button></div>
+<div class="space col-xs-8 col-xs-push-2"><button class="btn btn-block btn-default ris " style="color:black" id="riprova">RIPROVA</button></div>
+<div class="space col-xs-8 col-xs-push-2"><button class="btn btn-block btn-primary ris " id="back_winner">TORNA AL MENU</button></div>
+</div>
+</div>
+
+</div>
+<div class="game_kind" id="c_feedback">
+<div class="col-xs-12 veryspace" >
+<h2><span id="c_responso"></span></h2>
+</div>
+<div class="veryspace col-xs-12" id="c_nextlevel">
+<div class="row text-center" >
+<div class="space col-xs-8 col-xs-push-2"><button class="btn btn-block btn-success ris" id="c_next_lvl">LIVELLO 2</button></div>
+<div class="space col-xs-8 col-xs-push-2"><button class="btn btn-block btn-default ris " style="color:black" id="c_riprova">RIPROVA</button></div>
+<div class="space col-xs-8 col-xs-push-2"><button class="btn btn-block btn-primary ris " id="c_back_winner">TORNA AL MENU</button></div>
+</div>
+</div>
+
+</div>
+<div class="col-xs-12 veryspace" id="score">
+<h3 style="color:yellow">Punti: <span id="punti"></span></h3>
+<h3 id="punti_wrapper" class="row text-center"></h3>
+</div>
+<div class="col-xs-12 veryspace"></div>
+<button class="veryspace btn btn-md btn-info" id="in_btn_regola" data-toggle="modal" data-target="#regola"> <span class="glyphicon glyphicon-question-sign" ></span> RIPASSA LA REGOLA</button>
+
+<button class="space btn btn-md btn-secondary"  data-toggle="modal" data-target="#quit"> <span class="glyphicon glyphicon-menu-left"></span> TORNA AL MENU</button>
+
+</div>
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<script src="lib/jquery.js?v=4"></script>
+
+<script src="src/database.js?v=7"></script>
+<script src="src/giochi.js?v=2"></script>
+
+<script src="js/bootstrap.js?v=6"></script>
+<script src="src/multipla.js?v=8"></script>
+<script src="src/componi.js?v=7"></script>
+
+<script src="src/menus.js?v=7"></script>
+
+</body>

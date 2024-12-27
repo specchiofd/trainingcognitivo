@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<META NAME="DESCRIPTION" CONTENT="Una versione informatizzata del barrage di lettere: trova tutte quelle che puoi in un minuto!">
+<title>Occhio di falco</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link href="src/stile.css" rel="stylesheet" type="text/css">
+  <link href="src/tastiera.css" rel="stylesheet" type="text/css">
+  <link href="src/tablet.css" rel="stylesheet" type="text/css">
+
+  <script src="lib/jquery.js"></script>
+  <script src="src/occhiodifalco.js"></script>
+
+
+
+</head>
+
+<body>
+<div class="modal fade" tabindex="-1" role="dialog" id="fine" keyboard=false data-backdrop='static' style='color:black' >
+  <div class="modal-dialog" role="document" style='color:black'>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center">Fine partita!</h4>
+      </div>
+      <div class="modal-body text-center" id="highyes">
+        <h3 style='color:black'>Complimenti: sei nella top 20!</h3>
+		<h1 style="font-size:100px"><span class="glyphicon glyphicon-star-empty" style="color:green" aria-hidden="true"></span></h1>
+		<h3 style='color:black'>Inserisci il tuo nome</h3>
+		<input placeholder="Mio nome" class="input-lg" id="nome" style="text-align:center; width:50%; margin:10px auto; padding:10px; font-size:1.5em; color:black">
+      </div>
+      <div class="modal-body text-center" id="highno">
+        		<h3 style='color:black'>Mi dispiace, non hai fatto un punteggio da top20!</h3>
+				<br/>
+				<h3>Vuoi riprovare?</h3>
+      </div>
+      <div class="modal-footer">
+	  <div id="footeryes">
+        <button type="button" class="btn btn-primary" id="inserisci">Inserisci</button>
+	</div>
+		  <div id="footerno">
+        <button type="button" class="btn btn-warning rigioca" id="rigioca">Rigioca</button>
+        <button type="button" class="btn btn-primary" id="guardaclassifica">Guarda la classifica</button>
+	</div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="highscore" keyboard=false data-backdrop='static' style='color:black'>
+  <div class="modal-dialog" role="document" style='color:black'>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center">Top 20</h4>
+      </div>
+      <div class="modal-body " id="classifica">
+       <table class="table" >
+  <thead>
+    <tr>
+
+      <th>Posizione</th>
+      <th>Nome</th>
+      <th>Punti</th>
+    </tr>
+  </thead>
+  <tbody id="tabella">
+
+  </tbody>
+</table>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-warning rigioca" id="rigiocadue">Rigioca</button>
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="container" class="container">
+  <h1>Occhio di falco</h1>
+  <h4>Ideato e programmato da Antonio Milanese - info@trainingcognitivo.it</h4>
+  <br/>
+
+<br/>
+<div class="col-xs-12">
+<div id="wrapper"></div>
+</div>
+</div>
+<script src="lib/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

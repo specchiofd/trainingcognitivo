@@ -1,0 +1,148 @@
+body{
+	background:url('../img/bg.png');
+}
+
+@font-face {
+    font-family: "SGB";
+    src: url('../fonts/SaranaiGame-Bold.ttf') format("truetype");
+}
+
+.mytext{
+	font-family:SGB;
+	color:aqua;
+}
+
+.myspan{
+	padding:20px 0px;
+}
+
+.mybutton{
+	background:url('../img/button.png');
+	background-size:contain;
+	width:168px;
+	height:53px;
+	text-align:center;
+	font-family:SGB;
+	color:aqua;
+	background-repeat:no-repeat;
+	margin-bottom:5px;
+}
+
+.mybutton:hover{
+	background:url('../img/buttonhover.png');
+	color:navy;
+	background-size:contain;
+		background-repeat:no-repeat;
+		
+}
+
+.pavimento{
+	width:100%;
+	background:url('../img/floor.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-repeat:no-repeat;
+		font-family:sans-serif;
+		text-transform:uppercase;
+	color:aqua;
+	text-align:center;
+	cursor:pointer;
+}
+
+.col-xs-4{
+	padding:0px;
+	margin:0px;
+}
+
+.primogiocatore{
+	width:100%;
+	background:url('../img/firstPlayer.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-repeat:no-repeat;
+		font-family:SGB;
+	color:aqua;
+	text-align:center;
+}
+
+.giocatore{
+	width:100%;
+	background:url('../img/player.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-repeat:no-repeat;
+		font-family:sans-serif;
+		text-transform:uppercase;
+	color:aqua;
+	text-align:center;
+}
+
+.errore{
+	width:100%;
+	background:url('../img/errore.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-repeat:no-repeat;
+		font-family:SGB;
+	color:aqua;
+	text-align:center;
+}
+
+
+.hoverable:hover{
+	background:url('../img/floorhover.png');
+	    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-repeat:no-repeat;
+	color:black;
+}
+
+.vita{
+	float:left;
+	width:30px;
+	margin:10px 5px;
+}
+
+.novita{
+	float:left;
+	width:30px;
+	margin-right:10px;
+	margin-top:10px;
+	display:none;
+}
+
+#livello{
+	width:50px;
+	height:50px;
+	float:right;
+	background:url('../img/livello.png');
+	background-size:cover;
+	background-repeat:no-repeat;
+	font-family:SGB;
+	color:aqua;
+	text-align:center;
+	line-height:50px;
+}
+
+.toolbg{
+	height:50px;
+	background:url('../img/bar.png');
+	background-repeat:repeat-x;	
+}
+
+#parolaesatta{
+	color:green;
+}
+#parolaerrata{
+	color:red;
+}

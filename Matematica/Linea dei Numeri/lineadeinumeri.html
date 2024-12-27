@@ -1,0 +1,52 @@
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="src/stile.css?v=1" media="all" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" />
+<style type="text/css" media="print">
+  @page { size: landscape; }
+</style>
+
+<title>Linea dei numeri gratuita: Conta su di me</title>
+<meta name="description" content="Conta su di me è una linea dei numeri gratuita e interattiva">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container text-center" id="logocontainer">
+
+
+
+<div id="header" class="no-print text-center"><img  src="src/header.png" class="img-responsive" alt="Conta su di me"></div>
+<h4>Ideata e programmata da Antonio Milanese - info@trainingcognitivo.it</h4>
+<div class="row">
+<div id="parametri" class="col-xs-12 col-md-8 col-md-push-2">
+<h2 class="testo_parametro text-center">Inserire i parametri</h2>
+
+<div class="row riga_parametro"><div class="testo_parametro col-xs-12 col-md-6">Lunghezza della linea</div><div class="col-xs-12 col-md-6 text-right">Da <input type="number" value="0" class="dato" id="min">  <span style="margin:0px 10px">a</span>  <input type="number" value="10" class="dato" id="max"> </div></div>
+<div class="row riga_parametro"><div class="testo_parametro col-xs-12 col-md-6">Passo (intervallo)</div><div class="col-xs-12 col-md-6 text-right"> <input type="number" value="1" class="dato" id="passo" min=1></div></div>
+<div class="row riga_parametro"><div class="testo_parametro col-xs-12 col-md-6">Colore della linea</div>  <div class="col-xs-12 col-md-6 text-right"><div class="colore "  style="background-color: rgb(173, 216, 230);" colore="rgb(173, 216, 230)"></div><div class="colore" style="background-color:red" colore="red"></div><div class="colore" colore="yellow" style="background-color:yellow"></div><div class="colore" colore="green" style="background-color:green"></div><div id="linea_iniziale" class="colore finale" colore="black" style="border: 4px solid purple; background-color:black"></div></div> </div>
+<div class="row riga_parametro"><div class="testo_parametro col-xs-12 col-md-6">Colore dei numeri</div>  <div class="col-xs-12 col-md-6 text-right"><div class="numero_colore"  style="background-color: rgb(173, 216, 230);" colore="rgb(173, 216, 230)"></div><div class="numero_colore" style="background-color:red" colore="red"></div><div class="numero_colore" colore="yellow" style="background-color:yellow"></div><div class="numero_colore" colore="green" style="background-color:green"></div><div id="numeri_iniziale" class="numero_colore" colore="black" style="border: 4px solid purple; margin-right:0px;  background-color:black"></div></div></div> </div>
+</div>
+<div class="row text-center riga_parametro"><button class="btn btn-success btn-lg" id="crea" onclick="Ldn.check()">CREA LA LINEA!</button></div>
+<div class="row riga_parametro"><div id="feedback"></div></div>
+</div>
+
+<div id="gioco">
+<div id="sopra_linea"><div id="striscia"><div id="pointer"></div></div></div>
+<div id="numeri_container"></div>
+<div id="linea_container"></div>
+<div id="inserisci_container">
+<div id="operazione_container" class="no-print">
+<input class="big_dato" value="" type="number" id="primo"></input><div id="prima_freccia"></div><div style="float:left"><select class="big_dato" type="number" id="operazione"></select></div><div id="seconda_freccia"></div><div style="float:left"><select class="big_dato" type="number" id="secondo"></select></div><div id="uguale"></div><input class="big_dato" value="" type="number" id="risultato"></input></div>
+<div style="clear:both"></div>
+<div id="feedback_operazione" class="no-print"></div>
+<div id="ri" class="no-print">
+<div class="no-print" id="stampa" onclick="print()">STAMPA LA LINEA</div><div class="no-print" id="nuova" onclick="Ldn.nuova()">CREA UNA NUOVA LINEA</div>
+</div>
+</div>
+</div>
+</div>
+<script src="lib/jquery.js"></script>
+<script src="src/ldn.js?v=1"></script>
+<script src="js/bootstrap.js"></script>
+</body>

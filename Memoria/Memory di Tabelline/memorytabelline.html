@@ -1,0 +1,130 @@
+<html>
+<head>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Memory di tabelline!</title>
+</head>
+<body>
+
+<div class="container">
+
+<div class="col-xs-12" id="settings">
+    <div class="row text-center">
+    <h1>Memory di tabelline!</h1>
+    <h3>Programmato da Antonio Milanese su un'idea di <a style="color:white; text-decoration:underline" href="http://www.helpripetizioni.it">Help Ripetizioni</a></h3>
+    <br/>
+
+        </div>
+</br/>
+<div class="row mysettings">
+  <div class="col-xs-3">
+    <button type="button" class="btn btn-default pull-left noborder" aria-label="Prev" id="prevtable">
+      <h2 class="mypadding"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </h2></button>
+  </div>
+    <div class="col-xs-6">
+      <h2 class="mypadding text-center" id="tabellina_setting"></h2>
+    </div>
+  <div class="col-xs-3">
+      <button type="button" class="btn btn-default pull-right noborder" aria-label="Next"  id="nexttable">
+    <h2 class="mypadding"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  </h2></button>
+</div>
+</div>
+
+<div class="row mysettings">
+  <div class="col-xs-3">
+    <button type="button" class="btn btn-default pull-left noborder" aria-label="Prev"  id="prevcat">
+      <h2 class="mypadding"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </h2></button>
+  </div>
+    <div class="col-xs-6">
+      <h2 class="mypadding text-center" id="categoria_setting"></h2>
+    </div>
+  <div class="col-xs-3">
+      <button type="button" class="btn btn-default pull-right noborder" aria-label="Next" id="nextcat">
+    <h2 class="mypadding"><span class="glyphicon glyphicon-chevron-right" aria-hidden="tru4e"></span>
+  </h2></button>
+</div>
+</div>
+
+
+<div class="row mysettings">
+  <div class="col-xs-3">
+    <button type="button" class="btn btn-default pull-left noborder" aria-label="Prev"  id="prevav">
+      <h2 class="mypadding"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </h2></button>
+  </div>
+    <div class="col-xs-6">
+      <h2 class="mypadding text-center" id="avanzamento_setting"></h2>
+    </div>
+  <div class="col-xs-3">
+      <button type="button" class="btn btn-default pull-right noborder" aria-label="Next" id="nextav">
+    <h2 class="mypadding"><span class="glyphicon glyphicon-chevron-right" aria-hidden="tru4e"></span>
+  </h2></button>
+</div>
+</div>
+
+<div class="row mysettings text-center">
+  <br/>
+  <button id="start" name="singlebutton" class="btnshadow btn btn-lg btn-success"><h1>GIOCA!</h1></button>
+
+</div>
+
+</div>
+<div class="col-xs-12 text-center" id="game">
+<div class="row red text-left" id="redbox" >
+<div class="col-xs-2">
+  <h2 id="redturn"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></h2>
+</div>
+<div class="col-xs-8">
+
+<h2>ROSSI</h2>
+</div>
+
+<div class="col-xs-2 text-right">
+<h2 id="puntirossi"></h2>
+</div>
+</div>
+<div class="row blue text-left" id="bluebox">
+<div class="col-xs-2">
+  <h2 id="blueturn"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></h2>
+</div>
+<div class="col-xs-8">
+
+<h2>BLU</h2>
+</div>
+
+<div class="col-xs-2 text-right">
+<h2 id="puntiblu"></h2>
+</div>
+</div>
+<br/>
+<br/>
+<div class="row" id="gametable">
+
+</div>
+
+</div>
+
+<div class="row text-center" id="result">
+  <img src="img/coppa2.png"/>
+  <h1 id="chivince"></h2>
+  <button class="btn btn-lg btn-success" id="restart"><h1>GIOCA ANCORA!</h1></button>
+</div>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="src/stile.css">
+
+<script src="lib/jquery.js"></script>
+<script src="lib/soundjs-0.6.2.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="src/game.js?v=3"></script>
+
+</div>
+</body>
+</html>

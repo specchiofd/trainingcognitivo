@@ -1,0 +1,73 @@
+#logo{
+margin: 0px auto;
+padding:0px;
+width:800px;
+height:100px;
+background-image: url("logo.png");
+}
+
+#banner{
+margin: 0px auto;
+padding:0px;
+width:800px;
+height:100px;
+background-image: url("banner.png");
+}
+
+#container{
+margin:0px auto;
+width:800px;
+min-height:600px;
+border:1px solid black;
+border-radius:5px;
+}
+
+#parametri{
+padding:10px;
+}
+
+#cancella_tutto{
+float:right;
+margin:10px 0px 10px 10px;
+width:200px;
+height:30px;
+font-size:24px;
+text-align:center;
+background-color:peachpuff;
+border-radius:5px;
+border:1px solid black;
+}
+
+#inizia{
+margin:0px auto;
+display:block;
+width:200px;
+height:30px;
+font-size:24px;
+text-align:center;
+background-color:blue;
+border-radius:5px;
+border:1px solid black;
+color: white;
+}
+
+#canvas_container{
+display:none;
+width: 100%;
+}
+
+#canvas{
+width:800px;
+height:600px;
+border:1px solid black;
+border-radius:5px;
+margin:0px auto;
+}
+
+.credits{
+margin:1em auto;
+text-align:center;
+font-size:0.9em;
+color:black;
+font-family:sans-serif;
+}

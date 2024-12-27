@@ -1,0 +1,548 @@
+﻿<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Read è un Tachistoscopio Online gratuito e altamente personalizzabile!">
+<meta name="keywords" content="lettura,dislessia,dsa,tachistoscopio">
+<meta name="author" content="Antonio Milanese">
+
+<title>Read! - Il Tachistoscopio Online Gratuito</title>
+<link rel="icon"
+      type="image/png"
+      href="src/favicon.ico">
+
+</head>
+<body class="noselect">
+
+
+
+<div class="modal fade" id="avvia_modal"    data-backdrop="static"
+   data-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Ci siamo quasi</h4>
+      </div>
+      <div class="modal-body text-center">
+		<h3 class="text-center">La modalità scelta è: <span id="primotesto"></span></h3>
+		<br/>
+    <img style="margin:0px auto; border:2px solid black" id="img_modalita" class="img-responsive" />
+    <br/>
+
+    <h3 class="text-center"><span id="secondotesto"></span></h3>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="avvia_vero">Sono pronto</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="riavvia_modal"    data-backdrop="static"
+   data-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Riavvia la sessione</h4>
+      </div>
+      <div class="modal-body">
+		<h3 class="text-center">Sei sicuro di voler riavviare questa sessione?</h3>
+		</br>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-info" id="annulla_riavvia">Annulla</button>
+        <button type="button" class="btn btn-success" id="ok_riavvia">Riavvia</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="stop_modal"    data-backdrop="static"
+   data-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Abbandona la sessione</h4>
+      </div>
+      <div class="modal-body">
+		<h3 class="text-center">Sei sicuro di voler abbandonare la sessione e tornare alle impostazioni?</h3>
+		</br>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-info" id="annulla_stop">Annulla</button>
+        <button type="button" class="btn btn-danger" id="ok_stop">Torna al menu</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mycollapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Lettura</a>
+    </div>
+	<div class="collapse navbar-collapse" id="mycollapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Tachistoscopio</a></li>
+	  <li ><a href="http://www.trainingcognitivo.it/Sillabe/">Sillaba per sillaba</a></li>
+	  <li><a href="http://www.trainingcognitivo.it/GC/paroleatempo/">Parole a tempo</a></li>
+
+    </ul>
+	<ul class="nav navbar-nav navbar-right">
+  <li><a href="http://www.trainingcognitivo.it/gamecenter">Torna al Gamecenter</a></li>
+	<li><a href="http://www.trainingcognitivo.it">Torna a TrainingCognitivo.it</a></li>
+	<li><a href="https://www.facebook.com/t.cognitivo/">Seguici su Facebook</a></li></ul>
+	</div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row mytitle">
+    <h1>Tachistoscopio Read!</h1>
+    <h5>Ideato e programmato da Antonio Milanese - <a href="mailto:info@trainingcognitivo.it">info@trainingcognitivo.it</a></h5>
+  </div>
+<div class="settings row">
+
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2" style="margin-bottom:10px">
+    <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12" style="padding:0px">
+      <div class="left-buttons" id="btn_lista">
+        <h1><span class="glyphicon glyphicon-list" aria-hidden="true"></span></h1>
+        <h3>Lista</h3>
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12" style="padding:0px">
+      <div class="left-buttons" id="btn_options">
+        <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></h1>
+        <h3>Opzioni</h3>
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12" style="padding:0px">
+      <div class="left-buttons" id="btn_parola">
+        <h1><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span></h1>
+        <h3>Stile parola</h3>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="settings_wrapper">
+
+    <div class="settings_panel" id="lista">
+    <h2 class="text-center">Lista</h2>
+    <br/>
+
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+    		<label class="control-label mycontrol-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="customauto"><h4>Lista esistente o nuova</h4></label>
+    		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+    			<div class="input-group col-sm-8" style="width:100%" >
+    				<select class="form-control input-lg"  id="customauto" >
+    					<option value="auto">Lista esistente</option>
+    					<option value="custom">Nuova lista</option>
+    				</select>
+    			</div><!-- /input-group -->		</div>
+        </div>
+    	<div id="autooptions">
+    	    <div class="form-group">
+    		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="parolenonparole"><h4>Tipo di lista</h4></label>
+    		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+    			<div class="input-group col-sm-8" style="width:100%" >
+    				<select class="form-control input-lg"  id="parolenonparole" >
+    					<option value="parole">Parole</option>
+    					<option value="nonparole">Non parole</option>
+    					<option value="sillabe">Sillabe</option>
+    				</select>
+
+    			</div><!-- /input-group -->		</div>
+        </div>
+    	<span id="ifsillabe">
+    	    <div class="form-group">
+    		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="numerosillabe"><h4>Numero di sillabe</h4></label>
+    		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+    			<div class="input-group col-sm-8" style="width:100%" >
+    				<select class="form-control input-lg"  id="numerosillabe" >
+    					<option value=2>2</option>
+    					<option value=3>3</option>
+    					<option value=4>4</option>
+    				</select>
+
+    			</div><!-- /input-group -->		</div>
+        </div>
+    		    <div class="form-group">
+    		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="gruppoortografico"><h4>Tipo di parole</h4></label>
+    		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+    			<div class="input-group col-sm-8" style="width:100%" >
+    				<select class="form-control input-lg"  id="gruppoortografico" >
+    					<option value="tutti">Tutti i tipi</option>
+    					<option value="semplici">Semplici</option>
+    					<option value="discriminazione">Discriminazione</option>
+              <!--
+    					<option value="doppie">Doppie</option>
+    					<option value="accenti">Accenti</option>
+            -->
+    					<option value="gn">GN</option>
+    				</select>
+
+    			</div><!-- /input-group -->		</div>
+        </div>
+    	</span>
+    				    <div class="form-group">
+    		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="listaliste"><h4>Lista</h4></label>
+    		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+    			<div class="input-group col-sm-8" style="width:100%"  >
+    				<select class="form-control input-lg"  id="listaliste" >
+
+    				</select>
+
+    			</div><!-- /input-group -->		</div>
+    			</div>
+
+
+
+    </div>
+    <div id="customoptions">
+    			    <div class="form-group">
+
+    		<div class="col-sm-12">
+    		<div class="row"><h4 class="col-sm-12; text-center" style="margin:20px 0px 10px 0px;color:black">Scrivi o incolla una lista di parole separate da virgola</h4></div>
+
+    			<div class="input-group col-sm-12" style="width:100%"  >
+    				<textarea class="form-control" rows=5 id='listapersonalizzata' placeholder="cane,gatto,penna"></textarea>
+
+    				</input>
+
+    			</div><!-- /input-group -->		</div>
+    			</div>
+    </div>
+  </form>
+    </div>
+    <div class="settings_panel" id="opzioni">
+    <h2 class="text-center">Opzioni</h2>
+    <br/>
+    <form class="form-horizontal" role="form">
+  		<div class="form-group">
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="tempo"><h4>Tempo di esposizione (ms)</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%"  >
+  				<input class="form-control input-lg"  step="100" type=number value=1000 id='tempo' >
+  				</input>
+  			</div><!-- /input-group -->		</div>
+  			</div>
+        <div class="form-group">
+    		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="intertempo"><h4>Tempo di esposizione (ms)</h4></label>
+    		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+    			<div class="input-group col-sm-8" style="width:100%"  >
+    				<input class="form-control input-lg"  step="50" type=number value=500 id='intertempo' >
+    				</input>
+    			</div><!-- /input-group -->		</div>
+    			</div>
+  		 <div class="form-group">
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="intertempo"><h4>Mescola gli stimoli</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%"  >
+  				<input class="form-control" type="checkbox" checked id='mescola' >
+  				</input>
+  			</div><!-- /input-group -->		</div>
+  			</div>
+
+  		    <div class="form-group">
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="posizione"><h4>Posizione della parola</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%" >
+  				<select class="form-control input-lg"  id="posizione" >
+  				<option value="centro">Centro</option>
+  				<option value="sinistra">Sinistra</option>
+  				<option value="destra">Destra</option>
+  				</select>
+  			</div><!-- /input-group -->		</div>
+  			</div>
+  			    <div class="form-group">
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="modalita"><h4>Modalità di verifica</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%" >
+  				<select class="form-control input-lg"  id="modalita" >
+  <option value="normale">Normale</option>
+  <option value="feedback">Feedback esplicito</option>
+  <option value="riscrivi">Riscrivi</option>
+  				</select>
+  			</div><!-- /input-group -->		</div>
+  			</div>
+  									    <div class="form-group" >
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="incremento"><h4>Incremento automatico</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%"  >
+  				<input class="form-control" type="checkbox" unchecked id='incremento' >
+
+  				</input>
+
+  			</div><!-- /input-group -->		</div>
+  			</div>
+  			    <div class="form-group" id="quantoincrementowrapper">
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="quantoincremento"><h4>Incremento (%)</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%"  >
+  				<input class="form-control input-lg"  step="0.5" type=number value=1.5 id='quantoincremento' >
+
+  				</input>
+
+  			</div><!-- /input-group -->		</div>
+  			</div>
+  											    <div class="form-group" >
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="mascheramento"><h4>Mascheramento percettivo</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%"  >
+  				<input class="form-control" type="checkbox" checked id='mascheramento' >
+
+  				</input>
+
+  			</div><!-- /input-group -->		</div>
+  			</div>
+        <div class="form-group" >
+<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="mascheramento"><h4>Pre-stimolo</h4></label>
+<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+<div class="input-group col-sm-8" style="width:100%"  >
+<input class="form-control" type="checkbox" checked id='prestimolo' >
+
+</input>
+
+</div><!-- /input-group -->		</div>
+</div>
+</form>
+</div>
+        <div class="settings_panel" id="parola">
+        <h2 class="text-center">Stile parola</h2>
+        <br/>
+            <form class="form-horizontal" role="form">
+  														    <div class="form-group" >
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="maiuscole"><h4>Tutte maiuscole</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%"  >
+  				<input class="form-control" type="checkbox" unchecked id='maiuscole' >
+
+  				</input>
+
+  			</div><!-- /input-group -->		</div>
+  			</div>
+  			    <div class="form-group" >
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="dimensioni"><h4>Dimensioni della parola</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%"  >
+  <input type="range" min=1 max=7 id="dimensioni" value=2 step="0.5" class="form-control">
+  				</input>
+
+  			</div><!-- /input-group -->		</div>
+  			</div>
+  			    <div class="form-group">
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="carattere"><h4>Carattere delle parole</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%" >
+  				<select class="form-control input-lg"  id="carattere" >
+  <option value="sans-serif">Senza grazie</option>
+  <option value="serif">Con grazie</option>
+  <option value="monospace">Monospazio</option>
+  				</select>
+  			</div><!-- /input-group -->		</div>
+  			</div>
+  			    <div class="form-group">
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="coloretesto"><h4>Colore del testo</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%" >
+  				<select class="form-control input-lg"  id="coloretesto" >
+  <option value="#000">Nero</option>
+  <option value="#FFF">Bianco</option>
+  <option style="color:#CCC" value="#CCC">Grigio</option>
+  <option style="color:#FF0000" value="red">Rosso</option>
+  <option style="color:#336600" value="#336600">Verde</option>
+  <option style="color:#0000FF" value="#0000FF">Blu</option>
+  				</select>
+  			</div><!-- /input-group -->		</div>
+  			</div>
+  			    <div class="form-group">
+  		<label class="control-label col-xs-12 col-sm-12 col-md-5 col-lg-5" for="coloresfondo"><h4>Colore dello sfondo</h4></label>
+  		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+  			<div class="input-group col-sm-8" style="width:100%" >
+  				<select class="form-control input-lg"  id="coloresfondo" >
+  <option value="#FFF">Bianco</option>
+  <option value="#000">Nero</option>
+  <option style="color:#CCC" value="#CCC">Grigio</option>
+  <option style="color:#FF0000" value="red">Rosso</option>
+  <option style="color:#336600" value="#336600">Verde</option>
+  <option style="color:#0000FF" value="#0000FF">Blu</option>
+  				</select>
+  			</div><!-- /input-group -->		</div>
+  			</div>
+
+  			</form>
+
+    </div>
+    <div class="big_button_wrapper text-center">
+      <button class="btn btn-success btn-lg" id="avvia"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> AVVIA IL TACHISTOSCOPIO</button>
+    </div>
+
+
+  </div>
+  <div id="tachistoscopio_wrapper" class="col-xs-12 col-md-12  col-md-8 col-lg-8">
+  <div id="tachistoscopio">
+    <div id="right_button_wrapper">
+    <div id="stop">
+    <h2><span class="glyphicon glyphicon-remove myglyphicon" aria-hidden="true"></span></h2>
+    </div>
+    <div id="riavvia">
+    <h2><span class="glyphicon glyphicon-repeat myglyphicon" aria-hidden="true"></span></h2>
+    </div>
+    </div>
+    <div id="feedback">
+    <h2 class="text-center" id="feedback_line">La parola <span id="feedback_parola"></span> è stata letta correttamente?</h2>
+    <div class="row" style="padding:50px">
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <button class="btn btn-block btn-danger" id="feedback_no"><h3>NO</h3></button>
+    </div>
+    <div class="xs-hidden sm-hidden col-md-4 col-lg-4">
+
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <button class="btn btn-block btn-success" id="feedback_si"><h3>Sì</h3></button>
+    </div>
+    </div>
+    </div>
+
+    <div id="riscrivi">
+    <h2 class="text-center" style="color:black;margin-top:20px" id="riscrivi_feedback"></h2>
+    <div class="row" id="box_riscritta">
+    <input type="text" id="riscritta">
+    </div>
+    <div class="row" style="padding:25px">
+    <div >
+      <div class="xs-hidden sm-hidden col-md-4 col-lg-4">
+      </div>
+        <div class="col-xs-12 col-sm-12-col-md-4 col-lg-4">
+        <button class="btn btn-block btn-info" id="riscrivi_ok"><h3>OK</h3></button>
+        <button class="btn btn-block btn-success" id="riscrivi_avanti"><h3>AVANTI</h3></button>
+        </div>
+      </div>
+      <div class="xs-hidden sm-hidden col-md-4 col-lg-4">
+      </div>
+    </div>
+
+    </div>
+
+<div id="tachistoscopio_parola_wrapper">
+  <span id="tachistoscopio_parola"></span><span id="tachistoscopio_prestimolo"></span>
+</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" id="myprogress"
+    aria-valuemin="0" aria-valuemax="100" style="width:70%">
+
+    </div>
+  </div>
+</div>
+<div id="riepilogo_wrapper" class="col-xs-12 col-md-12  col-md-8 col-lg-8">
+<div class="row">
+<h2 class="text-center">RIEPILOGO</h2>
+<br/>
+<br/>
+<div class="xs-col-12 sm-col-12 col-md-6 col-lg-6">
+<h1 class="text-center" id="percentuale"></h1>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" id="bar_percentuale"
+  aria-valuemin="0" aria-valuemax="100" >
+
+  </div>
+
+</div>
+<br/>
+
+<h3 id="ri_totali"></h3>
+<h3 id="ri_corrette"></h3>
+<h3 id="ri_errori"></h3>
+<br/>
+</div>
+
+
+
+<div class="xs-col-12 sm-col-12 col-md-6 col-lg-6">
+<h3 class="text-center">Parole sbagliate</h3>
+<div id="wordreport">
+
+</div>
+</div>
+</div>
+<div class="row" style="padding:25px">
+<div >
+  <div class="xs-hidden sm-hidden col-md-3 col-lg-3">
+  </div>
+    <div class="col-xs-12 col-sm-12-col-md-6 col-lg-6">
+    <button class="btn btn-block btn-info" id="final_cambia"><h3>CAMBIA IMPOSTAZIONI</h3></button>
+    <button class="btn btn-block btn-success" id="final_riavvia"><h3>RIAVVIA</h3></button>
+    </div>
+  </div>
+  <div class="xs-hidden sm-hidden col-md-3 col-lg-3">
+  </div>
+</div>
+</div>
+
+
+
+  <div class="hidden-xs hidden-sm col-md-3 col-lg-3">
+
+    <div class="recap_panel" id="recap_lista">
+    <h4 class="text-center">Anteprima Lista</h4>
+    <h5 class="text-center"><span id="nelementi"></span> elementi</h5>
+    <hr/>
+    <div id="preview">
+
+    </div>
+    </div>
+    <div class="recap_panel" id="recap_options">
+      <h4 class="text-center">Anteprima Opzioni</h4>
+      <hr/>
+        <br/>
+    <div id="mini_schermo">
+    <div id="mini_prestimolo">
+    <span id="mini_primalettera"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></span><span id="mini_restoprestimolo"></span>
+    </div>
+    <div id="mini_parola">
+    </div>
+    </div>
+    <div class="mini_button_wrapper text-center">
+    <button class="btn btn-md btn-warning" id="avvia_anteprima">Avvia anteprima</button>
+    </div>
+    <br/>
+    </div>
+    <div class="recap_panel" id="recap_parola">
+      <h4 class="text-center">Anteprima Parola</h4>
+      <hr/>
+        <br/>
+    <div id="mini_schermo_parola">
+      <div class="row" style="text-align:center;line-height:200px"><span id="wordpreview">Esempio</span></div>
+
+
+    </div>
+
+    <br/>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="src/stile.css">
+<script src="lib/jquery.js"></script>
+<script src="src/archivio.js"></script>
+<script src="src/menu.js"></script>
+<script src="src/tachistoscopio.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

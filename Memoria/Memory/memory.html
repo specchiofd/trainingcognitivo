@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<META NAME="DESCRIPTION" CONTENT="Un memory di immagini e parole online!">
+<title>Memory - Memory gratuito di immagini e parole</title>
+
+
+
+</head>
+<body>
+
+
+<div class="container text-center noselect">
+<div class="row screen" id="settings">
+<h1 id="title"></h1>
+<h3 id="credits" style="text-shadow:2px 2px 2px black"></h3>
+<h2 class="text-center" id="setting_title"></h2>
+<br/>
+
+<div class="row setting_row">
+<div class="col-xs-12 col-sm-6 marbot">
+<div id="txt_players"></div></div>
+<div class="col-xs-12 col-sm-6 marbot">
+<div class="col-xs-3 prev" target="players">
+  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+</div>
+<div class="col-xs-6">
+<div id="players"></div>
+</div>
+<div class="col-xs-3 next" target="players">
+  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ></span>
+</div>
+</div>
+</div>
+
+<div class="row setting_row">
+<div class="col-xs-12 col-sm-6 marbot">
+<div id="txt_quantistimoli"></div></div>
+<div class="col-xs-12 col-sm-6 marbot">
+<div class="col-xs-3 prev" target="quantistimoli">
+  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+</div>
+<div class="col-xs-6">
+<div id="quantistimoli"></div>
+</div>
+<div class="col-xs-3 next" target="quantistimoli">
+  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ></span>
+</div>
+</div>
+</div>
+
+<div class="row setting_row">
+<div class="col-xs-12 col-sm-6 marbot">
+<div id="txt_categoriastimoli"></div></div>
+<div class="col-xs-12 col-sm-6 marbot">
+<div class="col-xs-3 prev" target="categoriastimoli">
+  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+</div>
+<div class="col-xs-6">
+<div id="categoriastimoli"></div>
+</div>
+<div class="col-xs-3 next" target="categoriastimoli">
+  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ></span>
+</div>
+</div>
+</div>
+
+
+<div class="row setting_row">
+<div class="col-xs-12 col-sm-6 marbot">
+<div id="txt_tipostimoli"></div></div>
+<div class="col-xs-12 col-sm-6 marbot">
+<div class="col-xs-3 prev" target="tipostimoli">
+  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+</div>
+<div class="col-xs-6">
+<div id="tipostimoli"></div>
+</div>
+<div class="col-xs-3 next" target="tipostimoli">
+  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ></span>
+</div>
+</div>
+</div>
+
+<div class="row setting_row">
+<div class="col-xs-12 col-sm-6 marbot">
+<div id="txt_alternanza"></div></div>
+<div class="col-xs-12 col-sm-6 marbot">
+<div class="col-xs-3 prev" target="alternanza">
+  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+</div>
+<div class="col-xs-6">
+<div id="alternanza"></div>
+</div>
+<div class="col-xs-3 next" target="alternanza">
+  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ></span>
+</div>
+</div>
+</div>
+<div class="text-center">
+<div class="btn btn-lg btn-success centra" id="toteams"></div>
+</div>
+</div>
+
+<div class="row screen" id="teams">
+  <h1 class="text-center" id="teams_title"></h1>
+  <br/>
+<form>
+    <div id="squadra_uno_group" class="form-group">
+    <input type="text" class="form-control team" id="squadrauno"  placeholder="Rossi">
+    </div>
+    <div id="squadra_due_group" class="form-group">
+    <input type="text" class="form-control team" id="squadradue"  placeholder="Verdi">
+    </div>
+    <div id="squadra_tre_group" class="form-group">
+    <input type="text" class="form-control team" id="squadratre"  placeholder="Blu">
+    </div>
+    <div id="squadra_quattro_group" class="form-group">
+    <input type="text" class="form-control team" id="squadraquattro"  placeholder="Gialli">
+    </div>
+</form>
+<div class="text-center">
+<div class="btn btn-lg btn-default centra" id="backmain"></div>
+<div class="btn btn-lg btn-success centra" id="togame"></div>
+</div>
+
+</div>
+
+<div class="row screen" id="game">
+  <div class="row">
+    <div class="col-xs-hidden col-sm-hidden col-md-2 col-lg-2"></div>
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-8">
+<div class="team_wrapper">
+
+<div id="team_0" class="main_team"><div id="segna_0" class="segna"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div><div id="nome_0" class="nome"></div><div id="punti_0" class="punti"></div></div>
+<div id="team_1" class="main_team"><div id="segna_1" class="segna"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div><div id="nome_1" class="nome"></div><div id="punti_1" class="punti"></div></div>
+<div id="team_2" class="main_team"><div id="segna_2" class="segna"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div><div id="nome_2" class="nome"></div><div id="punti_2" class="punti"></div></div>
+<div id="team_3" class="main_team"><div id="segna_3" class="segna"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div><div id="nome_3" class="nome"></div><div id="punti_3" class="punti"></div></div>
+</div>
+</div>
+<div class="col-xs-hidden col-sm-hidden col-md-2 col-lg-2"></div>
+
+</div>
+<div class="row">
+<div class="col-xs-hidden col-sm-hidden col-md-2 col-lg-2"></div>
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-8"><div id="board">
+
+</div></div>
+<div class="col-xs-hidden col-sm-hidden col-md-2 col-lg-2"></div>
+</div>
+
+</div>
+
+<div class="row screen" id="win">
+<div class="row text-center" id="vittoria">
+<img class="img-responsive" style="margin:0px auto" src="" id="imgvittoria"/>
+<br/>
+
+<h2 id="txtvittoria"></h2>
+<br/>
+
+<div class="text-center">
+<div class="btn btn-lg btn-default centra" id="playagain"></div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+<script src="lib/jquery.js"></script>
+<script src="lib/jquery.flip.min.js"></script>
+
+<script src="js/bootstrap.js"></script>
+<script src="src/strings.js"></script>
+<script src="src/game.js"></script>
+<script src="src/carte.js"></script>
+<script src="src/info.js"></script>
+<script src="src/win.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="src/stile.css" rel="stylesheet" type="text/css">
+</body>
+
+</html>

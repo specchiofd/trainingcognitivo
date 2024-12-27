@@ -1,0 +1,123 @@
+body{
+  background-color:royalblue;
+}
+
+#titoli_wrapper{
+  padding:10px;
+  background-color:white;
+  box-shadow:2px 2px 2px black;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+
+#titoli_wrapper h1{
+  font-weight:600;
+}
+
+#settings{
+  padding:20px;
+  background-color:white;
+  box-shadow:2px 2px 2px black;
+  border-radius:10px;
+}
+
+.option_wrapper{
+  border-bottom:1px solid lightgrey;
+}
+
+.left-button{
+  width:120px;
+  height:120px;
+  border:4px solid navy;
+  text-align:center;
+  padding:10px 0px;
+  cursor:pointer;
+  color:navy;
+  background-color:white;
+  box-shadow:2px 2px 2px black;
+}
+
+.btn_unselected{
+  background-color:white;
+  border:2px solid black;
+  color:black;
+}
+
+#done{
+  margin-bottom:10px;
+}
+
+.btn_unselected:hover{
+  background-color:lightblue;
+}
+
+.left-button h1{
+  margin:0px;
+  padding:0px;
+  line-height:80px;
+  font-size:60px;
+}
+
+.left-button h3{
+  margin:0px;
+  padding:0px;
+  line-height:40px;
+  font-size:16px;
+}
+
+.btn-wrapper{
+  margin-top:20px;
+}
+
+.prev{
+  cursor:pointer;
+}
+
+.next{
+  cursor:pointer;
+}
+
+
+.mydisabled{
+  opacity:0.3;
+
+}
+
+.more{
+  cursor:pointer;
+}
+
+.less{
+  cursor:pointer;
+}
+
+.barrarossa{
+  border-left:50px solid red;
+}
+
+#totale{
+  margin-bottom:10px;
+}
+
+.myselecteded{
+  border:2px solid red;
+}
+
+#recap_wrapper{
+  border-radius:5px;
+  margin-bottom:10px;
+  background-color:white;
+  padding:5px;
+}
+
+#pre_instructions{
+  border-radius:5px;
+  margin-bottom:10px;
+  background-color:white;
+  padding:10px;
+}
+
+.imgintro{
+  border:2px solid black;
+  border-radius:5px;
+}

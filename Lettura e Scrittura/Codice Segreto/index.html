@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Il codice segreto!</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+
+
+
+
+
+<h2 class="text-center" style="text-shadow:2px 2px 2px black">Il codice segreto!</h2>
+<h5 class="text-center" style="text-shadow:2px 2px 2px black">Ideato e sviluppato da Antonio Milanese - <a style="color:lightgreen" href="mailto:info@trainingcognitivo.it">info@trainingcognitivo.it</a></h5>
+<br/>
+<div class="container">
+<div id="settings">
+<h3 class="text-center">Impostazioni</h3>
+<br/>
+
+<div class="row option_wrapper">
+  <div class="col-xs-12 col-sm-6"><h5>Parole da indovinare</h5></div>
+  <div class="col-xs-12 col-sm-6 nextprew_wrapper text-center"><div class="row"><div class="col-xs-2 text-left ">
+  <h5><span class="glyphicon glyphicon-chevron-left prev" aria-hidden="true" target="numerostimoli"></span></h5></div>
+  <div class="col-xs-8"><h5 id="numerostimoli"></h5></div>
+  <div class="col-xs-2 text-right ">
+  <h5><span class="glyphicon glyphicon-chevron-right next" aria-hidden="true" target="numerostimoli"></span></h5>
+  </div></div></div>
+</div>
+<div class="row option_wrapper">
+  <div class="col-xs-12 col-sm-6"><h5>Numero di sillabe</h5></div>
+  <div class="col-xs-12 col-sm-6 nextprew_wrapper text-center"><div class="row"><div class="col-xs-2 text-left ">
+  <h5><span class="glyphicon glyphicon-chevron-left prev" aria-hidden="true" target="sillabe"></span></h5></div>
+  <div class="col-xs-8"><h5 id="sillabe"></h5></div>
+  <div class="col-xs-2 text-right ">
+  <h5><span class="glyphicon glyphicon-chevron-right next" aria-hidden="true" target="sillabe"></span></h5>
+  </div></div></div>
+</div>
+<div class="row option_wrapper">
+  <div class="col-xs-12 col-sm-6"><h5>Larghezza tabella</h5></div>
+  <div class="col-xs-12 col-sm-6 nextprew_wrapper text-center"><div class="row"><div class="col-xs-2 text-left ">
+  <h5><span class="glyphicon glyphicon-chevron-left prev" aria-hidden="true" target="larghezza"></span></h5></div>
+  <div class="col-xs-8"><h5 id="larghezza"></h5></div>
+  <div class="col-xs-2 text-right ">
+  <h5><span class="glyphicon glyphicon-chevron-right next" aria-hidden="true" target="larghezza"></span></h5>
+  </div></div></div>
+</div>
+<div class="row option_wrapper">
+  <div class="col-xs-12 col-sm-6"><h5>Altezza tabella</h5></div>
+  <div class="col-xs-12 col-sm-6 nextprew_wrapper text-center"><div class="row"><div class="col-xs-2 text-left ">
+  <h5><span class="glyphicon glyphicon-chevron-left prev" aria-hidden="true" target="altezza"></span></h5></div>
+  <div class="col-xs-8"><h5 id="altezza"></h5></div>
+  <div class="col-xs-2 text-right ">
+  <h5><span class="glyphicon glyphicon-chevron-right next" aria-hidden="true" target="altezza"></span></h5>
+  </div></div></div>
+</div>
+<div class="row option_wrapper_final">
+  <div class="col-xs-12 col-sm-6"><h5>Tutto maiuscolo</h5></div>
+  <div class="col-xs-12 col-sm-6 nextprew_wrapper text-center"><div class="row"><div class="col-xs-2 text-left ">
+  <h5><span class="glyphicon glyphicon-chevron-left prev" aria-hidden="true" target="maiuscolo"></span></h5></div>
+  <div class="col-xs-8"><h5 id="maiuscolo"></h5></div>
+  <div class="col-xs-2 text-right ">
+  <h5><span class="glyphicon glyphicon-chevron-right next" aria-hidden="true" target="maiuscolo"></span></h5>
+  </div></div></div>
+</div>
+<div class="row text-center" style="margin-top:40px">
+<button class="btn btn-lg btn-success" style="margin:10px auto; font-weight:600" id="avvia">AVVIA IL GIOCO</button>
+</div>
+</div> <!-- End of settings -->
+<div id="game">
+<div class="row">
+<div class="col-xs-10 col-xs-push-1" id="tabella">
+
+</div>
+</div>
+<div id="parola_wrapper">
+<div class="row" >
+<div class="col-xs-2 col-sm-1">
+
+</div>
+<div class="col-xs-8 col-sm-10" id="codice">
+
+</div>
+</div>
+<div id="confronto_wrapper">
+<div class="row">
+
+
+<div class="col-xs-2 col-sm-1">
+
+</div>
+<div class="col-xs-8 col-sm-10" id="confronto">
+</div>
+<div class="col-xs-2 col-sm-1">
+</div>
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="col-xs-2 col-sm-1">
+
+</div>
+<div class="col-xs-8 col-sm-10" >
+<input id="risposta" class="form-control" >
+</div>
+<div class="col-xs-2 col-sm-1">
+<button class="btn btn-lg btn-success" id="ok"> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+
+</div>
+</div>
+</div>
+<div class="row" >
+<div class="col-xs-10 col-xs-push-1" id="avanzamento_wrapper">
+
+</div>
+</div>
+</div>
+<div class="row" id="win">
+<div class="col-xs-12 col-xs-6">
+<img class="img-responsive" src="./src/secret.png" />
+</div>
+<div class="col-xs-12 col-xs-6 text-center">
+<h1><span class="glyphicon glyphicon-star" style="color:yellow" aria-hidden="true"> HAI VINTO! <span style="color:yellow" class="glyphicon glyphicon-star" aria-hidden="true"></h1>
+<br/>
+<br/>
+<h2>Ben fatto, agente! Hai risolto tutti i codici segreti!</h2>
+<br/>
+<br/>
+<btn class="btn btn-success" style="margin:20px auto" id="riavvia"><h3>Gioca ancora</h3></btn>
+</div>
+</div>
+<div class="col-xs-10" id="riferimento">
+
+</div>
+</div>
+
+
+<script src="lib/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="src/sillabe.js"></script>
+<script src="src/codice.js?v=2"></script>
+
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="src/stile.css">
+</body>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sillaba per Sillaba</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="src/newstile.css" />
+</head>
+<body>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Istruzioni</h4>
+      </div>
+      <div class="modal-body" style="text-align:center">
+        <h3>Scegli o scrivi una lista di parole. <br/><br/>Ogni parola dovr� essere separata da una virgola e ogni sillaba dal simbolo /.<br/><br/>Imposta il tempo di esposizione per sillaba e, se vuoi, rendi il resto della parola parzialmente visibile.<br/><br/>Al termine dell'esposizione di ogni parola, verr� chiesto al bambino di riscriverla.</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="annullare" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Innterrompi esercizio</h4>
+      </div>
+      <div class="modal-body" style="text-align:center">
+	  <h3>Sei sicuro di voler interrompere l'esercizio?</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="interrompere" data-dismiss="modal">Ok</button>
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="game_options">
+<h1 class="text-center" style="color:white">Sillaba per sillaba</h1>
+<h4 class="text-center" style="color:white">Ideato e programmato da Antonio Milanese - info@trainingcognitivo.it</h4>
+  <div class="container ">
+ <div class="col-xs-12 istruzioni">
+  <div class="row text-center">
+  <h3>Impostazioni</h3>
+  <form class="form-horizontal" role="form" style="border:1px solid lightgrey; padding:10px; ">
+     <div class="form-group">
+		<label class="control-label col-sm-4" for="lista_stimoli"><h4>Seleziona una lista...</h4></label>
+		<div class="col-sm-8">
+			<div class="input-group col-sm-8" style="width:100%" >
+				<select class="form-control input-lg"  id="lista_stimoli" onchange="aggiungi_lista()">
+               <option value = "0">Scegli una lista</option>
+			   <option value = "1">Bisillabe piane 1</option>
+			   <option value = "2">Bisillabe piane 2</option>
+			   <option value = "3">Bisillabe con gruppo</option>
+			   <option value = "4">Trisillabe 1</option>
+			   <option value = "5">Quadrisillabe 1</option>
+			   <option value = "6">SC - Bisillabe CVCV 1</option>
+			   <option value = "7">SC - Bisillabe CVCV 2</option>
+			   <option value = "8">SC - Bisillabe CVCV 3</option>
+			   <option value = "9">SC - Bisillabe CVCV 4</option>
+			   <option value = "10">SC - Bisillabe CVCV 5</option>
+			   <option value = "11">SC - Bisillabe CVCV 6</option>
+			   <option value = "12">SC - Bisillabe CVCV 7</option>
+			   <option value = "13">SC - Bisillabe CVCV 8</option>
+			   <option value = "14">SC - Bisillabe CVCV 9</option>
+			   <option value = "15">SC - Bisillabe CVCV 10</option>
+			   <option value = "16">SC - Bisillabe VCCV 1</option>
+			   <option value = "17">SC - Bisillabe VCCV 2</option>
+			   <option value = "18">SC - Bisillabe CVC-CV (Doppie) 1</option>
+			   <option value = "19">SC - Bisillabe CVC-CV (Doppie) 2</option>
+			   <option value = "20">SC - Bisillabe ponte CVC-CV  1</option>
+			   <option value = "21">SC - Bisillabe ponte CVC-CV  2</option>
+			   <option value = "22">SC - Bisillabe ponte CVC-CV  3</option>
+			   <option value = "23">SC - Bisillabe ponte CVC-CV  4</option>
+			   <option value = "25">SC - Bisillabe ponte CVC-CV  5</option>
+			   <option value = "26">Bisillabe con gruppo CV-CCV o CCV-CV 1</option>
+			   <option value = "27">Bisillabe con gruppo CV-CCV o CCV-CV 2</option>
+			   <option value = "28">JR - Sillabe 1</option>
+			   <option value = "29">JR - Sillabe 2</option>
+			   <option value = "30">JR - Sillabe 3</option>
+			   <option value = "31">JR - Sillabe 4</option>
+			   <option value = "32">JR - Sillabe 5</option>
+			   <option value = "33">JR - Sillabe 6</option>
+			   <option value = "34">JR - Sillabe 7</option>
+			   <option value = "35">JR - Sillabe 8</option>
+			   <option value = "36">JR - Sillabe 9</option>
+			   <option value = "37">JR - Sillabe 10</option>
+			   <option value = "38">JR - Sillabe 11</option>
+			   <option value = "39">JR - Sillabe 12</option>
+			   <option value = "40">JR - Sillabe 13</option>
+				</select>
+			</div><!-- /input-group -->		</div>
+			</div>
+
+			    <div class="form-group">
+		<label class="control-label col-sm-4" for="area_stimoli"><h4>... o inserisci gli stimoli separando le sillabe con / e le parole con la virgola</h4></label>
+		<div class="col-sm-8">
+			<div class="input-group col-sm-8" style="width:100%"  >
+				<textarea class="form-control input-lg"  placeholder="Esempio: ca/po, so/gno, se/ra/ta" rows="5" id='area_stimoli' ></textarea>
+			<button class="pull-right btn btn-danger"
+			id="cancella_tutto">Cancella tutto</button>
+			</div><!-- /input-group -->		</div>
+			</div>
+    <div class="form-group">
+		<label class="control-label col-sm-4" for="tempo_esposizione"><h4>Tempo di esposizione (ms)</h4></label>
+		<div class="col-sm-2">
+			<div class="input-group col-sm-2" style="width:100%"  >
+				<input class="form-control input-lg" value=400 step=50 type="number" id="tempo_esposizione" >
+			</div><!-- /input-group -->		</div>
+		<label class="control-label col-sm-4" for="maiuscole"><h4>Tutto maiuscolo</h4></label>
+		<div class="col-sm-2">
+			<div class="input-group col-sm-8" style="width:100%"  >
+				<input class="form-control" type="checkbox" unchecked id='maiuscole' >
+
+				</input>
+
+			</div><!-- /input-group -->		</div>
+			</div>
+
+
+		    <div class="form-group">
+		<label class="control-label col-sm-4" for="trasparenza"><h4>Trasparenza del resto della parola</h4></label>
+		<div class="col-sm-2">
+			<div class="input-group col-sm-2" style="width:100%" >
+				<select class="form-control input-lg"  id="trasparenza" >
+					<option value = "0">Trasparente</option>
+					<option value = "1">Semitrasparente</option>
+				</select>
+
+			</div><!-- /input-group -->		</div>
+
+		<label class="control-label col-sm-4" for="randomized"><h4>Mescola stimoli</h4></label>
+		<div class="col-sm-2">
+			<div class="input-group col-sm-8" style="width:100%"  >
+				<input class="form-control" type="checkbox" checked id='randomized' >
+
+				</input>
+
+			</div><!-- /input-group -->		</div>
+			</div>
+
+
+
+			</form>
+			<div class="row" style="text-align:center; margin-top:40px">
+						<button class=" btn btn-lg btn-warning" style="padding:15px 60px"
+			onclick="Sillabe.avvio()">Inizia!</button>
+			</div>
+			<h4 id="error">Seleziona almeno una lista o scrivi una parola</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div id="game_panel" class="container" >
+<div class="col-xs-12" style="background-color:white; box-shadow:0px 2px 2px lightgrey;padding:20px">
+<div class="row" style="text-align:right"><h1 id="annulla" data-toggle="modal" data-target="#annullare">X</h1></div>
+<div class="row" style="text-align:center"><h3 id="esatto_errato">Ok</h1></div>
+<div class="row" style="text-align:center">
+<div id="parola" ></div>
+</div>
+<div class="row">
+<div class="input-group" style="margin-bottom:20px;">
+<div class="input-group-btn">
+<button class="btn btn-lg btn-success" id="hidden" style="opacity:0"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+</div>
+<input class="form-control input-lg" style="padding:10px 0px; box-shadow:0px 0px 0px black; border:0px solid black; border-bottom:1px solid grey;" type="text" id="guess"  autocapitalize="none">
+<div class="input-group-btn">
+<button class="btn btn-lg btn-success" id="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+</div>
+
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<h2 class="row" id="progress" ></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div id="risultato_container" style="background-color:white; box-shadow:0px 2px 2px lightgrey; padding-top:20px">
+<div class="row" style="text-align:center">
+<h3 id="risultato"></h3>
+</div>
+<div class="row" style="margin:0px; padding:20px">
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" id="progress_bar">
+  </div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Risposta</th>
+        <th>Hai scritto</th>
+        <th>Risultato</th>
+      </tr>
+    </thead>
+    <tbody id="mytbody">
+
+    </tbody>
+  </table>
+  </div>
+<div class="col-md-2"></div>
+</div>
+
+<div class="row" style="text-align:center">
+<button class="btn btn-lg btn-success" style="margin:30px 0px" id="clicca_continuare"></div>
+</div>
+</div>
+</div>
+
+<script src="lib/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="src/sillabe.js"></script>
+</body>

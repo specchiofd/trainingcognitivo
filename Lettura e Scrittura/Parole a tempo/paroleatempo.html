@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Parole a tempo!</title>
+
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="src/stile.css?v=2" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="container">
+</div>
+<div id="container">
+<div class="row text-center" id="mtitle">
+<div class="col-xs-12 text-center">
+<img class="img-responsive" style="margin:0px auto" src="src/header.png">
+</div>
+</div>
+<div id="wrapper">
+<div class="row">
+
+<br/>
+
+</div>
+<h4>Ideato e programmato da Antonio Milanese - info@trainingcognitivo.it</h4>
+<br/>
+
+</br/>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+<div class="carousel-inner" role="listbox">
+    <div class="item active ">
+	<div class="col-xs-12 text-center">
+	<div id="instructions">
+	<h3 id="instructionsWrapper">Trova le lettere sparse sullo schermo e forma la parola!
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	Clicca su un livello di difficoltà per iniziare dal primo livello o inserisci il codice per sbloccare un livello successivo!</h3>
+		<br/>
+	<br/>
+			<button type="button" class="btn btn-primary btn-lg" href="#myCarousel" role="button" data-slide="next"><h1>AVANTI</h1></button>
+
+	</div>
+</div>
+	</div>
+    <div class="item  ">
+<div id="avviorapido">
+<br/>
+<img class="icona" src="src/start.png"></img>
+<div id="scegli">Avvio rapido (primo livello) </div>
+<div id="sceglidue">Scegli il livello di difficoltà</div>
+<div class="row">
+<br/>
+<button class="diff btn btn-success btn-lg " id="facile"><h3>FACILE</h3></button>
+<button class=" btn btn-warning btn-lg diff" id="medio"><h3>MEDIO</h3></button>
+<button class=" btn btn-danger btn-lg diff" id="difficile"><h3>DIFFICILE</h3></button>
+<button class=" btn btn-primary btn-lg diff"  id="notempo"><h3>NO TEMPO</h3></div></button>
+ </div>
+    </div>
+	    <div class="item">
+
+		<div id="tastiera"><img class="icona" src="src/skip.png"></img><div id="scrivi">Salta al livello...</div>
+		<div id="scrividue">Scrivi il codice e clicca Invia</div>
+<div class="row text-center">
+		<div id="parola"></div>
+
+		</div>
+		<div class="row text-center">
+		<div class="col-xs-8 col-xs-push-2 col-md-12 col-md-push-0">
+		<button class="numero btn btn-lg" valore="0"><h3>0</h3></button>
+		<button class="numero btn btn-lg" valore="1"><h3>1</h3></button>
+		<button class="numero btn btn-lg" valore="2"><h3>2</h3></button>
+		<button class="numero btn btn-lg" valore="3"><h3>3</h3></button>
+		<button class="numero btn btn-lg" valore="4"><h3>4</h3></button>
+		<button class="numero btn btn-lg" valore="5"><h3>5</h3></button>
+		<button class="numero btn btn-lg" valore="6"><h3>6</h3></button>
+		<button class="numero btn btn-lg" valore="7"><h3>7</h3></button>
+		<button class="numero btn btn-lg" valore="8"><h3>8</h3></button>
+		<button class="numero btn btn-lg" valore="9"><h3>9</h3></button>
+		</div>
+</div>
+<br/>
+<br/>
+<div class="row">
+			<button class="btn btn-danger btn-lg" id="canc" valore="-1"><h3>CANC</h3></button>
+<button class="btn btn-success btn-lg" id="invia"><h3>INVIA</h3></button>
+</div>
+</div>
+<div class="row">
+<div id="risposta"></div>
+</div>
+</div>
+
+
+		</div>
+	  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+	</div>
+
+	</div>
+
+
+  <script src="lib/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="src/paroleatempo.js?v=3"></script>
+</body>
+
+</html>

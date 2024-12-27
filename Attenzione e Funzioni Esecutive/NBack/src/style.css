@@ -1,0 +1,35 @@
+#next{
+	display:none;
+}
+
+#options{
+	display:none;
+}
+
+#contenitore{
+	display:none;
+}
+
+.cella{
+	display:inline-block;
+	border:1px solid black;
+}
+
+.glyphicon{
+font-size:2em;
+line-height:2em;	
+}
+
+#s_visivo{
+	cursor:pointer;
+}
+#s_uditivo{
+	cursor:pointer;
+}
+#s_spaziale{
+	cursor:pointer;
+}
+
+#responso{
+	display:none;
+}

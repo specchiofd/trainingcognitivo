@@ -1,0 +1,37 @@
+<html>
+<head>
+
+
+
+<script src="lib/jquery.js"></script>
+<script src="src/tavole.js"></script>
+<script src="src/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="src/stile.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" />
+
+<title>È pronta la tavola!</title>
+
+
+</head>
+<body>
+<div class="container text-center" id="logocontainer">
+
+
+
+<div id="header" class="no-print"></div>
+<div id="parametri" >
+<h5 class="text-center">Ideata e programmata da Antonio Milanese - info@trainingcognitivo.it</h5>
+<div class="riga_parametro"><div class="testo_parametro">Inserire i parametri:</div></div>
+
+<div class="riga_parametro"><div class="testo_parametro">Asse orizzontale da <input type="number" value="1" class="dato" id="min_x"> a <input type="number" value="10" class="dato" id="max_x"> </div></div>
+<div class="riga_parametro"><div class="testo_parametro">Asse verticale da <input type="number" value="1" class="dato" id="min_y"> a <input type="number" value="10" class="dato" id="max_y"> </div></div>
+<div class="riga_parametro"><div class="testo_parametro">Colore degli assi <div class="colore" id="sfondo_iniziale" style="background-color:lightblue" colore="lightblue"></div><div class="colore" style="background-color:red" colore="red"></div><div class="colore" colore="yellow" style="background-color:yellow"></div><div class="colore" colore="green" style="background-color:green"></div><div class="colore" colore="black" style="background-color:black"></div></div> </div>
+<div class="riga_parametro"><div class="testo_parametro">Colore dei numeri negli assi <div id="testo_iniziale" class="testo_colore" style="background-color:black" colore="black"></div><div class="testo_colore" style="background-color:white" colore="white"></div></div></div>
+<div class="riga_parametro"><div id="crea" onclick="Tavole.check()">CREA LA TAVOLA!</div></div>
+<div class="riga_parametro"><div id="feedback"></div></div>
+
+</div>
+<div id="gioco"><div id="base"></div><div id="back" onclick="print()" class="no-print">STAMPA!</div><div id="back" onclick="Tavole.back()" class="no-print">CREA UNA NUOVA TAVOLA!</div></div>
+</div>
+</body>
+</html>

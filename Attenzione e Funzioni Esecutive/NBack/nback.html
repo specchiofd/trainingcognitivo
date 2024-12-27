@@ -1,0 +1,176 @@
+<html>
+<html>
+<head>
+
+<script src="lib/soundjs-0.6.2.min.js"></script>
+<script src="lib/preloadjs-0.6.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Dual N-Back gratuito online</title>
+</head>
+<body">
+<div class="container">
+
+<div class="row">
+<div class="xs-hidden sm-hidden col-md-2">
+</div>
+<div class="col-xs-12 col-sm-12 col-md-8">
+<div id="load">
+<h1 class="text-center">N-Back</h1>
+<h4 class="text-center">Programmato da Antonio Milanese - info@trainingcognitivo.it</h4>
+<br/>
+<h3>Riferimento</h3>
+<h4>Questa web-app è la verisone italiana del Jaeggi-Buschkuehl dual n-back task presente su <a href="http://cognitivefun.net/test/5">CognitiveFun</a></h4>
+<br/>
+<h3>Come si usa</h3>
+<h4 style="text-align:justify">
+All'inizio del gioco appare un quadrato sulla griglia. Dopo qualche secondo il quadrato cambierà posizione. Scopo del gioco è segnalare quando il quadrato appare nella stessa posizione rispetto a DUE esposizioni prima (n-back con span di 2).<br/>
+<br/>È possibile modificare il gioco in modo da aumentare lo span (cioè l'esposizione precedente a cui confrontare quella attuale) o aggiungere una modalità (ad esempio, oltre alla posizione nello spazio, è possibile chiedere all'utente di ricordare anche il colore del quadrato o un numero ascoltato).
+<br/>
+<br/>Per segnalare la risposta corretta è possibile usare la tastiera o cliccare le icone di fianco alla griglia. In particolare:
+<h4><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span> o freccia SINISTRA quando si ripete il numero ascoltato (modalità uditiva)</h4>
+<h4><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> o freccia DESTRA quando si ripete il colore del quadrato (modalità visiva)</h4>
+<h4><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span> o freccia IN BASSO quando si ripete la posizione del quadrato (modalità spaziale)</h4>
+</h4>
+</br>
+<div id="spinner" class="text-center"><img src="assets/712.gif"><br/><p>Caricamento dell'audio in corso...</p></div>
+<button type="button" class="btn btn-primary btn-lg btn-block" id="next">VAI AL GIOCO</button>
+<br/>
+<br/>
+</div>
+<div id="options">
+<form class="form-horizontal">
+<form class="form-horizontal">
+<div class="form-group">
+  <label for="nome" class="col-sm-6 col-form-label">Nome</label>
+  <div class="col-sm-6">
+    <input class="form-control" type="text" placeholder="Inserire il nome" id="nome">
+  </div>
+</div>
+<div class="form-group">
+  <label for="lato_matrice" class="col-sm-6 col-form-label">Lunghezza griglia (unit�)</label>
+  <div class="col-sm-6">
+    <input class="form-control" type="number" min=2 value=3 id="lato_matrice">
+  </div>
+</div>
+<div class="form-group">
+  <label for="nback" class="col-sm-6 col-form-label">N-back</label>
+  <div class="col-sm-6">
+    <input class="form-control" type="number" min=1 value=2 id="nback">
+  </div>
+</div>
+<div class="form-group">
+  <label for="latenza" class="col-sm-6 col-form-label">Tempo di latenza (ms)</label>
+  <div class="col-sm-6">
+    <input class="form-control" type="number" min=500 value=3000 id="latenza" step=500>
+  </div>
+</div>
+<div class="form-group">
+  <label for="item" class="col-sm-6 col-form-label">Numero di item</label>
+  <div class="col-sm-6">
+    <input class="form-control" type="number" min=3 value=10 id="item">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="modalita" class="col-sm-6 col-form-label">Modalità di gioco</label>
+  <div class="col-sm-6">
+      <select class="form-control" id="modalita">
+<option selected value="1">Visuospaziale</option>
+<option value="2">Uditiva</option>
+<option value="3">Visiva</option>
+<option value="4">Visuospaziale+Uditiva</option>
+<option value="5">Visuospaziale+Visiva</option>
+<option value="6">Uditiva+Visiva</option>
+<option value="7">Tutte</option>
+  </select>
+  </div>
+</div>
+
+</form>
+<button type="button" class="btn btn-primary btn-lg btn-block" id="avvia">AVVIA</button>
+
+</div>
+
+<div id="contenitore">
+<div class="row">
+<div class="col-xs-3 text-center" id="feedback_uditivo"><h1><span id="s_uditivo" class="glyphicon glyphicon-volume-up" aria-hidden="true"></h1></span></div>
+<div class="col-xs-6" id="display"></div>
+<div class="col-xs-3 text-center" id="feedback_visivo"><h1><span id="s_visivo" class="glyphicon glyphicon-eye-open" aria-hidden="true"></h1></div>
+</div>
+<div class="row">
+<div class="col-xs-3"></div>
+<div class="col-xs-6 text-center" id="feedback_spaziale"><h1><span id="s_spaziale" class="glyphicon glyphicon-fullscreen" aria-hidden="true"></h1></div>
+<div class="col-xs-3"></div>
+</div>
+<div class="row">
+<br/>
+<button type="button" class="btn btn-primary btn-lg btn-block" id="inizia">INIZIA</button>
+<br/>
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" id="bar">
+
+  </div>
+</div>
+</div>
+</div>
+<div id="responso">
+<h1 class="text-center">Risultati</h1>
+<h3>Nome: <span id="res_nome"></h3>
+<h4>Data: <span id="res_data"></h4>
+<br/>
+<div class="row text-center">
+<div id="res_spaziale" class="col-md-4" style="border:1px solid lightgrey">
+<h1><span id="s_spaziale" class="glyphicon glyphicon-fullscreen" aria-hidden="true"></h1>
+<h3 class="text-center">Visuospaziale</h3>
+<h3 class="text-center"><span id="res_per_esatte_spaziale"></h3>
+<h3>Esatte: <span style="color:green" id="res_esatte_spaziale"></h3>
+<h3>Errate: <span style="color:red" id="res_errate_spaziale"></h3>
+<h3>Omissioni: <span style="color:grey" id="res_omissioni_spaziale"></h3>
+</div>
+<div id="res_visivo"  class="col-md-4" style="border:1px solid lightgrey">
+<h1><span id="s_visivo" class="glyphicon glyphicon-eye-open" aria-hidden="true"></h1>
+<h3 class="text-center">Visivo</h3>
+<h3 class="text-center"><span id="res_per_esatte_visivo"></h3>
+<h3>Esatte: <span style="color:green" id="res_esatte_visivo"></h3>
+<h3>Errate: <span style="color:red" id="res_errate_visivo"></h3>
+<h3>Omissioni: <span style="color:grey" id="res_omissioni_visivo"></h3>
+
+</div>
+<div id="res_uditivo"  class="col-md-4" style="border:1px solid lightgrey">
+<h1><span id="s_uditivo" class="glyphicon glyphicon-volume-up" aria-hidden="true"></h1>
+<h3 class="text-center">Uditivo</h3>
+<h3 class="text-center"><span id="res_per_esatte_uditivo"></h3>
+<h3>Esatte: <span style="color:green" id="res_esatte_uditivo"></h3>
+<h3>Errate: <span style="color:red" id="res_errate_uditivo"></h3>
+<h3>Omissioni: <span style="color:grey" id="res_omissioni_uditivo"></h3>
+</div>
+</div>
+<br/>
+<div class="text-center">
+<h4>N-back: <span id="res_nback"></h4>
+<h4>Numero stimoli: <span id="res_item"></h4>
+<h4>Lato matrice: <span id="res_lato"></h4>
+<h4>Tempo di esposizione: <span id="res_delay"></h4>
+<h4>Modalita: <span id="res_modalita"></h4>
+</div>
+<br/>
+<h5>NB: il campo "esatte" e la percentuale includono anche gli item in cui l'utente non avrebbe dovuto dare risposte ed effettivamente non risponde</h5>
+<br/>
+<button type="button" class="btn btn-primary btn-lg btn-block" id="riavvia">RIAVVIA</button>
+</div>
+</div>
+<div class="xs-hidden sm-hidden col-md-2">
+</div>
+</div>
+
+<script src="lib/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="src/nback.js?v=1"></script>
+<script src="src/game.js?v=1"></script>
+
+</div>
+</body>
+</html>

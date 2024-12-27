@@ -1,0 +1,541 @@
+﻿<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Matrici - Training gratuito di attenzione e memoria di lavoro</title>
+
+<meta name='description' content='Una web-app totalmente personalizzabile con attività gratuite con matrici utili nel trattamento di memoria e attenzione'>
+</head>
+<body class="noselect">
+  <div class="modal fade" tabindex="-1" role="dialog" id="istruzioni">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Istruzioni <span id="tipo_istruzione"></span></h2>
+        </div>
+        <div class="modal-body text-center">
+        <h3 id="testo_istruzioni"></h3>
+        <img class="immagini_istruzioni img-responsive" id="help_modalita_riproduzione" src="./img/help_modalita_riproduzione.jpg" />
+        <img class="immagini_istruzioni img-responsive" id="help_sottocompito" src="./img/help_sottocompito.jpg" />
+        <img class="immagini_istruzioni img-responsive" id="help_distrattori" src="./img/help_distrattore.jpg" />
+        <img class="immagini_istruzioni img-responsive" id="help_tipo_distrattori" src="./img/help_tipo_distrattore.jpg" />
+        <img class="immagini_istruzioni img-responsive" id="help_immagini" src="./img/help_immagini.jpg" />
+
+        </div>
+
+        <div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-dismiss="modal">Chiudi</button>
+  </div>
+      </div><!-- /.modal-content -->
+
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <!-- Modal -->
+  <div id="mod_back" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Torna alle impostazioni</h4>
+        </div>
+        <div class="modal-body">
+          <p>Sei sicuro di voler tornare alle impostazioni?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="yesback">Sì</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div id="mod_refresh" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Riavvia questa attività</h4>
+        </div>
+        <div class="modal-body">
+          <p>Sei sicuro di voler riavviare questa attività?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="yesrefresh">Sì</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Salva le impostazioni</h4>
+        </div>
+        <div class="modal-body">
+          <p>Questo indirizzo è associato alle impostazioni della lista che hai generato. Copialo su un file Word o negli appunti. <br/>Inserendolo nella barra degli indirizzi di Chrome, Firefox o Explorer come se fosse un normale sito web, accederai a questa pagina con le impostazioni salvate!</p><br/>
+  		</br>
+  		  <form class="form-horizontal" role="form">
+  			    <div class="form-group white">
+  		<div class="col-xs-12">
+  			<div class="input-group " style="width:100%; text-align:center"  >
+  				<textarea  type=text   id='casella' style="width:100%; padding:10px"></textarea>
+  			</div><!-- /input-group -->		</div>
+  			</div>
+  			</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Chiudi</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+<div class="container hidden-md hidden-lg text-center">
+  <h1 class="text-center">Matrici</h1>
+  <h4>Programmato da Antonio Milanese - info@trainingcognitivo.it</h4>
+  <br/>
+
+  <h1 class="text-center"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></h1>
+  <br/>
+  <h3>Questa web-app ha bisogno di uno schermo grande</h3>
+<br/>
+  <a href="http://www.trainingcognitivo.it/gamecenter"><button class="btn btn-lg btn-info btn-block lowmargin" ><h5>Torna al Game Center</h5></button></a>
+
+</div>
+<div class="container hidden-xs hidden-sm">
+
+<h1 class="text-center">Matrici</h1>
+<h5 class="text-center">Programmato da Antonio Milanese - info@trainingcognitivo.it</h5>
+
+<div class="col-xs-12" id="settings">
+<h5>NB: Questa applicazione, gratuita, si rifà ad alcune tecniche usate in neuropsicologia nel trattamento dell'attenzione e della memoria di lavoro. Un esempio di questo tipo di lavoro è portato avanti in Italia dal <a href="http://www.alassiosalute.it/medico/dott-benso-francesco/">prof. Francesco Benso</a>. Questa web-app, tuttavia, è stata sviluppata senza la supervisione di qualunque figura implicata in questo tipo di trattamento.</h5>
+<h5>Le attività specifiche qui proposte sono illustrate nel capitolo "Training della memoria di lavoro" di Gazerro e Marotta contenuto nel libro <a href="http://amzn.to/2u6Mmme">Funzioni esecutive nei DSA</a></a> a cura del prof. Luigi Marotta.</h5>
+
+<h3 class="text-center">Impostazioni</h3>
+
+
+<div id="disclaimer">
+
+</div>
+<br/>
+<h4><span class="glyphicon glyphicon-record" aria-hidden="true"></span> Opzioni attività </h4>
+<div class="row option_wrapper">
+  <div class="col-xs-5">
+  <h5>Modalità</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+
+      <h5><span class="glyphicon glyphicon-chevron-left prev" aria-hidden="true" target="modalita"></span></h5>
+
+      </div>
+      <div class="col-xs-8">
+        <h5 id="modalita"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+
+        <h5><span class="glyphicon glyphicon-chevron-right next" aria-hidden="true" target="modalita"></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true" tipo="modalita"></span></h5>
+  </div>
+</div>
+
+<div class="row option_wrapper">
+  <div class="col-xs-5">
+  <h5>Compito</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+      <h5><span class="glyphicon glyphicon-chevron-left prev" aria-hidden="true" target="sottomodalita"></span></h5>
+      </div>
+      <div class="col-xs-8">
+        <h5 id="sottomodalita"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+        <h5><span class="glyphicon glyphicon-chevron-right next" aria-hidden="true" target="sottomodalita"></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true" tipo="compito"></span></h5>
+  </div>
+</div>
+
+<div class="row option_wrapper" id="esposizione_wrapper">
+  <div class="col-xs-5">
+  <h5 id='titolo_tempo'>Tempo di esposizione (ms)</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+      <h5><span class="glyphicon glyphicon-minus decrease" aria-hidden="true"></span></h5>
+      </div>
+      <div class="col-xs-8">
+        <h5 id="tempo"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+
+        <h5><span class="glyphicon glyphicon-plus increase" aria-hidden="true" ></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+            <!--
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h5>
+-->
+  </div>
+</div>
+<div class="row option_wrapper" id="esposizione_wrapper">
+  <div class="col-xs-5">
+  <h5 id='titolo_tempo'>Delay (ms)</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+      <h5><span class="glyphicon glyphicon-minus decreasedelay" aria-hidden="true"></span></h5>
+      </div>
+      <div class="col-xs-8">
+        <h5 id="delay"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+
+        <h5><span class="glyphicon glyphicon-plus increasedelay" aria-hidden="true" ></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+            <!--
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h5>
+-->
+  </div>
+</div>
+<br/>
+<h4><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Opzioni stimoli </h4>
+<div class="row option_wrapper" >
+  <div class="col-xs-5">
+  <h5 id='titolo_stimoli'>Numero di stimoli</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+      <h5><span class="glyphicon glyphicon-minus decreasestimoli" aria-hidden="true"></span></h5>
+      </div>
+      <div class="col-xs-8">
+        <h5 id="stimoli"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+
+        <h5><span class="glyphicon glyphicon-plus increasestimoli" aria-hidden="true" ></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+                        <!--
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h5>
+-->
+  </div>
+</div>
+
+<div class="row option_wrapper">
+  <div class="col-xs-5">
+  <h5>Stimoli uguali/diversi</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+      <h5><span class="glyphicon glyphicon-chevron-left prev" aria-hidden="true" target="uguali"></span></h5>
+      </div>
+      <div class="col-xs-8">
+        <h5 id="uguali"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+        <h5><span class="glyphicon glyphicon-chevron-right next" aria-hidden="true" target="uguali"></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+                            <!--
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h5>
+-->
+  </div>
+</div>
+<div class="row option_wrapper">
+  <div class="col-xs-5">
+  <h5>Tipo di immagine</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+      <h5><span class="glyphicon glyphicon-chevron-left prev" aria-hidden="true" target="immagini"></span></h5>
+      </div>
+      <div class="col-xs-8">
+        <h5 id="immagini"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+        <h5><span class="glyphicon glyphicon-chevron-right next" aria-hidden="true" target="immagini"></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true" tipo="immagini"></span></h5>
+  </div>
+</div>
+<div class="row option_wrapper" >
+  <div class="col-xs-5">
+  <h5>Numero di distrattori</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+      <h5><span class="glyphicon glyphicon-minus decreasedistrattori" aria-hidden="true"></span></h5>
+      </div>
+      <div class="col-xs-8">
+        <h5 id="distrattori"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+        <h5><span class="glyphicon glyphicon-plus increasedistrattori" aria-hidden="true" ></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true" tipo='numerodistrattori'></span></h5>
+  </div>
+</div>
+<div class="row option_wrapper" id="tipo_distrattori_wrapper">
+  <div class="col-xs-5">
+  <h5>Tipo di distrattori</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+      <h5><span class="glyphicon glyphicon-chevron-left prev" aria-hidden="true" target="tipo_distrattori"></span></h5>
+      </div>
+      <div class="col-xs-8">
+        <h5 id="tipodistrattori"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+        <h5><span class="glyphicon glyphicon-chevron-right next" aria-hidden="true" target="tipo_distrattori"></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true" tipo='tipodistrattori'></span></h5>
+  </div>
+</div>
+
+
+<br/>
+<h4><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Matrice </h4>
+<div class="row option_wrapper" >
+  <div class="col-xs-5">
+  <h5>Larghezza matrice</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+      <h5><span class="glyphicon glyphicon-minus decreaselarghezza" aria-hidden="true"></span></h5>
+      </div>
+      <div class="col-xs-8">
+        <h5 id="larghezza"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+        <h5><span class="glyphicon glyphicon-plus increaselarghezza" aria-hidden="true" ></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+    <!--
+
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h5>
+-->
+  </div>
+</div>
+
+<div class="row option_wrapper" >
+  <div class="col-xs-5">
+  <h5>Altezza matrice</h5>
+  </div>
+  <div class="col-xs-6 nextprew_wrapper text-center">
+    <div class="row">
+      <div class="col-xs-2 text-left ">
+      <h5><span class="glyphicon glyphicon-minus decreasealtezza" aria-hidden="true"></span></h5>
+      </div>
+      <div class="col-xs-8">
+        <h5 id="altezza"></h5>
+      </div>
+      <div class="col-xs-2 text-right ">
+        <h5><span class="glyphicon glyphicon-plus increasealtezza" aria-hidden="true" ></span></h5>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1 text-right">
+        <!--
+    <h5><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h5>
+-->
+  </div>
+</div>
+<div class="btn-wrapper text-center">
+  <button id="save" class="btn btn-lg btn-warning "><h3><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> SALVA IMPOSTAZIONI </h3></button>
+<button id="avvia_istr" class="btn btn-lg btn-success "><h3><span class="glyphicon glyphicon-play" aria-hidden="true"></span> SONO PRONTO! </h3></button>
+</div>
+<h6>Credits per le immagini: Scacchi - <a href="http://www.freepik.com/free-vector/chess-pieces-silhouettes_1069738.htm">Designed by Freepik</a></h6>
+
+</div>
+<div id="pre_instructions">
+  <h2 class="text-center">Istruzioni</h2>
+  <h3 class="justify" id="pre_mode"></h3>
+  <br/>
+  <h3 class="justify" id="pre_submode"></h3>
+  <br/>
+<h3 class="justify" id="pre_distrattori"></h3>
+  <br/>  <br/>
+  <div  class="row text-center" >
+    <div id="immagini_wrapper">
+      <h3>
+      <strong>Immagini da ricordare</strong>
+    </h3>
+    <div id="immagini_da_mostrare">
+
+    </div>
+    </div>
+    <div class="col-xs-6" id="distrattore_wrapper">
+      <h3>
+      <strong>Immagine da ignorare</strong>
+    </h3>
+      <img id="distrattore_esempio" class="img-responsive esempio" />
+    </div>
+
+  </div>
+    <div class="text-center btn-wrapper">
+      <button id="alleimpostazioni" class="btn btn-lg  mybtn"><h3><span class="glyphicon glyphicon-backward" aria-hidden="true"></span> Indietro </h3></button>
+
+  <button id="hocapito" class="btn btn-lg btn-primary mybtn"><h3><span class="glyphicon glyphicon-play" aria-hidden="true"></span> Ho capito!</h3></button>
+      </div>
+</div>
+
+<div id="game">
+<div class="row">
+    <h5 class="text-center" id="remaining"></h5>
+  </br>
+<div class="col-xs-2">
+
+
+<div id="recap_wrapper">
+<h4 class="text-center"><strong>Riepilogo</strong></h4>
+<h6>Modalità: <span id="rec_modalita"></span></h6>
+<h6>Compito: <span id="rec_sottomodalita"></span></h6>
+<h6>Tempo: <span id="rec_tempo"></span></h6>
+<h6>Delay: <span id="rec_delay"></span></h6>
+<h6>Stimoli: <span id="rec_stimoli"></span></h6>
+<h6>Uguali/diversi: <span id="rec_ugualidiversi"></span></h6>
+<h6>Immagini: <span id="rec_immagini"></span></h6>
+<h6>Distrattori: <span id="rec_distrattori"></span></h6>
+<h6>Tipo distrattori: <span id="rec_tipodistrattori"></span></h6>
+<h6>Griglia: <span id="rec_larghezza"></span> x <span id="rec_altezza"></span></h6>
+
+</div>
+<div class="text-center">
+<button class="btn btn-lg btn-info btn-block lowmargin" id="refresh"><h5><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>  RIAVVIA</h5></button>
+<button class="btn btn-lg btn-info btn-block" id="back"><h5><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> INDIETRO</h5></button>
+</div>
+</div>
+<div class="col-xs-8 text-center">
+  <div id="fakeboard" class="text-center">
+
+  </div>
+  <div id="divisor">
+
+  </div>
+  <div id="board" class="text-center">
+
+  </div>
+  <div class="btn-wrapper">
+
+
+  <button id="done" class="btn btn-lg btn-success btn-block"><h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ho finito!</h3></button>
+
+  </div>
+</div>
+<div class="col-xs-2">
+  <div id="tokens">
+
+  </div>
+  <div id="responso">
+  <div class="mini_wrapper">
+    <div class="cerchio" style="background-color:green" id="es">
+    </div>
+    <h5 class="text-center" style="color:green" id="txtesatte"></h5>
+  </div>
+  <div class="mini_wrapper">
+    <div class="cerchio" style="background-color:red" id="er">
+    </div>
+    <h5 class="text-center" style="color:red" id="txterrate"></h5>
+  </div>
+  <div class="mini_wrapper">
+    <div class="cerchio" style="background-color:grey" id="om">
+    </div>
+    <h5 class="text-center" style="color:grey" id="txtomesse"></h5>
+  </div>
+  <div class="mini_wrapper">
+    <div class="cerchio" style="background-color:yellow;" id="noim">
+    </div>
+    <h5 class="text-center" style="color:black" id="txtnoimmagine"></h5>
+  </div>
+
+
+  </div>
+  <div id="responso_bottom">
+
+  <button class="btn btn-lg btn-info btn-block lowmargin" id="lowrefresh"><h5><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>  RIAVVIA</h5></button>
+  <button class="btn btn-lg btn-info btn-block" id="lowback"><h5><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> CAMBIA</h5></button>
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-xs-8" id="riferimento">
+
+</div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="src/stile.css?v=4">
+<script src="lib/jquery.js"></script>
+<script src="lib/preload.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="src/game_settings.js?v=7"></script>
+<script src="src/game.js"></script>
+<script src="src/info.js"></script>
+<script src="src/pre.js"></script>
+</body>
+</html>

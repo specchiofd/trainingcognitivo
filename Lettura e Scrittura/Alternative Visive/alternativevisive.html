@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Riconoscimento visivo</title>
+<script src="lib/jquery.js"></script>
+
+<script src="src/riconosci.js"></script>
+<link href="src/stile.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+<div id="parametri">
+<h2 id="testoiniziale"></h2>
+<div id="intermezzo"></div>
+<div id="parametriBody">
+<div class="riga">
+<input type="checkbox" checked name="Numero uguale di stimoli" value="uguale" id="cbUguale"/>Numero uguale di stimoli: <input type="text" name="lname" value="20" id="nstimoli">
+</div>
+<div class="riga">
+Tempo di esposizione (ms): <input type="text" name="lname" value="400" id="esposizione">
+</div>
+<div class="riga">
+<input type="text" name="parola_1" id="parola_1" placeholder="Parola esatta" class="parola"><input type="text" name="esposizione1" id="esposizione_1" placeholder="20" class="esposizione">
+</div>
+<div class="riga">
+<input type="text" name="parola_2" id="parola_2" placeholder="Distrattore 2" class="parola"><input type="text" name="esposizione2" id="esposizione_2" placeholder="20" class="esposizione">
+</div>
+<div class="riga">
+<input type="text" name="parola_3" id="parola_3" placeholder="Distrattore 3" class="parola"><input type="text" name="esposizione3" id="esposizione_3" placeholder="20" class="esposizione">
+</div>
+<div class="riga">
+<input type="text" name="parola_4" id="parola_4" placeholder="Distrattore 4" class="parola"><input type="text" name="esposizione4" id="esposizione_4" placeholder="20" class="esposizione">
+</div>
+<div class="riga">
+<input type="checkbox" checked name="Feedback" value="feedback" id="cbFeedback"/>Feedback
+</div>
+<div class="riga">
+<div id="inizia">INIZIA</div>
+</div>
+<div style="text-align:center; margin-left:-20px;"><h6>Ideato e realizzato da Antonio Milanese. Per info e suggerimenti: info@trainingcognitivo.it</h6></div>
+</div>
+<div id="gioco">
+<div id="parola"></div>
+</div>
+<div id="risposte">
+<div id="giusto">GIUSTO</div>
+<div id="sbagliato">SBAGLIATO</div>
+</div>
+<div id="progress">
+<div id="front"></div>
+</div>
+<div id="risultati">
+<div id="rispEsatte"></div>
+<div id="rispErrate"></div>
+</div>
+</div>
+</div>
+
+</div>
+</body>
+
+</html>

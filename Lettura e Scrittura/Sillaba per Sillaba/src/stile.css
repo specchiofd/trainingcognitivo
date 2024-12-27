@@ -1,0 +1,368 @@
+#game_options{
+width:800px; 
+min-height:460px; 
+padding:0px; 
+border: 1px solid black; 
+border-top-left-radius:5px; 
+border-top-right-radius:5px; 
+margin-bottom: 5px; 
+margin-top:5px;
+box-shadow:2px 2px 2px black;
+margin:0px auto;
+background-image:url(bg.jpg);
+}
+
+.testo_parametro{
+font-size:1.4em; 
+margin-right:20px; 
+margin-top:20px; 
+font-family:Verdana;
+}
+
+.parametro_blocco{
+margin-top:20px;
+margin-bottom:40px;
+width:790px;
+padding-left:10px;
+}
+
+.parametro_input{
+font-size:1.4em;
+width:125px; 
+float:right;
+margin-right:20px;
+border:0px solid black;
+border-bottom:1px solid black;
+text-align:right;
+background:none;
+}
+
+.parametro_checkbox{
+padding:5px;
+float:right;
+margin-right:20px;
+width:20px;
+height:20px;
+}
+
+#options_title{
+background-color: navy; 
+width:800px; 
+border-top-left-radius:5px;}
+
+#options_title h1{
+background-color: navy; 
+font-size:26px;
+font-family:Verdana;
+color:white;
+margin:0px;
+padding:10px;
+}
+
+#game_panel{
+width:900px;
+margin: 0px auto;
+display:none;
+background-image:url(bg.jpg);
+}
+
+.barra_orizzontale{
+width:900px;
+height:50px;
+display:block;
+}
+
+.zona_ok{
+width:900px;
+height:50px;
+display:block;
+}
+
+.barra_verticale{
+width:50px;
+height:600px;
+float:left;
+}
+
+.area_tabella{
+border-radius:10px;
+background-image: url(../assets/back.png);
+width:800px;
+height:600px;
+float:left;
+box-shadow:3px 3px 0px black;
+}
+
+#risposte{
+display:none;
+margin:10px auto;
+overflow:auto;
+padding:10px;
+width:800px;
+border-radius:10px;
+background-image: url(../assets/back.png);
+box-shadow:3px 3px 0px black;
+}
+
+#finito{
+border-radius:5px;
+background-color:blue;
+width:150px;
+color: white;
+height:30px;
+font-size:26px;
+padding:5px;
+margin:0px auto;
+display:none;
+text-align:center;
+}
+
+#ricomincia{
+border-radius:5px;
+background-color:blue;
+width:150px;
+color: white;
+height:30px;
+font-size:26px;
+padding:5px;
+margin:0px auto;
+text-align:center;
+}
+
+.elemento{
+box-shadow: 5px 5px 5px #222222;
+float:left;
+background-color:white;
+border:1px solid black;
+border-radius:5px;
+width:98px;
+height:98px;
+margin:22px;
+}
+
+.risposta{
+box-shadow: 5px 5px 5px #222222;
+float:left;
+background-color:white;
+border:3px solid black;
+border-radius:5px;
+width:98px;
+height:98px;
+margin:5px;
+opacity : 0.8;
+}
+
+
+#wrapper_centrale{
+margin:0px auto;
+width:600px;
+}
+
+.result_board{
+display:none;
+float:left;
+width:600px;
+height:600px;
+background-image: url(../assets/back.png);
+margin: 5px;
+border-radius:10px;
+}
+
+#risultati{
+width:1220px;
+margin:0px auto;
+}
+
+#responso{
+width:100%;
+text-align: center;
+font-size:26px;
+}
+
+#cancella_tutto{
+clear:both;
+margin:0px 0px 0px 570px;
+width:200px;
+height:30px;
+font-size:24px;
+text-align:center;
+background-color:peachpuff;
+border-radius:5px;
+border:1px solid black;
+margin-top:0px;
+}
+
+.checkbox_random{
+width:25px;
+height:25px;
+float:right;
+margin-right:20px;
+}
+
+#parola{
+padding:50px 0px 30px 0px;
+display:inline-block;
+text-align:center;
+width:100%;
+}
+
+.sillaba{
+display:inline-block;
+font-family:verdana;
+}
+
+#game_panel{
+width:800px;
+height:360px;
+text-align:center;
+padding:0px; 
+border: 1px solid black; 
+border-top-left-radius:5px; 
+border-top-right-radius:5px; 
+margin-bottom: 5px; 
+margin-top:5px;
+box-shadow:2px 2px 2px black;
+margin:0px auto;
+display:none;
+}
+
+#guess{
+width:400px;
+padding:10px;
+text-align:center;
+font-family:Verdana;
+display:block;
+margin:20px auto;
+border-radius:10px;
+}
+
+#progress{
+width:100%;
+margin:20px 0px 20px 0px;
+text-align:center;
+display:inline-block;
+}
+
+.avanzamento{
+width:20px;
+height:20px;
+border-radius:50%;
+border:1px solid black;
+margin-right:5px;
+display:inline-block;
+}
+
+#next{
+cursor:pointer;
+color:white;
+background-color:Navy;
+padding:10px;
+border-radius:10px;
+border:1px solid black;
+display:inline-block;
+}
+
+#risultato{
+width:100%;
+font-size:40px;
+color:darkgreen;
+text-align:center;
+margin-top:40px;
+}
+
+#wrapper{
+display:block;
+margin:0px auto;
+width:700px;
+}
+
+#menu{
+display:block; 
+margin:0px auto 10px auto;
+max-width:900px; 
+box-shadow:0px 2px 2px grey;
+background-color:white; 
+}
+
+#logo{
+background-image:url('TC.png');
+float:left;
+margin-right:10px;
+margin-left:10px;
+width:120px;
+height:80px;
+background-repeat:no-repeat;
+background-position:center;
+display:inline-block;
+}
+
+#menu li{
+font-family:Verdana;
+font-size:16px;
+font-weight:600;
+color:black;
+text-align:center;
+padding:30px 10px 30px 10px;
+
+list-style:none;
+cursor:pointer;
+display:inline-block;
+}
+
+#menu li:hover{
+background-color:#e7e7e7;
+}
+
+#menu li a{
+text-decoration:none;
+color:black;
+}
+
+#menu li a:hover{
+text-decoration:none;
+color:black;
+}
+
+body{
+margin:0px;
+}
+
+#risultato_container{
+width:800px; 
+min-height:460px; 
+padding:0px; 
+border: 1px solid black; 
+border-top-left-radius:5px; 
+border-top-right-radius:5px; 
+margin-bottom: 5px; 
+margin-top:5px;
+box-shadow:2px 2px 2px black;
+margin:0px auto;
+display:none;
+cursor:pointer;
+background-image:url(bg.jpg);
+}
+
+#grey_bar{
+width:500px;
+height:30px;
+background-color:grey;
+border-radius:20px;
+margin:30px auto;
+}
+
+#green_bar{
+width:0px;
+height:30px;
+background-color:lightgreen;
+border-radius:20px;
+margin:0px;
+float:left;
+}
+
+#clicca_continuare{
+margin:30px auto;
+font-size:1.5em;
+color:black;
+text-align:center;
+}

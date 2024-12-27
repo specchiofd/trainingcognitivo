@@ -1,0 +1,200 @@
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none;
+    }
+}
+
+#wrapper{
+display:block;
+margin:0px auto;
+width:700px;
+}
+
+#menu{
+display:block; 
+margin:0px auto 10px auto;
+max-width:900px; 
+box-shadow:0px 2px 2px grey;
+background-color:white; 
+}
+
+#logo{
+background-image:url('TC.png');
+float:left;
+margin-right:10px;
+margin-left:10px;
+width:120px;
+height:80px;
+background-repeat:no-repeat;
+background-position:center;
+display:inline-block;
+}
+
+#menu li{
+font-family:Verdana;
+font-size:16px;
+font-weight:600;
+color:black;
+text-align:center;
+padding:30px 10px 30px 10px;
+
+list-style:none;
+cursor:pointer;
+display:inline-block;
+}
+
+#menu li:hover{
+background-color:#e7e7e7;
+}
+
+#menu li a{
+text-decoration:none;
+color:black;
+}
+
+#menu li a:hover{
+text-decoration:none;
+color:black;
+}
+
+#gioco
+{
+width:600px;
+height:800px;
+margin:0px auto;
+}
+
+#base{
+width:600px;
+height:600px;
+margin-top:50px;
+}
+
+.riga{
+text-align:left;
+width:100%;
+}
+
+.cella{
+border:1px solid black;
+float:left;
+display:block;
+text-align:center;
+font-family:Verdana;
+}
+
+.cella_left{
+background-color:lightblue;
+float:left;
+display:block;
+text-align:center;
+border:1px solid black;
+font-family:Verdana;
+}
+
+#parametri
+{
+width:560px;
+height:500px;
+margin:0px auto;
+border:1px solid black;
+border-bottom-left-radius:10px;
+border-bottom-right-radius:10px;
+padding:20px;
+}
+
+.testo_parametro{
+text-align:center;
+}
+
+.riga_parametro{
+font-size:20px;
+font-family:Verdana;
+width:100%;
+margin: 30px auto;
+}
+
+.dato{
+height:30px;
+border:0px solid black;
+border-bottom:1px solid black;
+font-size:24px;
+font-family:Verdana;
+width:60px;
+text-align:center;
+}
+
+#crea{
+width:250px;
+padding:20px;
+background-color:royalblue;
+color:white;
+text-align:center;
+font-size:18px;
+font-family:Verdana;
+cursor:Pointer;
+margin:50px auto 10px auto;
+}
+
+#crea:hover{
+background-color:navy;
+
+}
+
+#back{
+width:350px;
+padding:20px;
+background-color:royalblue;
+color:white;
+text-align:center;
+font-size:18px;
+font-family:Verdana;
+cursor:Pointer;
+margin:50px auto 10px auto;
+}
+
+#back:hover{
+background-color:navy;
+
+}
+
+#header{
+width:600px;
+height:150px;
+background-image:url('Header.png');
+margin:0px auto;
+border-top-left-radius:10px;
+border-top-right-radius:10px;
+border:1px solid black;
+}
+
+#feedback{
+text-align:center;
+color:red;
+font-size:18px;
+font-family:Verdana;
+margin:20px auto 10px auto;
+}
+
+.colore{
+display:inline-block;
+margin-right:20px;
+width:40px;
+height:40px;
+cursor:pointer;
+border:4px solid lightgrey;
+border-radius:5px;
+}
+
+.testo_colore{
+display:inline-block;
+margin-right:20px;
+width:40px;
+height:40px;
+cursor:pointer;
+border:4px solid lightgrey;
+border-radius:5px;
+}

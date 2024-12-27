@@ -1,0 +1,186 @@
+<html>
+<head>
+
+
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/stile.css">
+
+<title>Missione 1: Passo falso!</title>
+</head>
+<body>
+<div class="container">
+</div>
+<div class="modal fade" id="istruzioni">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Istruzioni</h4>
+      </div>
+      <div class="modal-body text-center">
+        <h4>Passo falso � un gioco di decisione ortografica ambientato nello spazio!</h4>
+		<h4>Hai quattro vite a disposizione per saltare sul punto giusto e avanzare fino alla fine della stanza!</h4>
+		<h4>Riuscirai a superare i 5 livelli?</h4>
+			  <img width=300px style="border-radius:100%" src="img/intro.png">
+			  <h4>Ideato e programmato da Antonio Milanese</h4>
+			  <h4>Per informazioni e suggerimenti: info@trainingcognitivo.it</h4>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-secondary" href="http://www.trainingcognitivo.it/gamecenter">Altri giochi</a>
+		<button type="button" class="btn btn-primary" data-dismiss="modal">Chiudi</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="errore"    data-backdrop="static"
+   data-keyboard="false" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h4 class="modal-title">Oh no!</h4>
+      </div>
+      <div class="modal-body text-center">
+	  <img width=100px src="img/passofalso.png">
+        <h2>Passo falso! La parola esatta era:</h2>
+		<br/>
+		<h2 id="parolaesatta"></h2>
+		<h2 id="parolaerrata"></h2>
+		<br/>
+		<h2>Ma non preoccuparti! Hai ancora <span id="quantevite"></span> <span id="vitavite"></span> a disposizione!</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="riprova">Riprova</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="sconfitta"    data-backdrop="static"
+   data-keyboard="false" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h4 class="modal-title">Game Over</h4>
+      </div>
+      <div class="modal-body text-center">
+	  	  <img width=100px src="img/novita.png">
+		  <h2>Passo falso! La parola esatta era:</h2>
+		<br/>
+		<h2 id="parolaesattadue"></h2>
+		<h2 id="parolaerratadue"></h2>
+		<br/>
+        <h2>Purtroppo hai finito le vite!</h2>
+		<h2>Vuoi riprovare?</h2>
+      </div>
+      <div class="modal-footer">
+
+        <a type="button" class="btn btn-secondary" href="http://www.trainingcognitivo.it/gamecenter">Altri giochi</a>
+		        <button type="button" class="btn btn-primary" id="rigiocauno">Rigioca</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="vittoria"    data-backdrop="static"
+   data-keyboard="false" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Vittoria!</h4>
+      </div>
+      <div class="modal-body text-center">
+	  	  <img width=100px src="img/vittoria.png">
+        <h2>Complimenti!</h2>
+		<h2>Hai completato il gioco...ma attento!</h2>
+		<h2>Presto arriveranno altre missioni!</h2>
+		<br/>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-secondary"  href="http://www.trainingcognitivo.it/gamecenter" >Altri giochi</a>
+        <button type="button" class="btn btn-primary" id="rigiocauno">Rigioca</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="superato"    data-backdrop="static"
+   data-keyboard="false" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h4 class="modal-title">Livello superato!</h4>
+      </div>
+      <div class="modal-body text-center">
+	  <img width=200px src="img/superato.png">
+        <h2>Livello superato!</h2>
+		<br/>
+		<h2>Sei pronto per la prossima sfida?</h2>
+		<br/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="next">Andiamo!</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="container screen" screen=0>
+<div class="row">
+<h1 class="text-center mytext">Missione 1: Passo falso!</h1>
+<h5 class="text-center mytext">Ideato e programmato da Antonio Milanese - info@trainingcognitivo.it</h5>
+<div class="myspan"></div>
+</div>
+<div class="row">
+<div class="col-xs-6 col-xs-push-3 col-md-3 col-md-push-3 col-md-3 text-center">
+<img src="img/hero.png" width="75%"/>
+<div class="myspan"></div>
+</div>
+<div class="col-xs-12 col-md-3 col-md-push-3 text-center">
+<button class="btn button-success btn-lg mybutton" id="gioca">Gioca!</button>
+<button class="btn button-success btn-lg mybutton" data-toggle="modal" data-target="#istruzioni">Istruzioni</button>
+<a class="btn button-success btn-lg mybutton" href="http://www.trainingcognitivo.it/gamecenter">Altri giochi</a>
+</div>
+</div>
+</div>
+<div class="container screen" screen=1>
+<div class="row" >
+<div class="col-xs-6 col-md-3 col-md-push-3 col-md-3 text-left toolbg">
+<img class="vita" src="img/vita.png" id="vita_1">
+<img class="vita" src="img/vita.png" id="vita_2">
+<img class="vita" src="img/vita.png" id="vita_3">
+<img class="novita" src="img/novita.png" id="novita_1">
+<img class="novita" src="img/novita.png" id="novita_2">
+<img class="novita" src="img/novita.png" id="novita_3">
+</div>
+<div class="col-xs-6 col-md-3 col-md-push-3 col-md-3 text-right toolbg">
+<div id="livello">
+
+
+</div>
+</div>
+</div>
+<div class="row">
+
+<div class="col-xs-4 col-md-2 col-md-push-3" id="colonna_0">
+
+</div>
+<div class="col-xs-4 col-md-2 col-md-push-3" id="colonna_1">
+
+</div>
+<div class="col-xs-4 col-md-2 col-md-push-3" id="colonna_2">
+</div>
+</div>
+</div>
+
+<script src="lib/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/parole.js"></script>
+<script src="js/decisione.js"></script>
+</body>

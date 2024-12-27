@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/mystyle.css" rel="stylesheet">
+	<title>OperaN - WebApp gratuita di Denominazione Rapida</title>
+
+
+</head>
+<body>
+		  <div id="infomodal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Istruzioni </h4>
+            </div>
+            <div class="modal-body text-center">
+			<h1 style="font-family:'Lobster'; color:red">OpeRan</h1>
+			<h3 style="font-family:'Bangers'">di Melissa Cupo e Antonio Milanese</h3>
+			<br/>
+			<h4>Scegli il numero degli stimoli, il tempo di esposizione, la modalità di avanzamento, le dimensioni delle immagini e se vuoi farle apparire tutte insieme o una per volta</h4>
+			<img class="istru" src="img/istru01.png">
+			<br/>
+			<br/>
+			<h4>Se imposterai l'opzione "Scelta degli stimoli automatica", sarà OpeRan a cercarli per te; altrimenti, potrai selezionare quelli che preferisci. Potrai poi rimuovere quelli che non ti piacciono nella schermata successiva</h4>
+			<img class="istru" src="img/istru02.png">
+			<br/>
+			<br/>
+			<h4>Nella schermata di Anteprima è possibile scegliere la frequenza con cui vuoi mostrare un determinato stimolo</h4>
+			<img class="istru" src="img/istru03.png">
+			<br/>
+			<br/>
+			<h4>Nel corso della Ran, premi il pulsante Errore per segnalare un errore commesso dal bambino</h4>
+			<img class="istru" src="img/istru04.png">
+			<br/>
+			<br/>
+			<h4>Per qualunque dubbio, non esitare a contattarci</h4>
+			<a href="https://www.facebook.com/t.cognitivo/" class="btn btn-primary btn-large">CONTATTACI</a>
+            </div>
+
+        </div>
+        </div>
+    </div>
+		<h1 class="text-center" style="color:white; text-shadow:2px 2px 2px black">OperaN</h1>
+		<h4 class="text-center" style="color:white; text-shadow:2px 2px 2px black">Programmata da Antonio Milanese - info@trainingcognitivo.it</h4>
+		  <div id="instruction" keyboard=false data-backdrop='static' class=" modal fade" role="dialog">
+        <div class="modal-dialog ">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Prima di iniziare </h4>
+            </div>
+            <div class="modal-body text-center">
+			<h2>Hai selezionato:</h2>
+			<br/>
+			<br/>
+			<h4 id="isauto"><strong>Avanzamento automatico:</strong> il quadrato rosso avanzerà in base alla velocità da te impostata</h4>
+			<h4 id="ismanu"><strong>Avanzamento manuale:</strong> clicca sul pulsante AVANZA in alto a destra per avanzare all'item successivo</h4>
+		    <img id="imgmanu" class="istru" src="img/istru06.png">
+			<img id="imgauto"class="istru" src="img/istru08.png">
+			<br/>
+			<br/>
+			<h4 id="iscomparsa"><strong>Stimoli a comparsa:</strong> gli stimoli appariranno volta per volta nel corso dell'avanzamento</h4>
+		    <img id="imgcomparsa" class="istru" src="img/istru07.png">
+			<br/>
+			<br/>
+			<h4 id="iserror">Clicca sul pulsante <strong>Errore</strong> in alto a destra quando il bambino commette un errore</h4>
+			<img class="istru" src="img/istru05.png">
+			<br/>
+			<br/>
+			<div class="row text-center">
+			<button class="btn btn-lg btn-success" id="partiamo">PARTIAMO! <span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+			</div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+			  <div id="fine" keyboard=false data-backdrop='static' class=" modal fade" role="dialog">
+        <div class="modal-dialog ">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Fine della sessione!</h4>
+            </div>
+            <div class="modal-body text-center">
+			<h2>Hai totalizzato <span id="risultato"></span></h2>
+			<br/>
+			<br/>
+  <div id="myprogress" class="progress-bar progress-bar-striped active" role="progressbar"aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" ></div>			<br/>
+			<br/>
+			<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Parola</th>
+      <th>Esatte/Tot</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody id="resultWrapper">
+  </tbody>
+  </table>
+
+			<br/>
+			<br/>
+			<button class="btn btn-warning" id="cambia"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>Cambia i parametri! </button>
+			<button class="btn btn-lg btn-success" id="riavvia"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>Riavvia! </button>
+
+            </div>
+
+        </div>
+        </div>
+    </div>
+		<div class="alert alert-warning " id="max" style="display:none">
+	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Attenzione!</strong> Il numero di stimoli per categoria non può superare il numero di stimoli totale.
+</div>
+	<div class="container">
+	<div class="row screen" id="screen_0">
+	<div class="col-xs-12 col-sm-6 formclass" id="impo">
+	<form class="form-horizontal" role="form">
+	<h2>Impostazioni</h2>
+    <div class="form-group">
+		<label class="control-label col-sm-4" for="speed">Numero di stimoli</label>
+		<div class="col-sm-8">
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button class="btn btn-primary " type="button" id="menostimoli">-</button>
+				</span>
+				<input type="number" class="form-control " value=20 id="items" style="text-align:center;background-color:white; color:black" readonly>
+				<span class="input-group-btn">
+					<button class="btn btn-primary " type="button" id="piustimoli">+</button>
+				</span>
+			</div><!-- /input-group -->
+		</div>
+    </div>
+
+	    <div class="form-group">
+		<label class="control-label col-sm-4" for="avanzamento">Avanzamento</label>
+		<div class="col-sm-8">
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active">
+    <input type="radio" name="avanzamentomanauto" checked autocomplete="off" id="avautomatico"> Automatico
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="avanzamentomanauto" autocomplete="off" id="avamanuale"> Manuale
+  </label>
+
+</div>
+		</div>
+    </div>
+
+
+    <div class="form-group" id="avanzamentoautomaticowrapper">
+		<label class="control-label col-sm-4" for="speed">Velocità di esposizione</label>
+		<div class="col-sm-8">
+			<div class="input-group">
+				<select class="form-control" id="tipovelocita">
+					<option value="sillsec">Sill/sec</option>
+					<option value="secsill">Sec/sill</option>
+					<option value="fisso">Fissa (ms)</option>
+				</select>
+				<span class="input-group-btn">
+					<button id="piulento" class="btn btn-primary " type="button">-</button>
+				</span>
+				<input type="number" class="form-control " value=1.2 id="speed" style="text-align:center;background-color:white; color:black" readonly>
+				<span class="input-group-btn">
+					<button id="piuveloce" class="btn btn-primary " type="button">+</button>
+				</span>
+			</div><!-- /input-group -->
+		</div>
+    </div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-4" for="comparsa">Elementi a scomparsa</label>
+		<div class="col-sm-8">
+			<div class="input-group">
+				<input type="checkbox" class="mycheckbox" unchecked id="scomparsa">
+			</div><!-- /input-group -->
+		</div>
+    </div>
+
+		    <div class="form-group">
+		<label class="control-label col-sm-4" for="dimensione">Dimensione immagine</label>
+		<div class="col-sm-8">
+
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button class="btn btn-primary " id="piupiccolo" type="button">-</button>
+				</span>
+				<input type="number" class="form-control " value=20 id="size" style="text-align:center;background-color:white; color:black" readonly>
+				<span class="input-group-btn">
+					<button class="btn btn-primary " id="piugrande" type="button">+</button>
+				</span>
+			</div><!-- /input-group -->
+
+
+		</div>
+    </div>
+		    <div class="form-group">
+		<label class="control-label col-sm-4" for="esempio">Esempio</label>
+		<div class="col-sm-8">
+
+			<img id="esempio" src='./img/bisillabe/chiave.png' class='img-thumbnail unselectedborder center-block example'>
+
+		</div>
+    </div>
+			    <div class="form-group" id="lblstimoliselezionati">
+		<label class="control-label col-sm-4" for="stimoliselezionati">Stimoli selezionati</label>
+		<div class="col-sm-8">
+
+  <h3 id="stimoliselezionati">
+
+  </h3>
+
+</div>
+		</div>
+		    <div class="form-group" id="tempostimatowrapper">
+		<label class="control-label col-sm-4" for="tempostimato">Tempo di esecuzione stimato</label>
+		<div class="col-sm-8">
+
+  <h3 id="tempostimato">
+
+  </h3>
+
+</div>
+		</div>
+
+  </form>
+  <button type=button" class="btn-lg btn-success btn-block buttonpadding" id="avanti_uno">AVANTI <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+  </div>
+
+	<div class="col-xs-12 col-sm-6" id="silla">
+
+	<form class="form-horizontal formclass" style="padding:0px 15px" role="form">
+	<h2>Stimoli</h2>
+    <div class="form-group">
+		<label class="control-label col-sm-4" for="speed">Scelta degli stimoli</label>
+		<div class="col-sm-8">
+			<div class="input-group " style="width:100%" >
+				<select class="form-control"  id="selezione" dir="rtl">
+					<option value="automatica">Automatica</option>
+					<option value="manuale">Manuale</option>
+				</select>
+
+			</div><!-- /input-group -->
+
+		</div>
+		</div>
+<div id="auto">
+    <div class="form-group">
+		<label class="control-label col-sm-4" for="speed">Bisillabe</label>
+		<div class="col-sm-8">
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button class="btn btn-primary " type="button" id="menobisillabe">-</button>
+				</span>
+				<input type="number" class="form-control " value=4 id="autobisillabe" style="text-align:center;background-color:white; color:black" readonly>
+				<span class="input-group-btn">
+					<button class="btn btn-primary " type="button" id="piubisillabe">+</button>
+				</span>
+			</div><!-- /input-group -->
+		</div>
+    </div>
+    <div class="form-group">
+		<label class="control-label col-sm-4" for="speed">Trisillabe</label>
+		<div class="col-sm-8">
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button class="btn btn-primary " type="button" id="menotrisillabe">-</button>
+				</span>
+				<input type="number" class="form-control " value=4 id="autotrisillabe" style="text-align:center;background-color:white; color:black" readonly>
+				<span class="input-group-btn">
+					<button class="btn btn-primary " type="button" id="piutrisillabe">+</button>
+				</span>
+			</div><!-- /input-group -->
+		</div>
+    </div>
+	    <div class="form-group">
+		<label class="control-label col-sm-4" for="speed">Quadrisillabe</label>
+		<div class="col-sm-8">
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button class="btn btn-primary " type="button" id="menoquadrisillabe">-</button>
+				</span>
+				<input type="number" class="form-control " value=4 id="autoquadrisillabe" style="text-align:center;background-color:white; color:black" readonly>
+				<span class="input-group-btn">
+					<button class="btn btn-primary " type="button" id="piuquadrisillabe">+</button>
+				</span>
+			</div><!-- /input-group -->
+		</div>
+    </div>
+</div>
+
+		</form>
+
+		<div id="manuale">
+	<div class="panel-group" id="sillabeaccordion">
+  <div class="panel panel-default" >
+    <div class="panel-heading">
+	<div class="row">
+	<div class="col-xs-8">
+      <h4>
+        <a data-toggle="collapse" data-parent="#sillabeaccordion" href="#bisillabepanel"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Bisillabe</a>
+      </h4>
+	</div>
+		<div class="col-xs-4">
+		<div class="btn-group pull-right" data-toggle="buttons">
+  <label class="btn btn-primary active ">
+    <input type="checkbox" unchecked autocomplete="off" id="selectallbisillabe"><span id="bitxtselectall">Seleziona tutto</span>
+  </label>
+  </div>
+  </div>
+    </div>
+		</div>
+    <div id="bisillabepanel" class="panel-collapse collapse in">
+      <div class="panel-body" id="bisillabepanelbody"></div>
+    </div>
+  </div>
+    <div class="panel panel-default" >
+    <div class="panel-heading">
+	<div class="row">
+	<div class="col-xs-8">
+      <h4>
+        <a data-toggle="collapse" data-parent="#sillabeaccordion" href="#trisillabepanel"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Trisillabe</a>
+      </h4>
+	</div>
+		<div class="col-xs-4">
+		<div class="btn-group pull-right" data-toggle="buttons">
+  <label class="btn btn-primary active ">
+    <input type="checkbox" unchecked autocomplete="off" id="selectalltrisillabe"><span id="tritxtselectall">Seleziona tutto</span>
+  </label>
+  </div>
+  </div>
+    </div>
+		</div>
+    <div id="trisillabepanel" class="panel-collapse collapse">
+      <div class="panel-body" id="trisillabepanelbody"></div>
+    </div>
+  </div>
+    <div class="panel panel-default" >
+    <div class="panel-heading">
+	<div class="row">
+	<div class="col-xs-8">
+      <h4>
+        <a data-toggle="collapse" data-parent="#sillabeaccordion" href="#quadrisillabepanel"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Quadrisillabe</a>
+      </h4>
+	</div>
+		<div class="col-xs-4">
+		<div class="btn-group pull-right" data-toggle="buttons">
+  <label class="btn btn-primary active ">
+    <input type="checkbox" unchecked autocomplete="off" id="selectallquadrisillabe"><span id="quadritxtselectall">Seleziona tutto</span>
+  </label>
+  </div>
+  </div>
+    </div>
+		</div>
+    <div id="quadrisillabepanel" class="panel-collapse collapse">
+      <div class="panel-body" id="quadrisillabepanelbody"></div>
+    </div>
+  </div>
+</div>
+</div>
+	  </div>
+	</div>
+	<div class="row screen" id="screen_1">
+	<div class="col-xs-12 text-center" id="anteprima">
+	<h2>Anteprima</h2>
+	<div class="row text-center" style="margin:15px 0px">
+	<button class="btn btn-warning btn-lg" id="indietro_due_top"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>INDIETRO</button>
+	<button class="btn btn-success btn-lg" id="avanti_due_top">AVANTI<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+	</div>
+	<div id="anteprimawrapper" class="col-xs-12" style="margin-bottom:15px">
+
+	</div>
+	<div class="row text-center" style="margin:15px 0px">
+	<button class="btn btn-warning btn-lg" id="indietro_due_bottom"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>INDIETRO</button>
+	<button class="btn btn-success btn-lg" id="avanti_due_bottom">AVANTI<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+	</div>
+	</div>
+	</div>
+	<div class="row screen" id="screen_2">
+	<div class="col-xs-12" style="background-color:white; padding:10px; position:fixed; z-index:5" id="barra">
+	<button class="btn btn-primary btn-lg pull-right" id="operanavanza" >AVANZA <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+	<button class="btn btn-danger pull-right" style="margin-right:20px; margin-top:5px; " id="errore"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> ERRORE</button>
+	</div>
+	<div class="col-xs-12" id="operan" style="background-color:white; padding:50px 0px 20px 0px">
+
+	</div>
+	</div>
+	</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="lib/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+		<script src="src/picker.js"></script>
+	<script src="src/operan.js"></script>
+
+	<script src="src/viewer.js"></script>
+	<script src="src/trueoperan.js"></script>
+</body>

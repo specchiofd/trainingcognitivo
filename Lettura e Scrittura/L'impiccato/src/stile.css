@@ -1,0 +1,341 @@
+@font-face {
+    font-family: "theminion";
+    src: url('../fonts/theminion.otf') format("truetype");
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url('../fonts/Lobster.otf') format("truetype");
+}
+
+
+body{
+	background-color:#151e23;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-image:url('../img/bg.png');
+	color:white;
+	text-shadow:2px 2px black;
+}
+
+.noshadow{
+	text-shadow:0px 0px black;
+}
+
+.carousel{
+interval: false
+}
+
+.vspan{
+	padding:20px 0px;
+}
+
+
+span.glyphicon-info-sign {
+    font-size: 2em;
+	cursor:pointer;
+	color:white;
+}
+
+
+
+.delimita{
+
+
+	margin-bottom:10px;
+	padding-bottom:10px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.optwrapper{
+	margin:20px 0px;	 
+	background-color:darkgreen; 
+
+	border:1px solid grey; 
+	border-radius:10px;
+}
+
+.options h2{
+	text-align:center;
+	font-family: "theminion";
+}
+.custombtn{
+	font-family: "theminion";
+	border:1px solid black;
+}
+
+
+label{
+	font-size: 1.3em;
+	font-family: "theminion";
+	text-shadow:none;
+}
+
+.myinput{
+	font-family: "theminion";
+	text-transform:uppercase;
+	font-size:2.5em;
+	height:100px;
+	background:none;
+	border:0px solid black;
+	border-bottom:2px solid white;
+	box-shadow:0px 0px 0px black;
+	border-radius:0px;
+	color:white;
+}
+
+.arrow{
+	font-size:50px;
+	color:white;
+	text-shadow:2px 2px  2px black;
+	line-height:100px;
+	display:inline-block;
+	cursor:pointer;
+}
+
+.avatar{
+	display:inline-block;
+	width:100px;
+	height:100px;
+	border-radius:100%;
+	border:1px solid black;
+	box-shadow:2px 2px 2px black;
+}
+
+.addmargin{
+	margin-top:40px;
+}
+
+.divider{
+	line-height:143px;
+	margin:0px;
+}
+
+html, body {
+  height: 100%;
+}
+
+* {
+    margin: 0;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer, .push {
+    height: 155px; /* .push must be the same height as .footer */
+	display:none;
+}
+
+.theminion{
+	font-family:theminion;
+}
+
+
+.footer {
+	background-color:black;
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  padding-top:20px;
+} 
+
+.popover-content{
+	color:black;
+}
+
+.btn-group .btn{
+	float:none;
+}
+
+.bar{
+	background-color:darkgreen;
+	border-radius:10px;
+	padding:10px;
+	border:2px solid black;
+	
+}
+
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (orientation: portrait) {
+	  
+.lettera{
+	width:34px;
+	height:34px;
+	line-height:30px;
+	background-color:white;
+	border:2px solid black;
+	display:inline-block;
+	color:black;
+	text-shadow:none;
+	font-size:1.5em;
+	padding:2px 0px;
+}
+  }
+  
+  @media only screen 
+  and (min-device-width: 481px) 
+ {
+.lettera{
+	width:50px;
+	height:50px;
+	line-height:50px;
+	background-color:white;
+	border:2px solid black;
+	display:inline-block;
+	color:black;
+	text-shadow:none;
+	font-size:1.5em;
+	
+}
+  }
+  
+  .tasto{
+	width:50px;
+	height:50px;
+	line-height:50px; 
+	background-color:lightgrey;
+	border:1px solid black;
+	color:black;
+	text-shadow:none;
+	font-size:1.5em;
+	display:inline-block;
+	cursor:pointer;
+	border-radius:100%;
+	box-shadow:2px 2px 2px black;
+	margin:5px;
+  }
+  
+  .tasto:hover{
+	background-color:darkgrey;
+  }
+  
+  .giacliccato{
+	  opacity:0.3;
+  }
+  
+  .controllo{
+	  border:2px solid yellow;
+  }
+  
+  .trovato{
+	  background-color:lightgreen;
+  }
+  
+  .parolacorretta{
+	  color:green;
+  }
+  
+  .txtback{
+	  background-color:darkgreen;
+	  padding:10px 0px 40px 0px;
+	  
+  }
+  
+  .wrap{
+	  margin:20px 0px;
+  }
+  
+  .my_opt[disabled]{
+	  background:none;
+	  font-size:2em;
+	  color:white;
+	  border:0;
+	  height:100px;
+	  box-shadow:0px 0px 0px black;
+	  	font-family: "theminion";
+  }
+  
+  .opt_lbl{
+	  line-height:100px;
+	  font-size:2em;
+
+  }
+  
+
+  .increment{
+	  font-size:2em;
+	  line-height:100px;
+	  text-shadow:2px 2px 2px black;
+	  background:none;
+	   outline: none;
+	   border:0;
+  }
+  
+    .increment:active{
+	  background:none;
+	  outline: none;
+
+  }
+  
+      .increment:hover{
+	  background:none;
+	  outline: none;
+
+  }
+  
+#gioca_multi{
+	display:none;
+}
+  
+  .carousel-control{
+	  width:10%;
+  }
+  
+  #single_avatar{
+
+	  border-radius:100%;
+	  border:2px solid black;
+	  width:80px;
+	  height:80px;
+	  margin:0px auto;
+  }
+  
+  #single_nome{
+	  line-height:20px;
+	  font-size:12px;
+	  text-align:center;
+	  color:white;
+	  text-transform:uppercase;
+	  font-family: "theminion";
+	  text-shadow:0px 0px 0px black;
+	  
+  }
+  
+  #lives{
+	  display:inline-block;
+	  line-height:100px;
+	  font-size:35px;
+  }
+  
+  #lives{
+	  margin-bottom:0px;
+  }
+  
+  h3{
+	  margin:0px;
+  }
+  
+  #turn{
+		  display:inline-block;
+	  line-height:100px;
+	  font-size:50px;  
+  }

@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<META NAME="DESCRIPTION" CONTENT="Il gioco dell'impiccato!">
+<title>Il gioco dell'impiccato!</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+
+
+</head>
+
+<body class="noselect">
+
+
+
+
+
+<div class="modal fade" id="responso" style="text-shadow:none; color:black;"   data-backdrop="static"
+   data-keyboard="false" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body text-center">
+        <h2 id="testo"></h2>
+		<br/>
+		<h2 class="parolacorretta"></h2>
+		<br/>
+		<h2 id="secondotesto"></h2>
+      </div>
+      <div class="modal-footer">
+		<a type="button" class="btn btn-secondary modalbutton" data-dismiss="modal" id="altrigiochi" href="http://www.trainingcognitivo.it/gamecenter">ALTRI GIOCHI</a>
+		<button type="button" class="btn btn-primary modalbutton" data-dismiss="modal" id="rigioca">GIOCA ANCORA</button>
+        <button type="button" class="btn btn-primary modalbutton" data-dismiss="modal" id="prossima">AVANTI</button>
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+<div class="container text-center" id="logocontainer">
+<h2 class="theminion">L'impiccato!</h2>
+<h4 class="theminion">Ideato e realizzato da Antonio Milanese</h4>
+</div>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active ">
+
+      <div id="players" class="container text-center ">
+<div class="col-xs-12">
+<h1 class="theminion text-center " >Clicca sul numero dei giocatori</h1>
+<div class='vspan'></div>
+<div class="row">
+
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-success active player" players=1>
+    <input type="radio" name="options"  id="player_one" autocomplete="off" checked><h2><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<i class="fa fa-desktop" aria-hidden="true"></i></h2><h3>1 giocatore</h3></label>
+  <label class="btn btn-success player disabled" players=2>
+    <input type="radio" name="options"  id="player_two" autocomplete="off" ><h2><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<i class="fa fa-user" aria-hidden="true"></i></h2><h3>2 giocatori</h3></label>
+    <label class="btn btn-success player disabled" players=3>
+    <input type="radio" name="options"  id="player_three" autocomplete="off" ><h2><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<i class="fa fa-user" aria-hidden="true"></i>&nbsp;<i class="fa fa-user" aria-hidden="true"></i></h2><h3>3 giocatori</h3></label>
+    <label class="btn btn-success player disabled" players=4>
+    <input type="radio" name="options"   id="player_four" autocomplete="off" ><h2><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<i class="fa fa-user" aria-hidden="true"></i>&nbsp;<i class="fa fa-user" aria-hidden="true"></i>&nbsp;<i class="fa fa-user" aria-hidden="true"></i></h2><h3>4 giocatori</h3></label>
+</div>
+</br>
+</br>
+</br>
+<h1>Modalità multigiocatore disponibile tra pochi giorni!</h1>
+</div>
+<div class="row text-center">
+<br/>
+<br/>
+</div>
+
+</div>
+</div>
+    </div>
+
+<div class="item text-center">
+<div class="container">
+<h1 class="theminion text-center " >Scrivi i nomi dei giocatori</h1>
+<br/>
+<br/>
+<div class="row wrap" id="player_one_wrapper">
+<div class="col-md-7 col-lg-8"><div class="form-group"><input type="text" class="form-control myinput" placeholder="Nome giocatore 1" id="player_one_name"></div></div>
+<div class="col-md-1"><div class="arrow" player=1 direction="left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div></div>
+<div class="col-md-2"><div class="avatar" id="avatar_1"></div></div>
+<div class="col-md-1"><div class="arrow" player=1 direction="right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div></div>
+</div>
+<div class="row wrap" id="player_two_wrapper">
+<div class="col-md-7 col-lg-8"><div class="form-group"><input type="text" class="form-control myinput" placeholder="Nome giocatore 2" id="player_two_name"></div></div>
+<div class="col-md-1"><div class="arrow" player=2 direction="left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div></div>
+<div class="col-md-2"><div class="avatar" id="avatar_2"></div></div>
+<div class="col-md-1"><div class="arrow" player=2 direction="right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div></div>
+</div>
+<div class="row wrap" id="player_three_wrapper">
+<div class="col-md-7 col-lg-8"><div class="form-group"><input type="text" class="form-control myinput" placeholder="Nome giocatore 3" id="player_three_name"></div></div>
+<div class="col-md-1"><div class="arrow" player=3 direction="left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div></div>
+<div class="col-md-2"><div class="avatar" id="avatar_3"></div></div>
+<div class="col-md-1"><div class="arrow" player=3 direction="right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div></div>
+</div>
+<div class="row wrap" id="player_four_wrapper">
+<div class="col-md-7 col-lg-8"><div class="form-group"><input type="text" class="form-control myinput" placeholder="Nome giocatore 4" id="player_four_name"></div></div>
+<div class="col-md-1"><div class="arrow" player=4 direction="left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div></div>
+<div class="col-md-2"><div class="avatar" id="avatar_4"></div></div>
+<div class="col-md-1"><div class="arrow" player=4 direction="right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div></div>
+</div>
+
+	  <a class="btn " href="#myCarousel" role="button" data-slide="prev"><h1 style="color:white"><span class="glyphicon glyphicon-circle-arrow-left"></span></h1></a>&nbsp;
+<a class="btn " href="#myCarousel" role="button" data-slide="next"><h1 style="color:white"><span class="glyphicon glyphicon-circle-arrow-right"></span></h1></a>
+</div>
+    </div>
+
+    <div class="item">
+      <div id="opzioni" class="container screen options" style="text-shadow:2px 2px 2px black">
+<h1 class="theminion text-center " >Scegli le opzioni</h1>
+<br/>
+<br/>
+<div class="vspan"></div>
+<div class="form-group row delimita" >
+  <label for="example-text-input" class="col-xs-12 col-sm-12 col-md-4  col-form-label opt_lbl">Categorie</label>
+
+	<div class="col-xs-8 col-xs-push-2 col-sm-push-2 col-md-push-0 col-sm-8 col-md-8 " >
+	<div class="row">
+	<div class="col-xs-2">
+	<button class="btn btn-primary increment" type="button" target="categorie" amount=-1><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+	</div>
+	<div class="col-xs-8">
+	<input type="text" class="form-control text-center my_opt" disabled="true" id="categorie">
+	</div>
+	<div class="col-xs-2">
+	<button class="btn btn-primary increment" type="button" target="categorie" amount=1><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+	</div>
+
+    </div>
+  </div>
+
+
+</div>
+<div class="form-group row delimita" >
+  <label for="example-text-input" class="col-xs-12 col-sm-12 col-md-4 col-form-label opt_lbl">Numero turni</label>
+
+	<div class="col-xs-8 col-xs-push-2 col-sm-push-2 col-md-push-0 col-sm-8 col-md-8 " >
+	<div class="row">
+	<div class="col-xs-2">
+	<button class="btn btn-primary increment" type="button" target="turni" amount=-1><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+	</div>
+	<div class="col-xs-8">
+	<input type="number" class="form-control text-center my_opt" disabled="true" id="turni">
+	</div>
+	<div class="col-xs-2">
+	<button class="btn btn-primary increment" type="button" target="turni" amount=1><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+	</div>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+<div class="form-group row delimita" id="tentativi_wrapper">
+  <label for="example-text-input" class="col-xs-12 col-sm-12 col-md-4 col-form-label opt_lbl">Livello</label>
+
+	<div class="col-xs-8 col-xs-push-2 col-sm-push-2 col-md-push-0 col-sm-8 col-md-8 " >
+	<div class="row">
+	<div class="col-xs-2">
+	<button class="btn btn-primary increment" type="button" target="tentativi" amount=-1><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+	</div>
+	<div class="col-xs-8">
+	<input type="text" class="form-control text-center my_opt" disabled="true" id="tentativi">
+	</div>
+	<div class="col-xs-2">
+	<button class="btn btn-primary increment" type="button" target="tentativi" amount=1><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+	</div>
+
+    </div>
+  </div>
+
+
+</div>
+<div class="row text-center">
+  <button type="button" class="btn btn-success btn-block btn-lg" id="gioca_single"><h1>Gioca</h1></button>
+
+  <button type="button" class="btn btn-success btn-block btn-lg" id="gioca_multi"><h1>Gioca</h1></button>
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+
+
+
+<div id="single" style="display:none" class="container screen ">
+<div class="vspan"></div>
+<div class="row text-center bar">
+<div class="col-xs-12 col-md-3 text-center">
+<div id="single_avatar"></div>
+<div id="single_nome"></div>
+</div>
+<div class="col-xs-12 col-md-6 text-center">
+<h3 id="lives"></h3>
+</div>
+<div class="col-xs-12 col-md-3 text-center">
+<h3 class="font-family:sans"><span id="turn"></span></h3>
+
+</div>
+</div>
+<div class="vspan"></div>
+<div class="row">
+<div class="col-xs-12 text-center bar">
+<div id="word_wrapper"></div>
+</div>
+</div>
+<div class="vspan"></div>
+<div class="row">
+<div class="col-xs-12 text-center bar">
+<div id="keyboard_wrapper" ></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="lib/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="src/parole.js"></script>
+<script src="src/single.js?v=1"></script>
+<script src="src/options.js?v=1"></script>
+  <link href="src/stile.css?v=4" rel="stylesheet" type="text/css">
+</body>
+
+</html>

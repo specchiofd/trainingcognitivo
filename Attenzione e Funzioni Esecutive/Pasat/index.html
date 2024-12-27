@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/preloadjs-0.6.2.min.js"></script>
+<script src="js/soundjs-0.6.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/stile.css">
+
+<title>PasatWeb: il Pasat online gratuito</title>
+</head>
+<body>
+<div class="container">
+<h1 class="text-center">Pasat</h1>
+<h4 class="text-center">Programmato da Antonio Milanese - info@trainingcognitivo.it</h4>
+<br />
+<br  />
+<div class="row">
+<div class="xs-hidden sm-hidden col-md-3">
+</div>
+<div class="col-xs-12 col-sm-12 col-md-6">
+<div id="options">
+<form class="form-horizontal">
+<div class="form-group">
+  <label for="nome" class="col-sm-6 col-form-label">Nome</label>
+  <div class="col-sm-6">
+    <input class="form-control" type="text" placeholder="Nome utente" id="nome">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="modalita" class="col-sm-6 col-form-label">Modalità di gioco</label>
+  <div class="col-sm-6">
+      <select class="form-control" id="modalita">
+    <option value="Concordante" selected>Concordante</option>
+    <option value="Visiva">Solo visiva</option>
+    <option value="Uditiva">Solo uditiva</option>
+    <option value="DiscordanteVisiva">Discordante visiva</option>
+	<option value="DiscordanteUditiva">Discordante uditiva</option>
+  </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="operazione" class="col-sm-6 col-form-label">Operazione da effettuare</label>
+  <div class="col-sm-6">
+      <select class="form-control" id="operazione">
+    <option value="Addizione" selected>Addizione</option>
+    <option value="Sottrazione">Sottrazione</option>
+
+  </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="stimoli" class="col-sm-6 col-form-label">Numero di stimoli</label>
+  <div class="col-sm-6">
+    <input class="form-control" type="number" placeholder=10 id="stimoli" min=2 value=10>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="span" class="col-sm-6 col-form-label">Span</label>
+  <div class="col-sm-6">
+    <input class="form-control" type="number" placeholder=2 id="span" min=1 value=2>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="feedback" class="col-sm-6 col-form-label">Feedback</label>
+  <div class="col-sm-6">
+          <select class="form-control" id="feedback">
+    <option value="Attivo" selected>Attivo</option>
+    <option value="Disattivo">Disattivo</option>
+  </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="range" class="col-sm-6 col-form-label">Range degli stimoli</label>
+  <div class="col-sm-6">
+    <input class="form-control" type="number" placeholder=9 id="range" min=2 value=9>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="tempo" class="col-sm-6 col-form-label">Tempo di esposizione (ms)</label>
+  <div class="col-sm-6">
+    <input class="form-control" type="number" id="tempo" min=2000 step=50 value=4000>
+  </div>
+</div>
+
+<!--
+<div class="form-group row">
+  <label for="feedback" class="col-sm-6 col-form-label">Tastiera a schermo</label>
+  <div class="col-sm-6">
+          <select class="form-control" id="tastiera">
+    <option value="Nascosta" selected>Nascosta</option>
+    <option value="Visibile">Visibile</option>
+  </select>
+  </div>
+</div>
+-->
+</form>
+<button type="button" class="btn btn-primary btn-lg btn-block" id="avvia">AVVIA</button>
+</div>
+
+<div id="game">
+<div id="screen">
+<span class="glyphicon glyphicon-ok" id="right"></span>
+<p id="numero"></p>
+<span class="glyphicon glyphicon-remove" id="wrong"></span>
+</div>
+<input id="casella" type="number"></input>
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" id="bar">
+
+  </div>
+</div>
+</div>
+
+<div id="results">
+<div class="row text-center">
+<h2>Riepilogo</h3><br/>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<h4>Numero di stimoli totali:</h4>
+</div>
+<div class="col-xs-6">
+<h4 id="stimoliTotali"></h4>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<h4>Numero di stimoli utili:</h4>
+</div>
+<div class="col-xs-6">
+<h4 id="stimoliUtili"></h4>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<h4>Tempo di esposizione:</h4>
+</div>
+<div class="col-xs-6">
+<h4 id="tempoEsposizione"></h4>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<h4>Media delle risposte attendibili*:</h4>
+</div>
+<div class="col-xs-6">
+<h4 id="mediaCorretta"></h4>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<h4>Risposte esatte:</h4>
+</div>
+<div class="col-xs-6">
+<h4 id="risposteEsatte"></h4>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<h4>Risposte errate:</h4>
+</div>
+<div class="col-xs-6">
+<h4 id="risposteErrate"></h4>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<h4>Tempi di risposta (ms):</h4>
+</div>
+<div class="col-xs-6">
+<h4 id="tempiRisposta"></h4>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<h4>Correttezza risposte:</h4>
+</div>
+<div class="col-xs-6">
+<h4 id="correttezzaRisposte"></h4>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<h5>*È la media delle risposte esatte e delle risposte errate non impulsive</h4><br/>
+</div>
+</div>
+<button type="button" class="btn btn-primary btn-lg btn-block" id="riavvia">RIAVVIA</button>
+</div>
+
+</div>
+
+
+<div class="xs-hidden sm-hidden col-md-3">
+</div>
+</div>
+</div>
+<script src="lib/jquery.js"></script>
+<script src="src/pasat.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>

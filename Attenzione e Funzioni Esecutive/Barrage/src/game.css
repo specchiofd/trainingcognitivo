@@ -1,0 +1,127 @@
+.cella{
+  cursor:pointer;
+  background-size:cover;
+  display:inline-block;
+  margin:20px;
+}
+
+#board{
+  background-color:white;
+}
+
+
+.to_guess{
+  background-size:cover;
+  margin:12px;
+  border:4px solid red;
+  display:inline-block;
+  background-color:white;
+}
+
+.to_guess_wrapper{
+  background-color:#e4e4e4;
+  border-bottom:1px solid black;
+}
+
+#time_wrapper{
+  background-color:white;
+  padding:0px 10px;
+  border-radius:5px;
+  text-align:center;
+}
+
+#time_wrapper h3{
+  margin:10px;
+}
+
+#time{
+  margin-left:10px;
+}
+
+#esatte_wrapper{
+  text-align:center;
+
+}
+
+#errate_wrapper{
+  text-align:left;
+  background-color:white;
+  border:4px solid red;
+  padding:0px 10px;
+
+}
+
+#omesse_wrapper{
+  text-align:left;
+  background-color:white;
+  border:4px solid orange;
+  padding:0px 10px;
+    margin-bottom:10px;
+}
+
+
+
+#errate{
+  margin-left:20px;
+
+}
+
+#omesse{
+  margin-left:20px;
+}
+.esatta_wrapper{
+
+    margin-left:30px;
+    display:inline-block;
+}
+
+.esatta_wrapper h3{
+  display:inline;
+  margin-left:10px;
+  line-height:40px;
+}
+
+
+
+.esatta_super_wrapper{
+  width:100%;
+      border:4px solid white;
+      text-align:left;
+      padding:10px 5px;
+      border-bottom:1px solid grey;
+      background-color:white;
+}
+
+
+
+.itis{
+  border:4px solid darkgreen;
+}
+
+.mini{
+  display:inline-block;
+  width:30px;
+  height:30px;
+  margin-top:5px;
+  margin-bottom:5px;
+  background-size:cover;
+}
+
+.esatta{
+  margin-left:10px;
+}
+
+#totale_wrapper{
+margin-bottom:10px;
+}
+
+.semitrasp{
+  opacity:0.1;
+}
+
+.modImg{
+  margin:10px auto;
+  width:200px;
+  height:200px;
+  border:4px solid red;
+}

@@ -1,0 +1,221 @@
+
+
+
+#instructions{
+font-size:1.3em;
+width:100%;
+margin:0% auto;
+text-align:center;
+font-weight:lighter;
+color:white;
+}
+
+#tempo{
+font-size:1.3em;
+width:100%;
+margin:0% auto;
+text-align:center;
+font-weight:lighter;
+color:white;
+}
+
+.diff{
+	margin:10px auto;
+	display:block;
+	width:200px;
+}
+
+#tastiera{
+	text-align:center;
+}
+
+#datrovare{
+	font-size:3em;
+}
+
+
+body{
+color:white;
+background-image:url('sky.png'); 
+}
+
+
+.numero{
+text-align:center;
+margin:10px;
+color:black;
+}
+
+#parola_numero{
+	text-align:center;
+	color:white;
+}
+
+#wrapper{
+	text-align:center;
+}
+#avviorapido{
+text-align:center;
+
+border-right:1px solid darkgrey;
+}
+
+#scegli{
+font-size:1.4em;
+color:white;
+line-height:2em;
+}
+
+#sceglidue{
+font-size:1.2em;
+color:white;
+line-height:2em;
+}
+
+#scrivi{
+font-size:1.4em;
+color:white;
+line-height:2em;
+}
+
+#scrividue{
+font-size:1.2em;
+color:white;
+line-height:2em;
+}
+
+#parti{
+font-size:1.4em;
+color:white;
+line-height:2em;
+}
+
+.icona{
+width:50px;
+height:50px;
+margin:20px auto;
+}
+
+#parola{
+display:inline-block;
+width:300px;
+text-align:center;
+border-radius:10%;
+border:1px solid grey;
+line-height:3em;
+min-height:3em;
+font-size:1.5em;
+background-color: white;
+box-shadow:2px 2px 2px black;
+color:black;
+}
+
+#in_uno{
+font-size:2em;
+margin:2em auto 2em auto;
+}
+
+#in_due{
+font-size:1.5em;
+margin:1em auto 2em auto;
+}
+
+#start{
+margin:2em auto;
+padding:20px;
+background-color:darkgreen;
+cursor:pointer;
+display:inline-block;
+border-radius:5px;
+min-width:150px;
+box-shadow:2px 2px 2px black;
+font-size:2em;
+}
+
+#tavola{
+text-align:center;
+margin:2em auto;
+}
+
+.lettera{
+background-color:white;
+border:1px solid black;
+display:inline-block;
+color:black;
+text-align:center;
+font-size:2em;
+cursor:pointer;
+}
+
+#barrasfondo{
+height:20px;
+margin:10px auto;
+width:70%;
+border:1px solid black;
+background-color:rgba(255,255,255,0.2);
+border-radius:5px;
+}
+
+#rimanente{
+float:left;
+width:100%;
+background-color:green;
+height:20px;
+border-radius:5px;
+}
+
+.txtgrande{
+margin:0em auto 1.5em auto;
+font-size:2em;
+}
+
+.txtmedio{
+margin:2em auto;
+font-size:1.5em;
+}
+
+#back{
+background-color:darkgrey;
+margin:0px auto;
+padding:30px;
+min-width:100px;
+display:inline-block;
+border-radius:10px;
+box-shadow:2px 2px 2px black;
+font-size:1.2em;
+cursor:pointer;
+}
+
+#nmedio{
+background-color:darkgoldenrod;
+margin:0px auto;
+padding:30px;
+min-width:100px;
+display:inline-block;
+border-radius:10px;
+box-shadow:2px 2px 2px black;
+font-size:1.2em;
+cursor:pointer;
+margin-right:10px;
+}
+
+#ndifficile{
+background-color:darkred;
+margin:0px auto;
+padding:30px;
+min-width:100px;
+display:inline-block;
+border-radius:10px;
+box-shadow:2px 2px 2px black;
+font-size:1.2em;
+cursor:pointer;
+margin-right:10px;
+}
+
+.altri{
+cursor:pointer; 
+display:inline-block; 
+margin:10px;
+}
+
+
